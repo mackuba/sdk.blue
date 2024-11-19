@@ -1,0 +1,4 @@
+name: Go
+repos:
+  - url: https://github.com/bluesky-social/indigo
+  - url: https://github.com/bluesky-social/jetstream

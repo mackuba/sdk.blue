@@ -1,0 +1,59 @@
+---
+---
+
+body {
+  text-align: center;
+  font-family: -apple-system, ui-sans-serif, system-ui, Arial, Helvetica, sans-serif;
+  color: #333;
+  margin: 40px 0;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(210, 75%, 45%);
+
+  &:hover { text-decoration: underline; }
+}
+
+header {
+  margin-top: 70px;
+  margin-bottom: 50px;
+
+  h1 {
+    font-size: 28pt;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+    a { color: #333; }
+  }
+
+  h2 {
+    font-size: 12pt;
+    font-weight: 500;
+  }
+}
+
+.language {
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 16pt;
+    font-weight: 500;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 10px;
+
+    li {
+      margin: 16px 0px;
+      text-align: center;
+    }
+  }
+}
+
+footer {
+  font-size: 10pt;
+  margin: 70px 0 40px;
+}

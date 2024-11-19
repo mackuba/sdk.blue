@@ -1,0 +1,7 @@
+name: Ruby
+repos:
+  - url: https://github.com/mackuba/blue_factory
+  - url: https://github.com/mackuba/didkit
+  - url: https://github.com/mackuba/minisky
+  - url: https://github.com/mackuba/skyfall
+  - url: https://github.com/mackuba/bluesky-feeds-rb

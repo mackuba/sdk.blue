@@ -1,0 +1,19 @@
+---
+---
+
+{% for projects in site.data.projects %}
+{% assign key = projects[0] %}
+{% assign data = projects[1] %}
+
+<div class="language">
+  <h2>{{ data.name }}</h2>
+  <ul>
+    {% for repo in data.repos %}
+      <li>
+        <a href="{{ repo.url }}">{{ repo.url }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endfor %}
