@@ -1,6 +1,10 @@
 ---
 ---
 
+:root {
+  color-scheme: light dark;
+}
+
 body {
   text-align: center;
   font-family: -apple-system, ui-sans-serif, system-ui, Arial, Helvetica, sans-serif;
@@ -91,4 +95,29 @@ header {
 footer {
   font-size: 10pt;
   margin: 70px 0 40px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body { color: #ccc; }
+
+  header {
+    h1 a { color: #ddd; }
+  }
+
+  .language {
+    h2 { border-color: #666; background-color: rgba(255, 255, 255, 0.05); }
+  }
+
+  .projects li {
+    border-color: #666;
+    background-color: rgba(255, 255, 255, 0.02);
+
+    .author a { color: #888; }
+    .stars { color: #888; }
+    .description + .stats { border-top-color: #444; }
+    .separator { color: #666; }
+    .license { border-color: #666; }
+    .license.unknown { border-color: #a62; }
+    .stats img { filter: invert(1); opacity: 0.5; }
+  }
 }
