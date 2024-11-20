@@ -28,7 +28,7 @@
   </p>
 
   <p class="description">
-    {{ info.description }}
+    {{ include.project.description | default: info.description }}
   </p>
 
   <p class="stats">

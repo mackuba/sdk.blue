@@ -4,6 +4,7 @@ repos:
   - url: https://github.com/aliceisjustplaying/labeler-starter-kit-bsky
   - url: https://github.com/bluesky-social/feed-generator
   - url: https://github.com/bluesky-social/atproto
+    description: "AT Protocol Reference Implementation (TypeScript)"
   - url: https://github.com/skyware-js/firehose
   - url: https://github.com/skyware-js/jetstream
   - url: https://github.com/skyware-js/bot

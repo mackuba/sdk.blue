@@ -5,8 +5,12 @@ repos:
   - url: https://github.com/andooown/swift-atproto
   - url: https://github.com/andooown/lexicon-gen
   - url: https://github.com/chead/SwiftBluesky
+    description: "A package for interacting with the Bluesky Social API."
   - url: https://github.com/chead/SwiftATProto
+    description: "A Swift package for constructing ATProto requests."
   - url: https://github.com/chead/SwiftLexicon
+    description: "A Swift package for decoding ATProto Lexicon."
   - url: https://github.com/nnabeyang/swift-atproto
   - url: https://github.com/nnabeyang/swift-cbor
   - url: https://github.com/nnabeyang/swift-atproto-demo-firehose
+    description: "A demo application of Firehose using swift-atproto."
