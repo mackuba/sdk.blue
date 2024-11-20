@@ -56,11 +56,18 @@ header {
     line-height: 125%;
     text-align: left;
 
+    &.official {
+      border-color: hsl(210, 90%, 45%);
+      box-shadow: 0 0 2px hsla(210, 90%, 45%, 40%);
+      background-color: hsla(210, 90%, 45%, 3%);
+    }
+
     .title { position: relative; padding-right: 35px; }
     .project-name { font-size: 14pt; font-weight: 500; margin-right: 2px; }
     .author { font-size: 11pt; vertical-align: bottom; }
     .author a { color: #333; }
     .author .dot { margin-right: 2px; }
+    .butterfly { margin-left: 4px; }
     .stars { position: absolute; right: 0px; font-size: 10pt; color: #666; }
     .stars .count { font-size: 11pt;  }
 
