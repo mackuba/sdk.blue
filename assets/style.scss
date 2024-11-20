@@ -97,6 +97,22 @@ footer {
   margin: 70px 0 40px;
 }
 
+#github {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+
+  img {
+    width: 24px;
+    opacity: 0.4;
+  }
+
+  a:hover img {
+    opacity: 0.6;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   body { color: #ccc; }
 
@@ -119,5 +135,10 @@ footer {
     .license { border-color: #666; }
     .license.unknown { border-color: #a62; }
     .stats img { filter: invert(1); opacity: 0.5; }
+  }
+
+  #github {
+    img { filter: invert(1); opacity: 0.5; }
+    a:hover img { opacity: 0.75; }
   }
 }
