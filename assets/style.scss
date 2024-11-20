@@ -78,6 +78,7 @@ header {
     .stats .separator { margin: 0px 5px; font-size: 13pt; }
     .description + .stats { margin-top: 18px; border-top: 1px solid #ddd; padding-top: 15px; }
     .license { border: 1px solid #bbb; border-radius: 5px; padding: 1px 5px; font-size: 10pt; white-space: nowrap; }
+    .license.unknown { border-color: #fa4; }
   }
 }
 
