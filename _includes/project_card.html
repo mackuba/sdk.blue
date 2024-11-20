@@ -39,6 +39,6 @@
     <span class="separator">|</span>
     <img src="/assets/images/commit.png" width="15"> Last commit: {{ info.last_commit.author_date | date: "%b %Y" }}
     <span class="separator">|</span>
-    <span class="license">{{ info.license | replace: "-", " " | default: "Unknown" }}</span>
+    <span class="license">{{ include.project.license | default: info.license | replace: "-", " " | default: "Unknown" }}</span>
   </p>
 </li>
