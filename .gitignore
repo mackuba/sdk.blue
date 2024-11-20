@@ -1,5 +1,7 @@
+_data/github_info.yml
 _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
+config/auth.yml
 vendor
