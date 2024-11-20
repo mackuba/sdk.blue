@@ -1,0 +1,28 @@
+{% assign info = include.project.info %}
+
+{% assign dates = '' | split: '' %}
+{% if info.last_release %}
+  {% assign dates = dates | push: info.last_release.published_at %}
+{% endif %}
+{% if info.last_tag %}
+  {% assign dates = dates | push: info.last_tag.committer_date %}
+{% endif %}
+{% assign last_release = dates | sort | last %}
+
+{% if info.user_name %}
+  {% if info.user_name != info.user_login %}
+    {% assign user = '@' | append: info.user_login | append: ' (' | append: info.user_name | append: ')' %}
+  {% else %}
+    {% assign user = '@' | append: info.user_login %}
+  {% endif %}
+{% else %}
+  {% assign user = '@' | append: info.user_login %}
+{% endif %}
+
+<li>
+  <a href="{{ include.project.url }}" target="_blank">{{ info.name }}</a>
+  by {{ user }} *{{ info.stars }}<br>
+  {{ info.description }}<br>
+  Last release: {{ last_release | date_to_string }} |
+  commit: {{ info.last_commit.author_date | date_to_string }} | {{ info.license | replace: "-", " " }}
+</li>
