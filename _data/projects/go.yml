@@ -2,3 +2,9 @@ name: Go
 repos:
   - url: https://github.com/bluesky-social/indigo
   - url: https://github.com/bluesky-social/jetstream
+  - url: https://github.com/uabluerail/indexer
+  - url: https://github.com/CharlesDardaman/blueskyfirehose
+  - url: https://github.com/danrusei/gobot-bsky
+  - url: https://github.com/ericvolp12/go-bsky-feed-generator
+  - url: https://github.com/ericvolp12/bsky-experiments
+  - url: https://github.com/ericvolp12/atproto.tools

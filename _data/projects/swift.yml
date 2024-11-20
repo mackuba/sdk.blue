@@ -1,3 +1,12 @@
 name: "Swift & ObjC"
 repos:
+  - url: https://github.com/kphrx/plc-handle-tracker
   - url: https://github.com/MasterJ93/ATProtoKit
+  - url: https://github.com/andooown/swift-atproto
+  - url: https://github.com/andooown/lexicon-gen
+  - url: https://github.com/chead/SwiftBluesky
+  - url: https://github.com/chead/SwiftATProto
+  - url: https://github.com/chead/SwiftLexicon
+  - url: https://github.com/nnabeyang/swift-atproto
+  - url: https://github.com/nnabeyang/swift-cbor
+  - url: https://github.com/nnabeyang/swift-atproto-demo-firehose

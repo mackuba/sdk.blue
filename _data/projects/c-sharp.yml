@@ -1,0 +1,5 @@
+name: "C# (.NET)"
+repos:
+  - url: https://github.com/drasticactions/FishyFlip
+  - url: https://github.com/a-gubskiy/X.Bluesky
+  - url: https://github.com/electricduck/booski

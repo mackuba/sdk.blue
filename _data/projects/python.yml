@@ -1,0 +1,11 @@
+name: Python
+repos:
+  - url: https://github.com/susumuota/nanoatp
+  - url: https://github.com/MarshalX/atproto
+  - url: https://github.com/MarshalX/bluesky-feed-generator
+  - url: https://github.com/MarshalX/python-libipld
+  - url: https://github.com/DavidBuchanan314/dag-cbrrr
+  - url: https://github.com/DavidBuchanan314/picopds
+  - url: https://github.com/mnogu/chitose
+  - url: https://github.com/snarfed/lexrpc
+  - url: https://github.com/snarfed/arroba
