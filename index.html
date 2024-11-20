@@ -5,16 +5,10 @@
   {% assign key = projects[0] %}
   {% assign data = projects[1] %}
 
-  <div class="language">
-    <h2>{{ data.name }}</h2>
-    <ul class="projects">
-      {% assign repos = data.repos | sort: "info.stars", "first" | reverse %}
-
-      {% for repo in repos %}
-        {% if repo.info %}
-          {% include project_card.html project=repo %}
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </div>
+  {% if key != 'other' %}
+    {% include language_section.html data=data %}
+  {% endif %}
 {% endfor %}
+
+{% assign other = site.data.projects.other %}
+{% include language_section.html data=other %}

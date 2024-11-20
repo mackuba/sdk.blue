@@ -1,0 +1,6 @@
+name: Other
+repos:
+  - url: https://github.com/christopherkenny/bskyr
+    description: "Interact with Bluesky Social from R"
+    license: MIT
+  - url: https://github.com/feenkcom/gt4atproto

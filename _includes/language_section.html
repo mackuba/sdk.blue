@@ -1,0 +1,12 @@
+<div class="language">
+  <h2>{{ include.data.name }}</h2>
+  <ul class="projects">
+    {% assign repos = include.data.repos | sort: "info.stars", "first" | reverse %}
+
+    {% for repo in repos %}
+      {% if repo.info %}
+        {% include project_card.html project=repo %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
