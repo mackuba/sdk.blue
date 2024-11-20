@@ -29,6 +29,10 @@ task :update_metadata do
           'license' => json['license'] && json['license']['spdx_id']
         }
 
+        if data[url]['license'] == 'NOASSERTION'
+          data[url]['license'] = nil
+        end
+
         response = Net::HTTP.get_response(URI("https://api.github.com/repos/#{user}/#{repo}/releases/latest"), hh)
 
         if response.code.to_i == 200
