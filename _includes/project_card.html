@@ -9,12 +9,8 @@
 {% endif %}
 {% assign last_release = dates | sort | last %}
 
-{% if info.user_name %}
-  {% if info.user_name != info.user_login %}
-    {% assign user = '@' | append: info.user_login | append: ' (' | append: info.user_name | append: ')' %}
-  {% else %}
-    {% assign user = '@' | append: info.user_login %}
-  {% endif %}
+{% if info.user_name and (info.user_name != info.user_login) %}
+  {% assign user = '@' | append: info.user_login | append: ' (' | append: info.user_name | append: ')' %}
 {% else %}
   {% assign user = '@' | append: info.user_login %}
 {% endif %}
