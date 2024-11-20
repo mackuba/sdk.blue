@@ -10,7 +10,7 @@ body {
 
 a {
   text-decoration: none;
-  color: hsl(210, 75%, 45%);
+  color: hsl(210, 90%, 45%);
 
   &:hover { text-decoration: underline; }
 }
@@ -40,17 +40,37 @@ header {
     font-size: 16pt;
     font-weight: 500;
   }
+}
 
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin: 10px;
+.projects {
+  list-style-type: none;
+  padding-left: 0;
+  width: 525px;
+  margin: 10px auto;
 
-    li {
-      margin: 16px 0px;
-      text-align: center;
-      line-height: 125%;
-    }
+  li {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 20px 0px;
+    padding: 2px 16px;
+    line-height: 125%;
+    text-align: left;
+
+    .title { position: relative; padding-right: 35px; }
+    .project-name { font-size: 14pt; font-weight: 500; margin-right: 2px; }
+    .author { font-size: 11pt; vertical-align: bottom; }
+    .author a { color: #333; }
+    .author .dot { margin-right: 2px; }
+    .stars { position: absolute; right: 0px; font-size: 10pt; color: #666; }
+    .stars .count { font-size: 11pt;  }
+
+    .description { line-height: 145%; font-size: 11pt; }
+
+    .stats { margin-top: 15px; font-size: 11pt; }
+    .stats img { position: relative; top: 2px; margin-right: 2px; }
+    .stats .separator { margin: 0px 5px; font-size: 13pt; }
+    .description + .stats { margin-top: 18px; border-top: 1px solid #ddd; padding-top: 15px; }
+    .license { border: 1px solid #bbb; border-radius: 5px; padding: 1px 5px; font-size: 10pt; white-space: nowrap; }
   }
 }
 

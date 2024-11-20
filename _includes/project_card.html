@@ -20,9 +20,22 @@
 {% endif %}
 
 <li>
-  <a href="{{ include.project.url }}" target="_blank">{{ info.name }}</a>
-  by {{ user }} *{{ info.stars }}<br>
-  {{ info.description }}<br>
-  Last release: {{ last_release | date_to_string }} |
-  commit: {{ info.last_commit.author_date | date_to_string }} | {{ info.license | replace: "-", " " }}
+  <p class="title">
+    <a class="project-name" href="{{ include.project.url }}" target="_blank">{{ info.name }}</a>
+    <span class="author"><span class="dot">•</span>
+      <a href="https://github.com/{{ info.user_login }}" target="_blank">{{ user }}</a></span>
+    <span class="stars">★ <span class="count">{{ info.stars }}</span></span>
+  </p>
+
+  <p class="description">
+    {{ info.description }}
+  </p>
+
+  <p class="stats">
+    <img src="/assets/images/release.png" width="15"> Last release: {{ last_release | date: "%b %Y" | default: "–" }}
+    <span class="separator">|</span>
+    <img src="/assets/images/commit.png" width="15"> Last commit: {{ info.last_commit.author_date | date: "%b %Y" }}
+    <span class="separator">|</span>
+    <span class="license">{{ info.license | replace: "-", " " | default: "Unknown" }}</span>
+  </p>
 </li>

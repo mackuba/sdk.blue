@@ -7,7 +7,7 @@
 
   <div class="language">
     <h2>{{ data.name }}</h2>
-    <ul>
+    <ul class="projects">
       {% assign repos = data.repos | sort: "info.stars", "first" | reverse %}
 
       {% for repo in repos %}
