@@ -8,3 +8,8 @@ repos:
   - url: https://github.com/ericvolp12/go-bsky-feed-generator
   - url: https://github.com/ericvolp12/bsky-experiments
   - url: https://github.com/ericvolp12/atproto.tools
+  - url: https://github.com/whtwnd/whitewind-blog
+    description: The AT Protocol blogging platform
+  - url: https://github.com/bsky-watch/labeler
+  - url: https://github.com/bsky-watch/utils
+  - url: https://github.com/bsky-watch/plc-mirror
