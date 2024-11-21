@@ -4,6 +4,8 @@ description: "A curated list of libraries & SDKs for the Bluesky API and AT Prot
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
+destination: "./public"
+
 defaults:
   - scope:
       path: ""
