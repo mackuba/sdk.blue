@@ -1,12 +1,25 @@
 ---
 ---
 
+<nav>
+  {% for projects in site.data.projects %}
+    {% assign key = projects[0] %}
+    {% assign data = projects[1] %}
+
+    {% if key != 'other' %}
+      <a href="#{{ key }}">{{ data.name }}</a> |
+    {% endif %}
+  {% endfor %}
+
+  <a href="#other">Other</a>
+</nav>
+
 {% for projects in site.data.projects %}
   {% assign key = projects[0] %}
   {% assign data = projects[1] %}
 
   {% if key != 'other' %}
-    {% include language_section.html data=data %}
+    {% include language_section.html key=key data=data %}
   {% endif %}
 {% endfor %}
 

@@ -1,4 +1,4 @@
-<div class="language">
+<div class="language" id="{{ include.key }}">
   <h2>{{ include.data.name }}</h2>
   <ul class="projects">
     {% assign repos = include.data.repos | sort: "info.stars", "first" | reverse %}

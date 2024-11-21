@@ -21,7 +21,7 @@ a {
 
 header {
   margin-top: 70px;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 
   h1 {
     font-size: 28pt;
@@ -34,6 +34,15 @@ header {
   h2 {
     font-size: 12pt;
     font-weight: 500;
+  }
+}
+
+nav {
+  margin-bottom: 60px;
+
+  a {
+    margin-left: 2px;
+    margin-right: 2px;
   }
 }
 
