@@ -13,4 +13,5 @@ defaults:
       layout: default
 
 exclude:
+  - "[A-Z]*"
   - config
