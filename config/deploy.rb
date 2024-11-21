@@ -16,16 +16,14 @@ set :public_children, []
 server "blue.mackuba.eu", :app, :web, :db, :primary => true
 
 before 'bundle:install', 'deploy:set_bundler_options'
-after 'deploy:update_code', 'deploy:link_shared'
 
-after 'deploy', 'deploy:build', 'deploy:cleanup'
-after 'deploy:cold', 'deploy:fetch_metadata', 'deploy:build', 'deploy:cleanup'
+post_deploy = ['deploy:build', 'deploy:cleanup']
+
+after 'deploy:update_code', 'deploy:link_shared'
+after 'deploy', *post_deploy
+after 'deploy:cold', 'deploy:fetch_metadata', *post_deploy
 
 namespace :deploy do
-  task :restart, :roles => :web do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
-
   task :set_bundler_options do
     run "cd #{release_path} && bundle config set --local deployment 'true'"
     run "cd #{release_path} && bundle config set --local path '#{shared_path}/bundle'"
@@ -46,6 +44,11 @@ namespace :deploy do
   end
 
   task :fetch_metadata do
-    run "cd #{release_path} && RACK_ENV=production bundle exec rake update_metadata"
+    run "cd #{release_path} && RACK_ENV=production bundle exec rake fetch_metadata"
+  end
+
+  task :refresh do
+    update
+    fetch_metadata
   end
 end

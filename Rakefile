@@ -2,7 +2,7 @@ require 'json'
 require 'net/http'
 require 'yaml'
 
-task :update_metadata do
+task :fetch_metadata do
   yamls = Dir['_data/projects/*.yml']
   urls = yamls.map { |x| YAML.load(File.read(x))['repos'] }.flatten.map { |x| x['url'] }
   config = YAML.load(File.read('config/auth.yml'))
