@@ -123,7 +123,10 @@ footer {
 }
 
 @media (prefers-color-scheme: dark) {
-  body { color: #ccc; }
+  body {
+    background-color: #0d1117;
+    color: #ccc;
+  }
 
   header {
     h1 a { color: #ddd; }
