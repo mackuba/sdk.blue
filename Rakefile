@@ -57,7 +57,7 @@ task :fetch_metadata do
 
           if json
             name = json['name']
-            response = Net::HTTP.get_response(URI(json['commit']['url']))
+            response = Net::HTTP.get_response(URI(json['commit']['url']), hh)
             if response.code.to_i == 200
               json = JSON.parse(response.body)
               data[url]['last_tag'] = {
