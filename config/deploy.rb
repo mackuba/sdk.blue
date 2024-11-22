@@ -17,11 +17,9 @@ server "blue.mackuba.eu", :app, :web, :db, :primary => true
 
 before 'bundle:install', 'deploy:set_bundler_options'
 
-post_deploy = ['deploy:build', 'deploy:cleanup']
-
-after 'deploy:update_code', 'deploy:link_shared'
-after 'deploy', *post_deploy
-after 'deploy:cold', 'deploy:fetch_metadata', *post_deploy
+after 'deploy:update_code', 'deploy:link_shared', 'deploy:build'
+after 'deploy', 'deploy:cleanup'
+after 'deploy:cold', 'deploy:fetch_metadata', 'deploy:build', 'deploy:cleanup'
 
 namespace :deploy do
   task :set_bundler_options do
@@ -50,5 +48,7 @@ namespace :deploy do
   task :refresh do
     update
     fetch_metadata
+    build
+    cleanup
   end
 end
