@@ -1,3 +1,4 @@
 name: "C/C++"
 repos:
   - url: https://github.com/mfnboer/atproto
+  - url: https://github.com/lmangani/atproto-cpp
