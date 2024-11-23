@@ -4,10 +4,17 @@ class MetadataImport
   OUTPUT_FILE = '_data/github_info.yml'
   PROJECTS_DIR = '_data/projects'
 
-  def run
-    urls = get_repo_urls
+  def run(language: nil)
+    output_path = File.join(__dir__, '..', OUTPUT_FILE)
+
+    if language
+      data = YAML.load_file(output_path, permitted_classes: [Time])
+    else
+      data = {}
+    end
+
+    urls = get_repo_urls(language)
     importers = [GithubImport.new]
-    data = {}
 
     urls.each do |url|
       if imp = importers.detect { |i| i.url_matches?(url) }
@@ -18,12 +25,11 @@ class MetadataImport
       end
     end
 
-    output_path = File.join(__dir__, '..', OUTPUT_FILE)
     File.write(output_path, YAML.dump(data))
   end
 
-  def get_repo_urls
-    yamls = Dir[File.join(__dir__, '..', '_data', 'projects', '*.yml')]
+  def get_repo_urls(language = nil)
+    yamls = Dir[File.join(__dir__, '..', '_data', 'projects', language ? "#{language}.yml" : '*.yml')]
     yamls.map { |x| YAML.load(File.read(x))['repos'] }.flatten.map { |x| x['url'] }
   end
 end
