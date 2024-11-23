@@ -8,6 +8,10 @@ class GithubImport
     @user_cache = {}
   end
 
+  def request_headers
+    { 'Authorization' => "Bearer " + auth_config['github_token'] }
+  end
+
   def url_matches?(url)
     url =~ %r{^https://github\.com/[\w\-\.]+/[\w\-\.]+}
   end
