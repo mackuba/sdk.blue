@@ -19,7 +19,7 @@ before 'bundle:install', 'deploy:set_bundler_options'
 
 after 'deploy:update_code', 'deploy:link_shared', 'deploy:build'
 after 'deploy', 'deploy:cleanup'
-after 'deploy:cold', 'deploy:fetch_metadata', 'deploy:build', 'deploy:cleanup'
+after 'deploy:cold', 'deploy:fetch_metadata', 'deploy:cleanup'
 
 namespace :deploy do
   task :set_bundler_options do
@@ -42,13 +42,13 @@ namespace :deploy do
   end
 
   task :fetch_metadata do
-    run "cd #{release_path} && RACK_ENV=production bundle exec rake fetch_metadata"
+    run "cd #{current_path} && RACK_ENV=production bundle exec rake fetch_metadata"
+    run "cd #{current_path} && RACK_ENV=production bundle exec jekyll build"
   end
 
-  task :refresh do
+  task :with_fetch do
     update
     fetch_metadata
-    build
     cleanup
   end
 end
