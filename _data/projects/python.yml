@@ -10,4 +10,6 @@ repos:
   - url: https://github.com/snarfed/lexrpc
   - url: https://github.com/snarfed/arroba
   - url: https://github.com/robcerda/blue-pyinthe-sky
+  - url: https://github.com/TahomaSoft/Saltstraumen
+  - url: https://github.com/TahomaSoft/ZulkiBlueFlake
     description: "This is a set of functions to help with the management of atprotocols, and bluesky."
