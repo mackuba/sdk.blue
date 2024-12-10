@@ -4,3 +4,4 @@ repos:
     description: "Interact with Bluesky Social from R"
     license: MIT
   - url: https://github.com/feenkcom/gt4atproto
+  - url: https://github.com/camerahacks/cfbsky
