@@ -14,3 +14,4 @@ repos:
   - url: https://github.com/nnabeyang/swift-cbor
   - url: https://github.com/nnabeyang/swift-atproto-demo-firehose
     description: "A demo application of Firehose using swift-atproto."
+  - url: https://github.com/ChimeHQ/OAuthenticator
