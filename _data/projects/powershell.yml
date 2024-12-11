@@ -1,0 +1,4 @@
+name: PowerShell
+repos:
+  - url: https://github.com/StartAutomating/PSA
+  - url: https://github.com/jdhitsolutions/PSBluesky
