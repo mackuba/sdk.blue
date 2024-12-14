@@ -4,3 +4,5 @@ repos:
   - url: https://github.com/a-gubskiy/X.Bluesky
   - url: https://github.com/electricduck/booski
     description: "Bluesky cross-poster for inferior services (and a .NET library for ATProto and Bluesky)"
+  - url: https://github.com/blowdart/idunno.Bluesky
+  - url: https://github.com/PassiveModding/atompds
