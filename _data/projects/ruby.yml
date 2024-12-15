@@ -6,3 +6,4 @@ repos:
   - url: https://github.com/mackuba/skyfall
   - url: https://github.com/mackuba/bluesky-feeds-rb
   - url: https://github.com/lasercatspro/omniauth-atproto
+  - url: https://github.com/jhuckabee/atproto_auth
