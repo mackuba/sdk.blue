@@ -6,3 +6,4 @@ repos:
     description: "Bluesky cross-poster for inferior services (and a .NET library for ATProto and Bluesky)"
   - url: https://github.com/blowdart/idunno.Bluesky
   - url: https://github.com/PassiveModding/atompds
+  - url: https://github.com/alnkesq/AppViewLite
