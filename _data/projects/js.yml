@@ -13,5 +13,5 @@ repos:
   - url: https://github.com/juni-b-queer/bsky-event-handlers
     license: "BSD 4 Clause"
   - url: https://github.com/likeandscribe/frontpage
-  - url: https://github.com/aquareum-tv/atproto-oauth-client-react-native
+  - url: https://github.com/streamplace/atproto-oauth-client-react-native
     description: "atproto OAuth Client for React Native"
