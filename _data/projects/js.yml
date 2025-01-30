@@ -15,3 +15,5 @@ repos:
   - url: https://github.com/likeandscribe/frontpage
   - url: https://github.com/streamplace/atproto-oauth-client-react-native
     description: "atproto OAuth Client for React Native"
+  - url: https://github.com/colds-ky/bski
+    description: "Raw CAR/CBOR format parsing"
