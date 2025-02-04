@@ -13,3 +13,5 @@ repos:
   - url: https://github.com/bsky-watch/labeler
   - url: https://github.com/bsky-watch/utils
   - url: https://github.com/bsky-watch/plc-mirror
+  - url: https://github.com/davhofer/botsky
+    license: "MIT + Apache"
