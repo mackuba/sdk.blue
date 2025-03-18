@@ -1,4 +1,4 @@
 name: Elixir
 repos:
-  - url: https://github.com/mekaem/hexpds
+  - url: https://github.com/NetWatchInc/hexpds
   - url: https://github.com/cribbles/bluesky_ex
