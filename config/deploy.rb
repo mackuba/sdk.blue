@@ -17,9 +17,9 @@ server "blue.mackuba.eu", :app, :web, :db, :primary => true
 
 before 'bundle:install', 'deploy:set_bundler_options'
 
-after 'deploy:update_code', 'deploy:link_shared', 'deploy:build'
+after 'deploy:update_code', 'deploy:link_shared'
+before 'deploy:create_symlink', 'deploy:build'
 after 'deploy', 'deploy:cleanup'
-after 'deploy:cold', 'deploy:fetch_metadata', 'deploy:cleanup'
 
 namespace :deploy do
   task :set_bundler_options do
@@ -42,13 +42,15 @@ namespace :deploy do
   end
 
   task :fetch_metadata do
-    run "cd #{current_path} && RACK_ENV=production bundle exec rake fetch_metadata"
-    run "cd #{current_path} && RACK_ENV=production bundle exec jekyll build"
+    run "export RACK_ENV=production; cd #{current_path} && bundle exec rake fetch_metadata && bundle exec jekyll build"
   end
 
   task :with_fetch do
-    update
-    fetch_metadata
+    update_code
+
+    run "cd #{release_path} && RACK_ENV=production bundle exec rake fetch_metadata"
+
+    create_symlink
     cleanup
   end
 end
