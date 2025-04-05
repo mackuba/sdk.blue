@@ -5,3 +5,5 @@ repos:
     license: MIT
   - url: https://github.com/feenkcom/gt4atproto
   - url: https://github.com/camerahacks/cfbsky
+  - url: https://github.com/atproto-clj/atproto-clj
+    description: "ATProto Clojure SDK"
