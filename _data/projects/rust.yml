@@ -4,5 +4,5 @@ repos:
   - url: https://github.com/astrenoxcoop/badgeblue
   - url: https://github.com/blacksky-algorithms/rsky
   - url: https://github.com/skyfeed-dev/query-engine
-  - url: https://github.com/sugyan/atrium
+  - url: https://github.com/atrium-rs/atrium
   - url: https://github.com/videah/jetstream-oxide
