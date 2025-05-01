@@ -7,3 +7,5 @@ repos:
   - url: https://github.com/blowdart/idunno.Bluesky
   - url: https://github.com/PassiveModding/atompds
   - url: https://github.com/alnkesq/AppViewLite
+  - url: https://github.com/shinolabs/PinkSea
+    license: "EUPL + CC0"
