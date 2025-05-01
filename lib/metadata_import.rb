@@ -1,7 +1,7 @@
 require_relative 'github_import'
 
 class MetadataImport
-  OUTPUT_FILE = '_data/github_info.yml'
+  OUTPUT_FILE = '_data/metadata.yml'
   PROJECTS_DIR = '_data/projects'
 
   def run(language: nil)

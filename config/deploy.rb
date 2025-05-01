@@ -31,7 +31,7 @@ namespace :deploy do
   task :link_shared do
     run "mkdir -p #{release_path}/config"
     run "ln -s #{shared_path}/auth.yml #{release_path}/config/auth.yml"
-    run "ln -s #{shared_path}/github_info.yml #{release_path}/_data/github_info.yml"
+    run "ln -s #{shared_path}/metadata.yml #{release_path}/_data/metadata.yml"
   end
 
   task :build do
