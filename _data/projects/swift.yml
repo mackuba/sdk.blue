@@ -17,3 +17,7 @@ repos:
   - url: https://github.com/ChimeHQ/OAuthenticator
   - url: https://github.com/mattmassicotte/ATResolve
   - url: https://github.com/mattmassicotte/ATAT
+  - url: https://github.com/ATProtoKit/ATSyntaxTools
+  - url: https://github.com/ATProtoKit/ATCommonTools
+  - url: https://github.com/ATProtoKit/MultiformatsKit
+  - url: https://github.com/ATProtoKit/ATCryptography
