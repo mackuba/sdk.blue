@@ -36,7 +36,7 @@ class NPMImport
     end
 
     def repository_url
-      @json['repository']['url']
+      @json['repository'] && @json['repository']['url']
     end
   end
 
