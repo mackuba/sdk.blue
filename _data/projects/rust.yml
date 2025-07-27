@@ -6,3 +6,4 @@ repos:
   - url: https://github.com/skyfeed-dev/query-engine
   - url: https://github.com/atrium-rs/atrium
   - url: https://github.com/videah/jetstream-oxide
+  - url: https://github.com/graze-social/aip
