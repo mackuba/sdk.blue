@@ -3,6 +3,7 @@ require_relative 'requests'
 
 require 'didkit'
 require 'fileutils'
+require 'licensee'
 require 'minisky'
 
 class TangledImport
@@ -38,6 +39,10 @@ class TangledImport
 
     if tag_info = get_latest_tag(repo_folder)
       data['last_tag'] = tag_info
+    end
+
+    if (license = Licensee.license(repo_folder)) && license.spdx_id != 'NOASSERTION'
+      data['license'] = license.spdx_id
     end
 
     data['stars'] = get_stars(repo_record['uri'])
