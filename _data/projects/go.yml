@@ -5,9 +5,9 @@ repos:
   - url: https://github.com/uabluerail/indexer
   - url: https://github.com/CharlesDardaman/blueskyfirehose
   - url: https://github.com/danrusei/gobot-bsky
-  - url: https://github.com/ericvolp12/go-bsky-feed-generator
-  - url: https://github.com/ericvolp12/bsky-experiments
-  - url: https://github.com/ericvolp12/atproto.tools
+  - url: https://github.com/jazware/go-bsky-feed-generator
+  - url: https://github.com/jazware/bsky-experiments
+  - url: https://github.com/jazware/atproto.tools
   - url: https://github.com/whtwnd/whitewind-blog
     description: The AT Protocol blogging platform
   - url: https://github.com/bsky-watch/labeler
