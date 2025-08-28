@@ -40,6 +40,8 @@ class TangledImport
       data['last_tag'] = tag_info
     end
 
+    data['stars'] = get_stars(repo_record['uri'])
+
     data['last_commit'] = get_latest_commit(repo_folder)
 
     data
@@ -94,5 +96,16 @@ class TangledImport
         'author_date' => %x(git show -s --format=%aI).strip.then { |x| Time.parse(x) }
       }
     end
+  end
+
+  def get_stars(repo_record_uri)
+    url = URI("https://constellation.microcosm.blue/links/count")
+    url.query = URI.encode_www_form(target: repo_record_uri, collection: 'sh.tangled.feed.star', path: '.subject')
+
+    response = get_response(url)
+    raise FetchError.new(response) unless response.code.to_i == 200
+
+    json = JSON.parse(response.body)
+    json['total']
   end
 end
