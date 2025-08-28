@@ -1,4 +1,5 @@
 require_relative 'github_import'
+require_relative 'tangled_import'
 
 class MetadataImport
   OUTPUT_FILE = '_data/metadata.yml'
@@ -14,7 +15,7 @@ class MetadataImport
     end
 
     urls = get_repo_urls(language)
-    importers = [GithubImport.new]
+    importers = [GithubImport.new, TangledImport.new]
 
     urls.each do |url|
       if imp = importers.detect { |i| i.url_matches?(url) }

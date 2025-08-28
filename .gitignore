@@ -5,4 +5,5 @@ _data/metadata.yml
 .jekyll-metadata
 config/auth.yml
 public
+tmp
 vendor

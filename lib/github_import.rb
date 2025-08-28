@@ -59,11 +59,12 @@ class GithubImport
 
   def extract_repo_data(json)
     data = {
-      'name'        => json['name'],
-      'description' => json['description'],
-      'user_login'  => json['owner']['login'],
-      'homepage'    => json['homepage'],
-      'stars'       => json['stargazers_count']
+      'name'         => json['name'],
+      'description'  => json['description'],
+      'user_login'   => json['owner']['login'],
+      'user_profile' => "https://github.com/#{json['owner']['login']}",
+      'homepage'     => json['homepage'],
+      'stars'        => json['stargazers_count']
     }
 
     if json['license'] && json['license']['spdx_id'] != 'NOASSERTION'

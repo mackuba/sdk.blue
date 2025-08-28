@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
 
+gem 'minisky', '~> 0.5'
+gem 'didkit', '~> 0.2'
+
 group :jekyll_plugins do
 end
 

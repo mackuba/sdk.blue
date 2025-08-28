@@ -19,7 +19,7 @@
   <p class="title">
     <a class="project-name" href="{{ include.project.url }}" target="_blank">{{ info.name }}</a>
     <span class="author"><span class="dot">•</span>
-      <a href="https://github.com/{{ info.user_login }}" target="_blank">{{ user }}</a></span>
+      <a href="{{ info.user_profile }}" target="_blank">{{ user }}</a></span>
     {% if info.user_login == "bluesky-social" %}
       <img class="butterfly" src="/assets/images/logo.png" width="16">
     {% endif %}
