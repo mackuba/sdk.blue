@@ -1,9 +1,17 @@
 name: Ruby
 repos:
-  - url: https://github.com/mackuba/blue_factory
-  - url: https://github.com/mackuba/didkit
-  - url: https://github.com/mackuba/minisky
-  - url: https://github.com/mackuba/skyfall
+  - urls:
+    - https://tangled.sh/@mackuba.eu/blue_factory
+    - https://github.com/mackuba/blue_factory
+  - urls:
+    - https://tangled.sh/@mackuba.eu/didkit
+    - https://github.com/mackuba/didkit
+  - urls:
+    - https://tangled.sh/@mackuba.eu/minisky
+    - https://github.com/mackuba/minisky
+  - urls:
+    - https://tangled.sh/@mackuba.eu/skyfall
+    - https://github.com/mackuba/skyfall
   - url: https://github.com/mackuba/bluesky-feeds-rb
   - url: https://github.com/lasercatspro/omniauth-atproto
   - url: https://github.com/jhuckabee/atproto_auth
