@@ -31,6 +31,6 @@ class MetadataImport
 
   def get_repo_urls(language = nil)
     yamls = Dir[File.join(__dir__, '..', '_data', 'projects', language ? "#{language}.yml" : '*.yml')]
-    yamls.map { |x| YAML.load(File.read(x))['repos'] }.flatten.map { |x| x['url'] }
+    yamls.map { |x| YAML.load(File.read(x))['repos'] }.flatten.map { |x| x['url'] || x['urls'] }.flatten
   end
 end
