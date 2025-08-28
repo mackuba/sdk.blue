@@ -32,6 +32,7 @@ namespace :deploy do
     run "mkdir -p #{release_path}/config"
     run "ln -s #{shared_path}/auth.yml #{release_path}/config/auth.yml"
     run "ln -s #{shared_path}/metadata.yml #{release_path}/_data/metadata.yml"
+    run "ln -s #{shared_path}/repos #{release_path}/tmp/repos"
   end
 
   task :build do
