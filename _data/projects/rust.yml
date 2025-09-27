@@ -7,4 +7,4 @@ repos:
   - url: https://github.com/atrium-rs/atrium
   - url: https://github.com/videah/jetstream-oxide
   - url: https://github.com/graze-social/aip
-  - url: https://tangled.sh/@smokesignal.events/atproto-identity-rs
+  - url: https://tangled.org/@smokesignal.events/atproto-identity-rs

@@ -14,11 +14,11 @@ class TangledImport
   end
 
   def url_matches?(url)
-    url =~ %r{^https://tangled\.sh/@[\w\-\.]+/[\w\-\.]+}
+    url =~ %r{^https://tangled\.org/@[\w\-\.]+/[\w\-\.]+}
   end
 
   def import_url(url)
-    url =~ %r{^https://tangled\.sh/@([\w\-\.]+)/([\w\-\.]+)}
+    url =~ %r{^https://tangled\.org/@([\w\-\.]+)/([\w\-\.]+)}
     user, repo = $1, $2
 
     did = DID.resolve_handle(user)
@@ -35,7 +35,7 @@ class TangledImport
 
     data = repo_data_from_record(repo_record['value'])
     data['user_login'] = user
-    data['user_profile'] = "https://tangled.sh/@#{user}"
+    data['user_profile'] = "https://tangled.org/@#{user}"
 
     if tag_info = get_latest_tag(repo_folder)
       data['last_tag'] = tag_info
@@ -65,7 +65,7 @@ class TangledImport
       end
     else
       Dir.chdir(repos_cache) do
-        system("git clone https://tangled.sh/@#{user}/#{repo} #{dirname}")
+        system("git clone https://tangled.org/@#{user}/#{repo} #{dirname}")
       end
     end
 
