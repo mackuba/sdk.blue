@@ -10,11 +10,11 @@ repos:
   - url: https://tangled.org/@smokesignal.events/atproto-identity-rs/
   - url: https://tangled.org/@nonbinary.computer/jacquard/
   - url: https://tangled.org/@parakeet.at/plc-mirror/
-    license: "MIT + Apache"
+    license: "MIT / Apache"
   - url: https://tangled.org/@parakeet.at/parakeet/
     description: "Rust-based Bluesky AppView aiming to implement most of the functionality required to support the Bluesky client"
-    license: "MIT + Apache"
+    license: "MIT / Apache"
   - url: https://tangled.org/@slices.network/slices/
   - url: https://github.com/graze-social/iftta
   - url: https://tangled.org/@microcosm.blue/Allegedly/
-    license: "MIT + Apache"
+    license: "MIT / Apache"

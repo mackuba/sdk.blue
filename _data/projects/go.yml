@@ -1,6 +1,7 @@
 name: Go
 repos:
   - url: https://github.com/bluesky-social/indigo
+    license: "MIT / Apache"
   - url: https://github.com/bluesky-social/jetstream
   - url: https://github.com/uabluerail/indexer
   - url: https://github.com/CharlesDardaman/blueskyfirehose
@@ -14,7 +15,7 @@ repos:
   - url: https://github.com/bsky-watch/utils
   - url: https://github.com/bsky-watch/plc-mirror
   - url: https://github.com/davhofer/botsky
-    license: "MIT + Apache"
+    license: "MIT / Apache"
   - url: https://github.com/whyrusleeping/konbini
     description: "A Cozy Bluesky AppView"
     license: MIT
