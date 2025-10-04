@@ -18,3 +18,5 @@ repos:
   - url: https://github.com/colds-ky/bski
     description: "Raw CAR/CBOR format parsing"
   - url: https://github.com/blebbit/authr
+  - url: https://github.com/hyperlink-academy/leaflet
+  - url: https://github.com/dollspace-gay/PublicAppView

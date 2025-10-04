@@ -15,3 +15,7 @@ repos:
   - url: https://github.com/bsky-watch/plc-mirror
   - url: https://github.com/davhofer/botsky
     license: "MIT + Apache"
+  - url: https://github.com/whyrusleeping/konbini
+    description: "A Cozy Bluesky AppView"
+    license: MIT
+  - url: https://github.com/blebbit/atmunge
