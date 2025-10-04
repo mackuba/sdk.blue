@@ -1,20 +1,28 @@
 name: Rust
 repos:
   - url: https://github.com/astrenoxcoop/supercell
+    tags: ['feeds']
   - url: https://github.com/astrenoxcoop/badgeblue
+    tags: ['other app']
   - url: https://github.com/blacksky-algorithms/rsky
   - url: https://github.com/skyfeed-dev/query-engine
   - url: https://github.com/atrium-rs/atrium
   - url: https://github.com/videah/jetstream-oxide
+    tags: ['firehose']
   - url: https://github.com/graze-social/aip
+    tags: ['oauth']
   - url: https://tangled.org/@smokesignal.events/atproto-identity-rs/
+    tags: ['identity']
   - url: https://tangled.org/@nonbinary.computer/jacquard/
   - url: https://tangled.org/@parakeet.at/plc-mirror/
     license: "MIT / Apache"
+    tags: ['plc']
   - url: https://tangled.org/@parakeet.at/parakeet/
     description: "Rust-based Bluesky AppView aiming to implement most of the functionality required to support the Bluesky client"
     license: "MIT / Apache"
+    tags: ['bluesky appview']
   - url: https://tangled.org/@slices.network/slices/
   - url: https://github.com/graze-social/iftta
   - url: https://tangled.org/@microcosm.blue/Allegedly/
     license: "MIT / Apache"
+    tags: ['plc']

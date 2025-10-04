@@ -92,10 +92,13 @@ nav {
 
     .description { line-height: 145%; font-size: 11pt; }
 
-    .stats { margin-top: 15px; font-size: 11pt; }
+    .tags { margin: -2px 0; }
+    .tags span { font-size: 10pt; background-color: #d9efff; border: 1px solid #bde2fe; border-radius: 5px; padding: 1px 5px;
+      margin-right: 3px; }
+
+    .stats { margin-top: 18px; font-size: 11pt; border-top: 1px solid #ddd; padding-top: 15px; }
     .stats img { position: relative; top: 2px; margin-right: 2px; }
     .stats .separator { margin: 0px 5px; font-size: 13pt; }
-    .description + .stats { margin-top: 18px; border-top: 1px solid #ddd; padding-top: 15px; }
     .license { border: 1px solid #bbb; border-radius: 5px; padding: 1px 5px; font-size: 10pt; white-space: nowrap; }
     .license.unknown { border-color: #fa4; }
   }
@@ -142,7 +145,8 @@ footer {
 
     .author a { color: #888; }
     .stars { color: #888; }
-    .description + .stats { border-top-color: #444; }
+    .stats { border-top-color: #444; }
+    .tags span { background-color: #073659; border-color: #1c5179; color: #77aad1; }
     .separator { color: #666; }
     .license { border-color: #666; }
     .license.unknown { border-color: #a62; }

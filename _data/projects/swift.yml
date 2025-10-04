@@ -1,23 +1,30 @@
 name: "Swift & ObjC"
 repos:
   - url: https://github.com/kphrx/plc-handle-tracker
+    tags: ['plc']
   - url: https://github.com/MasterJ93/ATProtoKit
   - url: https://github.com/andooown/swift-atproto
   - url: https://github.com/andooown/lexicon-gen
+    tags: ['lexicons']
   - url: https://github.com/chead/SwiftBluesky
     description: "A package for interacting with the Bluesky Social API."
   - url: https://github.com/chead/SwiftATProto
     description: "A Swift package for constructing ATProto requests."
   - url: https://github.com/chead/SwiftLexicon
     description: "A Swift package for decoding ATProto Lexicon."
+    tags: ['lexicons']
   - url: https://github.com/nnabeyang/swift-atproto
   - url: https://github.com/nnabeyang/swift-cbor
+    tags: ['cbor']
   - url: https://github.com/nnabeyang/swift-atproto-demo-firehose
     description: "A demo application of Firehose using swift-atproto."
   - url: https://github.com/ChimeHQ/OAuthenticator
+    tags: ['oauth']
   - url: https://github.com/mattmassicotte/ATResolve
+    tags: ['identity']
   - url: https://github.com/mattmassicotte/ATAT
   - url: https://github.com/ATProtoKit/ATSyntaxTools
   - url: https://github.com/ATProtoKit/ATCommonTools
   - url: https://github.com/ATProtoKit/MultiformatsKit
   - url: https://github.com/ATProtoKit/ATCryptography
+    tags: ['crypto']

@@ -1,9 +1,13 @@
 name: "C# (.NET)"
 repos:
   - url: https://github.com/drasticactions/FishyFlip
+    tags: ['xrpc client', 'firehose', 'oauth']
   - url: https://github.com/a-gubskiy/X.Bluesky
   - url: https://github.com/blowdart/idunno.Bluesky
   - url: https://github.com/PassiveModding/atompds
+    tags: ['pds']
   - url: https://github.com/alnkesq/AppViewLite
+    tags: ['bluesky appview']
   - url: https://github.com/shinolabs/PinkSea
     license: "EUPL + CC0"
+    tags: ['other app']

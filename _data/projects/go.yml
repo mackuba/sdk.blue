@@ -4,19 +4,28 @@ repos:
     license: "MIT / Apache"
   - url: https://github.com/bluesky-social/jetstream
   - url: https://github.com/uabluerail/indexer
+    tags: ['indexer']
   - url: https://github.com/CharlesDardaman/blueskyfirehose
+    tags: ['firehose']
   - url: https://github.com/danrusei/gobot-bsky
+    tags: ['bots']
   - url: https://github.com/jazware/go-bsky-feed-generator
+    tags: ['feeds', 'example']
   - url: https://github.com/jazware/bsky-experiments
   - url: https://github.com/jazware/atproto.tools
   - url: https://github.com/whtwnd/whitewind-blog
     description: The AT Protocol blogging platform
+    tags: ['other app']
   - url: https://github.com/bsky-watch/labeler
+    tags: ['labeller']
   - url: https://github.com/bsky-watch/utils
   - url: https://github.com/bsky-watch/plc-mirror
+    tags: ['plc']
   - url: https://github.com/davhofer/botsky
     license: "MIT / Apache"
+    tags: ['bots']
   - url: https://github.com/whyrusleeping/konbini
     description: "A Cozy Bluesky AppView"
     license: MIT
+    tags: ['bluesky appview']
   - url: https://github.com/blebbit/atmunge

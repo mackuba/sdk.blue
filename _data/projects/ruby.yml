@@ -3,15 +3,22 @@ repos:
   - urls:
     - https://tangled.org/@mackuba.eu/blue_factory/
     - https://github.com/mackuba/blue_factory
+    tags: ['feeds']
   - urls:
     - https://tangled.org/@mackuba.eu/didkit/
     - https://github.com/mackuba/didkit
+    tags: ['identity']
   - urls:
     - https://tangled.org/@mackuba.eu/minisky/
     - https://github.com/mackuba/minisky
+    tags: ['xrpc client']
   - urls:
     - https://tangled.org/@mackuba.eu/skyfall/
     - https://github.com/mackuba/skyfall
+    tags: ['firehose']
   - url: https://github.com/mackuba/bluesky-feeds-rb
+    tags: ['feeds', 'example']
   - url: https://github.com/lasercatspro/omniauth-atproto
+    tags: ['oauth']
   - url: https://github.com/jhuckabee/atproto_auth
+    tags: ['oauth']

@@ -2,3 +2,4 @@ name: Dart
 repos:
   - url: https://github.com/myConsciousness/atproto.dart
   - url: https://github.com/skyfeed-dev/indexer
+    tags: ['indexer']

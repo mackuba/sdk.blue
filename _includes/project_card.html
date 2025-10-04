@@ -30,6 +30,14 @@
     {{ include.project.description | default: info.description }}
   </p>
 
+  {% if include.project.tags %}
+  <p class="tags">
+    {% for tag in include.project.tags %}
+      <span>{{ tag }}</span>
+    {% endfor %}
+  </p>
+  {% endif %}
+
   <p class="stats">
     <img src="/assets/images/release.png" width="15"> Last release: {{ last_release | date: "%b %Y" | default: "–" }}
     <span class="separator">|</span>
