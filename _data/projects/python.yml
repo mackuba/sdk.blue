@@ -9,8 +9,6 @@ repos:
   - url: https://github.com/mnogu/chitose
   - url: https://github.com/snarfed/lexrpc
   - url: https://github.com/snarfed/arroba
-  - url: https://github.com/robcerda/blue-pyinthe-sky
-    description: "This is a set of functions to help with the management of atprotocols, and bluesky."
   - url: https://github.com/graze-social/jetstream-turbo
   - url: https://github.com/tfederman/pysky
   - url: https://tangled.org/@dwn.dwnfonts.cc/atpasser/
