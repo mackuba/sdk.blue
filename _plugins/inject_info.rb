@@ -30,7 +30,7 @@ Jekyll::Hooks.register :site, :post_read do |site|
   data['projects'].each do |key, section|
     section['repos'].each do |repo|
       if repo['urls']
-        repo['info'] = repo['urls'].map { |u| data['metadata'][u] }.then { |x| merge_infos(x) }
+        repo['info'] = repo['urls'].map { |u| data['metadata'][u] }.compact.then { |x| merge_infos(x) }
       else
         repo['info'] = data['metadata'][repo['url']]
       end
