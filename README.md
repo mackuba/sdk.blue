@@ -4,7 +4,7 @@ A list of libraries & SDKs for the Bluesky API and AT Protocol. See the website 
 
 ## Adding projects
 
-If you've created a library or SDK that you'd like to be listed on this page, please [send a pull request](https://github.com/mackuba/sdk.blue/pulls).
+If you've created a library or SDK that you'd like to be listed on this page, please [send a pull request](https://tangled.org/@mackuba.eu/sdk.blue/pulls).
 
 Note: this is meant to be a curated list with only specific kinds of projects, not a list of all projects related to Bluesky and ATProto.
 
