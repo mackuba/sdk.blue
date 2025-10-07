@@ -109,7 +109,7 @@ footer {
   margin: 70px 0 40px;
 }
 
-#github {
+#tangled {
   position: fixed;
   top: 15px;
   right: 15px;
@@ -117,11 +117,11 @@ footer {
 
   img {
     width: 24px;
-    opacity: 0.4;
+    opacity: 0.5;
   }
 
   a:hover img {
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
 
@@ -153,7 +153,7 @@ footer {
     .stats img { filter: invert(1); opacity: 0.5; }
   }
 
-  #github {
+  #tangled {
     img { filter: invert(1); opacity: 0.5; }
     a:hover img { opacity: 0.75; }
   }
