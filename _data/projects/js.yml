@@ -31,7 +31,9 @@ repos:
     tags: ['cbor']
   - url: https://github.com/blebbit/authr
     tags: ['oauth']
-  - url: https://github.com/hyperlink-academy/leaflet
+  - urls:
+    - https://tangled.org/@leaflet.pub/leaflet
+    - https://github.com/hyperlink-academy/leaflet
     tags: ['other app']
   - url: https://github.com/dollspace-gay/Aurora-Prism
     tags: ['bluesky appview']
