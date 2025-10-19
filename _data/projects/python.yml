@@ -18,5 +18,5 @@ repos:
     tags: ['pds']
   - url: https://github.com/graze-social/jetstream-turbo
   - url: https://github.com/tfederman/pysky
-  # - url: https://tangled.org/@dwn.dwnfonts.cc/atpasser/
-  #   license: "MIT / Apache"
+  - url: https://tangled.org/@dwn.myatproto.social/atpasser/
+    license: "MIT / Apache"
