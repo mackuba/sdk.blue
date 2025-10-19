@@ -28,3 +28,7 @@ repos:
   - url: https://github.com/ATProtoKit/MultiformatsKit
   - url: https://github.com/ATProtoKit/ATCryptography
     tags: ['crypto']
+  - url: https://github.com/ATProtoKit/ATIdentityTools
+    tags: ['identity']
+  - url: https://github.com/ATProtoKit/ATOAuthKit
+    tags: ['oauth']

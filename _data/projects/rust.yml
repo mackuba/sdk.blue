@@ -26,3 +26,16 @@ repos:
   - url: https://tangled.org/@microcosm.blue/Allegedly/
     license: "MIT / Apache"
     tags: ['plc']
+  - urls:
+    - https://tangled.org/@microcosm.blue/microcosm-rs/
+    - https://github.com/at-microcosm/microcosm-rs
+  - url: https://tangled.org/@microcosm.blue/repo-stream/
+    license: "MIT / Apache"
+    tags: ['parsing']
+  - url: https://tangled.org/@smokesignal.events/smokesignal/
+    description: "A decentralized event and RSVP management application built for the AT Protocol ecosystem"
+    tags: ['other app']
+  - url: https://tangled.org/@smokesignal.events/quickdid
+    description: "A high-performance AT Protocol identity resolution service written in Rust"
+    license: MIT
+    tags: ['identity']

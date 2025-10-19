@@ -10,6 +10,8 @@ repos:
     tags: ['parsing']
   - url: https://github.com/DavidBuchanan314/picopds
     tags: ['pds']
+  - url: https://github.com/DavidBuchanan314/millipds
+    tags: ['pds']
   - url: https://github.com/mnogu/chitose
   - url: https://github.com/snarfed/lexrpc
   - url: https://github.com/snarfed/arroba

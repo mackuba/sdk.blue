@@ -29,3 +29,17 @@ repos:
     license: MIT
     tags: ['bluesky appview']
   - url: https://github.com/blebbit/atmunge
+  - urls:
+    - https://tangled.org/@hailey.at/cocoon
+    - https://github.com/haileyok/cocoon
+    tags: ['pds']
+  - url: https://github.com/whyrusleeping/cbor-gen
+    tags: ['parsing']
+  - url: https://github.com/whyrusleeping/market
+    tags: ['indexer']
+  - urls:
+    - https://tangled.org/@stream.place/streamplace
+    - https://github.com/streamplace/streamplace
+    tags: ['other app']
+  - url: https://tangled.org/@tangled.org/core
+    tags: ['other app']
