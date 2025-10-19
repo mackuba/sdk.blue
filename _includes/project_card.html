@@ -17,7 +17,7 @@
 
 <li class="{% if info.user_login == 'bluesky-social' %}official{% endif %}">
   <p class="title">
-    <a class="project-name" href="{{ include.project.url | default: include.project.urls[0] }}" target="_blank">{{ info.name }}</a>
+    <a class="project-name" href="{{ include.project.url | default: include.project.urls[0] }}" target="_blank">{{ include.project.name | default: info.name }}</a>
     <span class="author"><span class="dot">•</span>
       <a href="{{ info.user_profile }}" target="_blank">{{ user }}</a></span>
     {% if info.user_login == "bluesky-social" %}

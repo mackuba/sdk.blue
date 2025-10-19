@@ -42,4 +42,5 @@ repos:
     - https://github.com/streamplace/streamplace
     tags: ['other app']
   - url: https://tangled.org/@tangled.org/core
+    name: 'tangled core'
     tags: ['other app']
