@@ -16,3 +16,4 @@ exclude:
   - "[A-Z]*"
   - config
   - lib
+  - tmp
