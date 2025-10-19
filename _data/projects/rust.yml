@@ -13,7 +13,9 @@ repos:
     tags: ['oauth']
   - url: https://tangled.org/@smokesignal.events/atproto-identity-rs/
     tags: ['identity']
-  - url: https://tangled.org/@nonbinary.computer/jacquard/
+  - urls:
+    - https://tangled.org/@nonbinary.computer/jacquard/
+    - https://github.com/rsform/jacquard
   - url: https://tangled.org/@parakeet.at/plc-mirror/
     license: "MIT / Apache"
     tags: ['plc']
@@ -23,7 +25,9 @@ repos:
     tags: ['bluesky appview']
   - url: https://tangled.org/@slices.network/slices/
   - url: https://github.com/graze-social/iftta
-  - url: https://tangled.org/@microcosm.blue/Allegedly/
+  - urls:
+    - https://tangled.org/@microcosm.blue/Allegedly/
+    - https://github.com/at-microcosm/allegedly
     license: "MIT / Apache"
     tags: ['plc']
   - urls:
