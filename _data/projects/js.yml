@@ -28,7 +28,7 @@ repos:
     tags: ['oauth']
   - url: https://github.com/colds-ky/bski
     description: "Raw CAR/CBOR format parsing"
-    tags: ['cbor']
+    tags: ['parsing']
   - url: https://github.com/blebbit/authr
     tags: ['oauth']
   - urls:

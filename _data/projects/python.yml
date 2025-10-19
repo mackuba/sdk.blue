@@ -5,9 +5,9 @@ repos:
   - url: https://github.com/MarshalX/bluesky-feed-generator
     tags: ['feeds', 'example']
   - url: https://github.com/MarshalX/python-libipld
-    tags: ['cbor']
+    tags: ['parsing']
   - url: https://github.com/DavidBuchanan314/dag-cbrrr
-    tags: ['cbor']
+    tags: ['parsing']
   - url: https://github.com/DavidBuchanan314/picopds
     tags: ['pds']
   - url: https://github.com/mnogu/chitose

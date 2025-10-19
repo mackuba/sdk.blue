@@ -15,7 +15,7 @@ repos:
     tags: ['lexicons']
   - url: https://github.com/nnabeyang/swift-atproto
   - url: https://github.com/nnabeyang/swift-cbor
-    tags: ['cbor']
+    tags: ['parsing']
   - url: https://github.com/nnabeyang/swift-atproto-demo-firehose
     description: "A demo application of Firehose using swift-atproto."
   - url: https://github.com/ChimeHQ/OAuthenticator
