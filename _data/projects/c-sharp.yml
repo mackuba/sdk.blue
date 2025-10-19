@@ -10,4 +10,4 @@ repos:
     tags: ['bluesky appview']
   - url: https://github.com/shinolabs/PinkSea
     license: "EUPL + CC0"
-    tags: ['other app']
+    tags: ['atproto app']

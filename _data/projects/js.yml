@@ -26,7 +26,7 @@ repos:
   - urls:
     - https://tangled.org/@frontpage.fyi/frontpage
     - https://github.com/likeandscribe/frontpage
-    tags: ['other app']
+    tags: ['atproto app']
   - url: https://github.com/streamplace/atproto-oauth-client-react-native
     description: "atproto OAuth Client for React Native"
     tags: ['oauth']
@@ -38,7 +38,7 @@ repos:
   - urls:
     - https://tangled.org/@leaflet.pub/leaflet
     - https://github.com/hyperlink-academy/leaflet
-    tags: ['other app']
+    tags: ['atproto app']
   - url: https://github.com/dollspace-gay/Aurora-Prism
     tags: ['bluesky appview']
   - url: https://tangled.org/@hailey.at/expo-atproto-auth/

@@ -15,7 +15,7 @@ repos:
   - url: https://github.com/jazware/atproto.tools
   - url: https://github.com/whtwnd/whitewind-blog
     description: The AT Protocol blogging platform
-    tags: ['other app']
+    tags: ['atproto app']
   - url: https://github.com/bsky-watch/labeler
     tags: ['labeller']
   - url: https://github.com/bsky-watch/utils
@@ -40,7 +40,7 @@ repos:
   - urls:
     - https://tangled.org/@stream.place/streamplace
     - https://github.com/streamplace/streamplace
-    tags: ['other app']
+    tags: ['atproto app']
   - url: https://tangled.org/@tangled.org/core
     name: 'tangled core'
-    tags: ['other app']
+    tags: ['atproto app']
