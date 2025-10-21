@@ -44,3 +44,6 @@ repos:
   - url: https://tangled.org/@tangled.org/core
     name: 'tangled core'
     tags: ['atproto app']
+  - url: https://github.com/hyphacoop/go-dasl
+    tags: ['parsing']
+    license: "MIT / Apache"
