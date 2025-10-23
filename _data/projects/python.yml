@@ -4,7 +4,7 @@ repos:
     tags: ['xrpc client']
 
   - url: https://github.com/MarshalX/atproto
-    tags: ['xrpc client', 'identity', 'firehose', 'parsing', 'crypto']
+    tags: ['xrpc client', 'identity', 'firehose', 'parsing', 'server', 'crypto']
 
   - url: https://github.com/MarshalX/bluesky-feed-generator
     tags: ['feeds', 'example']

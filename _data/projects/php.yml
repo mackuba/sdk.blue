@@ -4,6 +4,7 @@ repos:
     tags: ['xrpc client']
 
   - url: https://github.com/shahmal1yev/blugen
+    tags: ['lexicons']
 
   - url: https://github.com/cjrasmussen/BlueskyApi
     tags: ['xrpc client']

@@ -12,7 +12,7 @@ repos:
   - url: https://github.com/skyfeed-dev/query-engine
 
   - url: https://github.com/atrium-rs/atrium
-    tags: ['xrpc client']
+    tags: ['xrpc client', 'lexicons']
 
   - url: https://github.com/videah/jetstream-oxide
     tags: ['firehose']
@@ -26,7 +26,7 @@ repos:
   - urls:
     - https://tangled.org/@nonbinary.computer/jacquard/
     - https://github.com/rsform/jacquard
-    tags: ['xrpc client', 'firehose', 'oauth', 'identity', 'server', 'moderation']
+    tags: ['xrpc client', 'firehose', 'oauth', 'identity', 'lexicons', 'server', 'moderation']
 
   - url: https://tangled.org/@parakeet.at/plc-mirror/
     license: "MIT / Apache"

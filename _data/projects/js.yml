@@ -3,7 +3,7 @@ repos:
   - urls:
     - https://tangled.org/@mary.my.id/atcute
     - https://github.com/mary-ext/atcute
-    tags: ['xrpc client', 'firehose', 'identity', 'oauth', 'parsing', 'crypto']
+    tags: ['xrpc client', 'firehose', 'identity', 'oauth', 'server', 'lexicons', 'parsing', 'crypto']
 
   - url: https://github.com/aliceisjustplaying/labeler-starter-kit-bsky
     tags: ['moderation', 'example']
@@ -13,7 +13,7 @@ repos:
 
   - url: https://github.com/bluesky-social/atproto
     description: "AT Protocol Reference Implementation (TypeScript)"
-    tags: ['xrpc client', 'bluesky appview', 'pds', 'identity', 'crypto', 'oauth']
+    tags: ['xrpc client', 'bluesky appview', 'pds', 'server', 'identity', 'crypto', 'oauth']
     license: "MIT / Apache"
 
   - url: https://github.com/skyware-js/firehose

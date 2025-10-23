@@ -41,7 +41,9 @@ repos:
     license: "MIT / Apache"
     tags: ['bots']
 
-  - url: https://github.com/whyrusleeping/konbini
+  - urls:
+    - https://github.com/whyrusleeping/konbini
+    - https://tangled.org/@why.bsky.team/konbini
     description: "A Cozy Bluesky AppView"
     license: MIT
     tags: ['bluesky appview']

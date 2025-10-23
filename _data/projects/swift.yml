@@ -25,7 +25,7 @@ repos:
     tags: ['lexicons']
 
   - url: https://github.com/nnabeyang/swift-atproto
-    tags: ['xrpc client', 'identity']
+    tags: ['xrpc client', 'identity', 'lexicons']
 
   - url: https://github.com/nnabeyang/swift-cbor
     tags: ['parsing']
