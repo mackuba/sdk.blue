@@ -2,48 +2,73 @@ name: Go
 repos:
   - url: https://github.com/bluesky-social/indigo
     license: "MIT / Apache"
+    tags: ['xrpc client', 'identity', 'firehose', 'crypto', 'relay', 'indexer', 'parsing', 'moderation']
+
   - url: https://github.com/bluesky-social/jetstream
+    tags: ['firehose', 'relay']
+
   - url: https://github.com/uabluerail/indexer
     tags: ['indexer']
+
   - url: https://github.com/CharlesDardaman/blueskyfirehose
     tags: ['firehose']
+
   - url: https://github.com/danrusei/gobot-bsky
     tags: ['bots']
+
   - url: https://github.com/jazware/go-bsky-feed-generator
     tags: ['feeds', 'example']
+
   - url: https://github.com/jazware/bsky-experiments
+    tags: ['firehose', 'feeds', 'indexer', 'bots', 'plc', 'example']
+
   - url: https://github.com/jazware/atproto.tools
+    tags: ['firehose']
+
   - url: https://github.com/whtwnd/whitewind-blog
     description: The AT Protocol blogging platform
     tags: ['atproto app']
+
   - url: https://github.com/bsky-watch/labeler
-    tags: ['labeller']
+    tags: ['moderation']
+
   - url: https://github.com/bsky-watch/utils
+
   - url: https://github.com/bsky-watch/plc-mirror
     tags: ['plc']
+
   - url: https://github.com/davhofer/botsky
     license: "MIT / Apache"
     tags: ['bots']
+
   - url: https://github.com/whyrusleeping/konbini
     description: "A Cozy Bluesky AppView"
     license: MIT
     tags: ['bluesky appview']
+
   - url: https://github.com/blebbit/atmunge
+    tags: ['firehose', 'indexer']
+
   - urls:
     - https://tangled.org/@hailey.at/cocoon
     - https://github.com/haileyok/cocoon
     tags: ['pds']
+
   - url: https://github.com/whyrusleeping/cbor-gen
     tags: ['parsing']
+
   - url: https://github.com/whyrusleeping/market
     tags: ['indexer']
+
   - urls:
     - https://tangled.org/@stream.place/streamplace
     - https://github.com/streamplace/streamplace
     tags: ['atproto app']
+
   - url: https://tangled.org/@tangled.org/core
     name: 'tangled core'
     tags: ['atproto app']
+
   - url: https://github.com/hyphacoop/go-dasl
     tags: ['parsing']
     license: "MIT / Apache"

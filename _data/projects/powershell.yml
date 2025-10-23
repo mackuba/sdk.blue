@@ -1,4 +1,7 @@
 name: PowerShell
 repos:
   - url: https://github.com/StartAutomating/PSA
+    tags: ['xrpc client']
+
   - url: https://github.com/jdhitsolutions/PSBluesky
+    tags: ['xrpc client']

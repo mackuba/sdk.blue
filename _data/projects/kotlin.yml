@@ -1,4 +1,7 @@
 name: "Kotlin"
 repos:
   - url: https://github.com/uakihir0/kbsky
+    tags: ['xrpc client', 'jetstream', 'oauth', 'identity']
+
   - url: https://github.com/christiandeange/ozone
+    tags: ['xrpc client', 'jetstream', 'oauth']

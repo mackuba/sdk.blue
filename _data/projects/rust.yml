@@ -2,43 +2,64 @@ name: Rust
 repos:
   - url: https://github.com/astrenoxcoop/supercell
     tags: ['feeds']
+
   - url: https://github.com/astrenoxcoop/badgeblue
     tags: ['atproto app']
+
   - url: https://github.com/blacksky-algorithms/rsky
+    tags: ['pds', 'relay', 'bluesky appview', 'feeds', 'firehose', 'identity', 'crypto', 'parsing', 'moderation']
+
   - url: https://github.com/skyfeed-dev/query-engine
+
   - url: https://github.com/atrium-rs/atrium
+    tags: ['xrpc client']
+
   - url: https://github.com/videah/jetstream-oxide
     tags: ['firehose']
+
   - url: https://github.com/graze-social/aip
     tags: ['oauth']
+
   - url: https://tangled.org/@smokesignal.events/atproto-identity-rs/
     tags: ['identity']
+
   - urls:
     - https://tangled.org/@nonbinary.computer/jacquard/
     - https://github.com/rsform/jacquard
+    tags: ['xrpc client', 'firehose', 'oauth', 'identity', 'server', 'moderation']
+
   - url: https://tangled.org/@parakeet.at/plc-mirror/
     license: "MIT / Apache"
     tags: ['plc']
+
   - url: https://tangled.org/@parakeet.at/parakeet/
     description: "Rust-based Bluesky AppView aiming to implement most of the functionality required to support the Bluesky client"
     license: "MIT / Apache"
     tags: ['bluesky appview']
+
   - url: https://tangled.org/@slices.network/slices/
+
   - url: https://github.com/graze-social/iftta
+
   - urls:
     - https://tangled.org/@microcosm.blue/Allegedly/
     - https://github.com/at-microcosm/allegedly
     license: "MIT / Apache"
     tags: ['plc']
+
   - urls:
     - https://tangled.org/@microcosm.blue/microcosm-rs/
     - https://github.com/at-microcosm/microcosm-rs
+    tags: ['firehose', 'indexer']
+
   - url: https://tangled.org/@microcosm.blue/repo-stream/
     license: "MIT / Apache"
     tags: ['parsing']
+
   - url: https://tangled.org/@smokesignal.events/smokesignal/
     description: "A decentralized event and RSVP management application built for the AT Protocol ecosystem"
     tags: ['atproto app']
+
   - url: https://tangled.org/@smokesignal.events/quickdid
     description: "A high-performance AT Protocol identity resolution service written in Rust"
     license: MIT

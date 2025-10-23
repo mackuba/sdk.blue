@@ -1,22 +1,40 @@
 name: Python
 repos:
   - url: https://github.com/susumuota/nanoatp
+    tags: ['xrpc client']
+
   - url: https://github.com/MarshalX/atproto
+    tags: ['xrpc client', 'identity', 'firehose', 'parsing', 'crypto']
+
   - url: https://github.com/MarshalX/bluesky-feed-generator
     tags: ['feeds', 'example']
+
   - url: https://github.com/MarshalX/python-libipld
     tags: ['parsing']
+
   - url: https://github.com/DavidBuchanan314/dag-cbrrr
     tags: ['parsing']
+
   - url: https://github.com/DavidBuchanan314/picopds
     tags: ['pds']
+
   - url: https://github.com/DavidBuchanan314/millipds
     tags: ['pds']
+
   - url: https://github.com/mnogu/chitose
+    tags: ['xrpc client']
+
   - url: https://github.com/snarfed/lexrpc
+    tags: ['xrpc client', 'server']
+
   - url: https://github.com/snarfed/arroba
     tags: ['pds']
+
   - url: https://github.com/graze-social/jetstream-turbo
+    tags: ['firehose', 'relay']
+
   - url: https://github.com/tfederman/pysky
+    tags: ['xrpc client']
+
   - url: https://tangled.org/@dwn.myatproto.social/atpasser/
     license: "MIT / Apache"

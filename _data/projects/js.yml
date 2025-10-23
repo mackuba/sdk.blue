@@ -3,44 +3,61 @@ repos:
   - urls:
     - https://tangled.org/@mary.my.id/atcute
     - https://github.com/mary-ext/atcute
+    tags: ['xrpc client', 'firehose', 'identity', 'oauth', 'parsing', 'crypto']
+
   - url: https://github.com/aliceisjustplaying/labeler-starter-kit-bsky
-    tags: ['labeller', 'example']
+    tags: ['moderation', 'example']
+
   - url: https://github.com/bluesky-social/feed-generator
     tags: ['feeds', 'example']
+
   - url: https://github.com/bluesky-social/atproto
     description: "AT Protocol Reference Implementation (TypeScript)"
+    tags: ['xrpc client', 'bluesky appview', 'pds', 'identity', 'crypto', 'oauth']
     license: "MIT / Apache"
+
   - url: https://github.com/skyware-js/firehose
     tags: ['firehose']
+
   - url: https://github.com/skyware-js/jetstream
     description: "A fully typed client for the Bluesky Jetstream service."
     tags: ['firehose']
+
   - url: https://github.com/skyware-js/bot
     tags: ['bots']
+
   - url: https://github.com/skyware-js/labeler
-    tags: ['labeller']
+    tags: ['moderation']
+
   - url: https://github.com/juni-b-queer/bsky-event-handlers
     description: "Typescript based framework for building Bluesky bots"
     license: "BSD 4 Clause"
     tags: ['bots']
+
   - urls:
     - https://tangled.org/@frontpage.fyi/frontpage
     - https://github.com/likeandscribe/frontpage
     tags: ['atproto app']
+
   - url: https://github.com/streamplace/atproto-oauth-client-react-native
     description: "atproto OAuth Client for React Native"
     tags: ['oauth']
+
   - url: https://github.com/colds-ky/bski
     description: "Raw CAR/CBOR format parsing"
     tags: ['parsing']
+
   - url: https://github.com/blebbit/authr
     tags: ['oauth']
+
   - urls:
     - https://tangled.org/@leaflet.pub/leaflet
     - https://github.com/hyperlink-academy/leaflet
     tags: ['atproto app']
+
   - url: https://github.com/dollspace-gay/Aurora-Prism
     tags: ['bluesky appview']
+
   - url: https://tangled.org/@hailey.at/expo-atproto-auth/
     description: Expo client library for Atproto OAuth
     tags: ['oauth']

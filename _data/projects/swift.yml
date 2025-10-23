@@ -2,36 +2,63 @@ name: "Swift & ObjC"
 repos:
   - url: https://github.com/kphrx/plc-handle-tracker
     tags: ['plc']
+
   - url: https://github.com/MasterJ93/ATProtoKit
+    tags: ['xrpc client', 'firehose', 'identity']
+
   - url: https://github.com/andooown/swift-atproto
+    tags: ['xrpc client']
+
   - url: https://github.com/andooown/lexicon-gen
     tags: ['lexicons']
+
   - url: https://github.com/chead/SwiftBluesky
     description: "A package for interacting with the Bluesky Social API."
+    tags: ['xrpc client']
+
   - url: https://github.com/chead/SwiftATProto
     description: "A Swift package for constructing ATProto requests."
+    tags: ['xrpc client']
+
   - url: https://github.com/chead/SwiftLexicon
     description: "A Swift package for decoding ATProto Lexicon."
     tags: ['lexicons']
+
   - url: https://github.com/nnabeyang/swift-atproto
+    tags: ['xrpc client', 'identity']
+
   - url: https://github.com/nnabeyang/swift-cbor
     tags: ['parsing']
+
   - url: https://github.com/nnabeyang/swift-atproto-demo-firehose
     description: "A demo application of Firehose using swift-atproto."
+    tags: ['firehose', 'parsing', 'example']
+
   - url: https://github.com/ChimeHQ/OAuthenticator
     tags: ['oauth']
+
   - url: https://github.com/mattmassicotte/ATResolve
     tags: ['identity']
+
   - url: https://github.com/mattmassicotte/ATAT
+    tags: ['xrpc client']
+
   - url: https://github.com/ATProtoKit/ATSyntaxTools
+
   - url: https://github.com/ATProtoKit/ATCommonTools
+
   - url: https://github.com/ATProtoKit/MultiformatsKit
+    tags: ['parsing']
+
   - url: https://github.com/ATProtoKit/ATCryptography
     tags: ['crypto']
+
   - url: https://github.com/ATProtoKit/ATIdentityTools
     tags: ['identity']
+
   - url: https://github.com/ATProtoKit/ATOAuthKit
     tags: ['oauth']
+
   - urls:
     - https://tangled.org/@khanwinter.com/CBOR
     - https://github.com/thecoolwinter/CBOR

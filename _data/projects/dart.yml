@@ -1,5 +1,7 @@
 name: Dart
 repos:
   - url: https://github.com/myConsciousness/atproto.dart
+    tags: ['xrpc client', 'identity', 'firehose', 'oauth']
+
   - url: https://github.com/skyfeed-dev/indexer
     tags: ['indexer']
