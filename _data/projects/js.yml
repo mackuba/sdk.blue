@@ -61,3 +61,9 @@ repos:
   - url: https://tangled.org/@hailey.at/expo-atproto-auth/
     description: Expo client library for Atproto OAuth
     tags: ['oauth']
+  
+  - urls:
+    - https://tangled.org/@tylur.dev/prototypey
+    - https://github.com/tylersayshi/prototypey
+    description: "atproto lexicon typescript toolkit"
+    tags: ['lexicons']
