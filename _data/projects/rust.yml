@@ -64,3 +64,6 @@ repos:
     description: "A high-performance AT Protocol identity resolution service written in Rust"
     license: MIT
     tags: ['identity']
+
+  - url: https://tangled.org/@baileytownsend.dev/pds-gatekeeper
+    tags: ['pds']
