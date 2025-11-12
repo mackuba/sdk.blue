@@ -1,6 +1,6 @@
 # sdk.blue
 
-A list of libraries & SDKs for the Bluesky API and AT Protocol. See the website here: <https://sdk.blue>.
+A list of libraries, frameworks and tools for the Bluesky API and AT Protocol. See the website here: <https://sdk.blue>.
 
 ## Adding projects
 
