@@ -20,7 +20,7 @@ repos:
     tags: ['feeds', 'example']
 
   - url: https://github.com/jazware/bsky-experiments
-    tags: ['firehose', 'feeds', 'indexer', 'bots', 'plc', 'example']
+    tags: ['firehose', 'feeds', 'indexer', 'bots', 'plc mirror', 'example']
 
   - url: https://github.com/jazware/atproto.tools
     tags: ['firehose']
@@ -35,7 +35,7 @@ repos:
   - url: https://github.com/bsky-watch/utils
 
   - url: https://github.com/bsky-watch/plc-mirror
-    tags: ['plc']
+    tags: ['plc mirror']
 
   - url: https://github.com/davhofer/botsky
     license: "MIT / Apache"
@@ -49,7 +49,7 @@ repos:
     tags: ['bluesky appview']
 
   - url: https://github.com/blebbit/atmunge
-    tags: ['firehose', 'indexer']
+    tags: ['firehose', 'indexer', 'plc mirror']
 
   - urls:
     - https://tangled.org/@hailey.at/cocoon

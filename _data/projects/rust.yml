@@ -30,7 +30,7 @@ repos:
 
   - url: https://tangled.org/@parakeet.at/plc-mirror/
     license: "MIT / Apache"
-    tags: ['plc']
+    tags: ['plc mirror']
 
   - url: https://tangled.org/@parakeet.at/parakeet/
     description: "Rust-based Bluesky AppView aiming to implement most of the functionality required to support the Bluesky client"
@@ -45,7 +45,7 @@ repos:
     - https://tangled.org/@microcosm.blue/Allegedly/
     - https://github.com/at-microcosm/allegedly
     license: "MIT / Apache"
-    tags: ['plc']
+    tags: ['plc mirror']
 
   - urls:
     - https://tangled.org/@microcosm.blue/microcosm-rs/

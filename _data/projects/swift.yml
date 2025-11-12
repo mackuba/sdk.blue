@@ -1,7 +1,7 @@
 name: "Swift & ObjC"
 repos:
   - url: https://github.com/kphrx/plc-handle-tracker
-    tags: ['plc']
+    tags: ['plc mirror']
 
   - url: https://github.com/MasterJ93/ATProtoKit
     tags: ['xrpc client', 'firehose', 'identity']
