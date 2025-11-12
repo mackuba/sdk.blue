@@ -67,3 +67,7 @@ repos:
 
   - url: https://tangled.org/@baileytownsend.dev/pds-gatekeeper
     tags: ['pds']
+
+  - url: https://tangled.org/@smokesignal.events/atproto-plc
+    license: "MIT / Apache"
+    tags: ['identity']
