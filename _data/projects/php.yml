@@ -14,3 +14,9 @@ repos:
 
   - url: https://github.com/aazsamir/libphpsky
     tags: ['xrpc client', 'firehose']
+
+  - url: https://github.com/socialdept/atp-resolver
+    tags: ['identity']
+
+  - url: https://github.com/socialdept/atp-signals
+    tags: ['firehose']
