@@ -71,3 +71,8 @@ repos:
   - url: https://tangled.org/@smokesignal.events/atproto-plc
     license: "MIT / Apache"
     tags: ['identity']
+
+  - url: https://github.com/teal-fm/cadet
+    name: "rocketman"
+    description: "A modular(ish) jetstream consumer. Backed by Tungstenite."
+    tags: ['firehose']
