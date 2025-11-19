@@ -63,3 +63,6 @@ repos:
     - https://tangled.org/@khanwinter.com/CBOR
     - https://github.com/thecoolwinter/CBOR
     tags: ['parsing']
+
+  - url: https://github.com/joshlacal/Petrel
+    tags: ['xrpc client', 'identity', 'oauth', 'lexicons']
