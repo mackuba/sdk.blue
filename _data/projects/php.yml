@@ -1,9 +1,9 @@
 name: PHP 
 repos:
-  - url: https://github.com/shahmal1yev/blueskysdk
+  - url: https://github.com/edevsh/blueskysdk
     tags: ['xrpc client']
 
-  - url: https://github.com/shahmal1yev/blugen
+  - url: https://github.com/edevsh/blugen
     tags: ['lexicons']
 
   - url: https://github.com/cjrasmussen/BlueskyApi
