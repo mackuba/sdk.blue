@@ -66,3 +66,6 @@ repos:
 
   - url: https://github.com/joshlacal/Petrel
     tags: ['xrpc client', 'identity', 'oauth', 'lexicons']
+
+  - url: https://github.com/tijs/ATProtoFoundation
+    tags: ['oauth']
