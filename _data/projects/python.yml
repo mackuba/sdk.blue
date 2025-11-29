@@ -36,5 +36,5 @@ repos:
   - url: https://github.com/tfederman/pysky
     tags: ['xrpc client']
 
-  - url: https://tangled.org/@dwn.myatproto.social/atpasser/
+  - url: https://tangled.org/dwn.poxiao-labs.work/atpasser/
     license: "MIT / Apache"
