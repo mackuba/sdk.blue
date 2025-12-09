@@ -58,7 +58,9 @@ repos:
   - url: https://github.com/dollspace-gay/Aurora-Prism
     tags: ['bluesky appview']
 
-  - url: https://tangled.org/@hailey.at/expo-atproto-auth/
+  - urls:
+    - https://tangled.org/@hailey.at/expo-atproto-auth/
+    - https://github.com/haileyok/expo-atproto-auth
     description: Expo client library for Atproto OAuth
     tags: ['oauth']
   
