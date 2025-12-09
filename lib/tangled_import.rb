@@ -61,7 +61,7 @@ class TangledImport
 
     if Dir.exist?(repo_folder)
       Dir.chdir(repo_folder) do
-        system('git pull')
+        system('git pull -q')
       end
     else
       Dir.chdir(repos_cache) do
