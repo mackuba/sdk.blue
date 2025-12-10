@@ -1,12 +1,13 @@
 require_relative 'requests'
+require 'json'
 require 'time'
 
 class NPMImport
   include Requests
 
-  class LocalPackage
-    def initialize(json)
-      @json = json
+  class PackageJSON
+    def initialize(data)
+      @json = JSON.parse(data)
     end
 
     def name
@@ -39,13 +40,12 @@ class NPMImport
       Time.parse(@json['time'][last_version])
     end
 
-    def repository_url
-      @json.dig('repository', 'url')
+    def homepage_url
+      @json['homepage']
     end
 
-    def normalized_repository_url
-      url = repository_url
-      url && url.gsub(%r{^.*://}, 'https://').gsub(/\.git$/, '').gsub(%r{tangled\.org/@}, 'tangled.org/')
+    def repository_url
+      @json.dig('repository', 'url')
     end
 
     def inspect

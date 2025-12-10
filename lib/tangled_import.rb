@@ -1,12 +1,15 @@
+require_relative 'import_helpers'
 require_relative 'npm_import'
 require_relative 'requests'
 
 require 'didkit'
 require 'fileutils'
+require 'json'
 require 'licensee'
 require 'minisky'
 
 class TangledImport
+  include ImportHelpers
   include Requests
 
   def initialize
@@ -130,12 +133,15 @@ class TangledImport
 
       packages.lines.each do |file|
         contents = File.read(file.strip)
-        package = NPMImport::LocalPackage.new(JSON.parse(contents))
+        package = NPMImport::PackageJSON.new(contents)
 
         next if package.version.nil? || package.private?
 
         if npm = NPMImport.new.get_package_info(package.name)
-          if project.urls.include?(npm.normalized_repository_url)
+          package_repo_url = normalize_repo_url(npm.repository_url)
+          package_homepage = normalize_repo_url(npm.homepage_url)
+
+          if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == package_repo_url || u == package_homepage }
             releases << npm
           end
         end
