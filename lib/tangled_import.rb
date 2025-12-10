@@ -17,7 +17,7 @@ class TangledImport
     url =~ %r{^https://tangled\.org/@[\w\-\.]+/[\w\-\.]+}
   end
 
-  def import_url(url)
+  def import_url(url, project)
     url =~ %r{^https://tangled\.org/@([\w\-\.]+)/([\w\-\.]+)}
     user, repo = $1, $2
 
@@ -46,6 +46,15 @@ class TangledImport
     end
 
     data['stars'] = get_stars(repo_record['uri'])
+
+    if project.language == :js
+      npm = get_npm_releases(repo_folder, project)
+      last_update = npm.map { |n| n.last_release_time }.sort.last
+
+      if last_update
+        data['last_release'] = { 'published_at' => last_update }
+      end
+    end
 
     data['last_commit'] = get_latest_commit(repo_folder)
 
@@ -112,5 +121,27 @@ class TangledImport
 
     json = JSON.parse(response.body)
     json['total']
+  end
+
+  def get_npm_releases(repo_folder, project)
+    Dir.chdir(repo_folder) do
+      packages = %x(find . -name 'package.json').strip
+      releases = []
+
+      packages.lines.each do |file|
+        contents = File.read(file.strip)
+        package = NPMImport::LocalPackage.new(JSON.parse(contents))
+
+        next if package.version.nil? || package.private?
+
+        if npm = NPMImport.new.get_package_info(package.name)
+          if project.urls.include?(npm.normalized_repository_url)
+            releases << npm
+          end
+        end
+      end
+
+      releases
+    end
   end
 end

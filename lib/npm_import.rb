@@ -27,6 +27,10 @@ class NPMImport
       @json = json
     end
 
+    def name
+      @json['name']
+    end
+
     def last_version
       @json['dist-tags']['latest']
     end
@@ -36,12 +40,27 @@ class NPMImport
     end
 
     def repository_url
-      @json['repository'] && @json['repository']['url']
+      @json.dig('repository', 'url')
+    end
+
+    def normalized_repository_url
+      url = repository_url
+      url && url.gsub(%r{^.*://}, 'https://').gsub(/\.git$/, '').gsub(%r{tangled\.org/@}, 'tangled.org/')
+    end
+
+    def inspect
+      fields = [:name, :last_version, :last_release_time].map { |v| "#{v}=#{self.send(v).inspect}" }.join(", ")
+      "#<#{self.class}:0x#{object_id} #{fields}>"
     end
   end
 
+  def initialize
+    @@cache ||= {}
+  end
+
   def get_package_info(name)
-    response = get_response("https://registry.npmjs.com/#{name}")
+    response = @@cache[name] || get_response("https://registry.npmjs.com/#{name}")
+    @@cache[name] = response
 
     if response.code.to_i == 200
       RemotePackage.new(JSON.parse(response.body))

@@ -17,7 +17,7 @@ class GithubImport
     url =~ %r{^https://github\.com/[\w\-\.]+/[\w\-\.]+}
   end
 
-  def import_url(url)
+  def import_url(url, project)
     url =~ %r{^https://github\.com/([\w\-\.]+)/([\w\-\.]+)}
     user, repo = $1, $2
 
@@ -33,7 +33,7 @@ class GithubImport
     end
 
     if ['JavaScript', 'TypeScript'].include?(repo_info['language'])
-      npm = get_npm_releases(user, repo)
+      npm = get_npm_releases(user, repo, project)
       last_update = npm.map { |n| n.last_release_time }.sort.last
 
       if last_update && (release.nil? || last_update > release['published_at'])
@@ -142,7 +142,7 @@ class GithubImport
     end
   end
 
-  def get_npm_releases(user, repo)
+  def get_npm_releases(user, repo, project)
     sleep 5
 
     search_url = URI("https://api.github.com/search/code")
@@ -164,7 +164,7 @@ class GithubImport
       next if package.version.nil? || package.private?
 
       if npm = NPMImport.new.get_package_info(package.name)
-        if npm.repository_url =~ %r{://github\.com/#{Regexp.escape(user)}/#{Regexp.escape(repo)}(\.git)?$}
+        if project.urls.include?(npm.normalized_repository_url)
           releases << npm
         end
       end

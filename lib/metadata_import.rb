@@ -1,4 +1,5 @@
 require_relative 'github_import'
+require_relative 'project'
 require_relative 'tangled_import'
 
 class MetadataImport
@@ -14,23 +15,20 @@ class MetadataImport
       data = {}
     end
 
-    urls = get_repo_urls(language)
+    projects = Project.load_all(language)
     importers = [GithubImport.new, TangledImport.new]
 
-    urls.each do |url|
-      if imp = importers.detect { |i| i.url_matches?(url) }
-        p url
-        data[url] = imp.import_url(url)
-      else
-        puts "Skipping #{url}"
+    projects.each do |project|
+      project.urls.each do |url|
+        if imp = importers.detect { |i| i.url_matches?(url) }
+          p url
+          data[url] = imp.import_url(url, project)
+        else
+          puts "Skipping #{url}"
+        end
       end
     end
 
     File.write(output_path, YAML.dump(data))
-  end
-
-  def get_repo_urls(language = nil)
-    yamls = Dir[File.join(__dir__, '..', '_data', 'projects', language ? "#{language}.yml" : '*.yml')]
-    yamls.map { |x| YAML.load(File.read(x))['repos'] }.flatten.map { |x| x['url'] || x['urls'] }.flatten
   end
 end
