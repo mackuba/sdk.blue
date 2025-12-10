@@ -14,7 +14,7 @@ module Requests
   end
 
   def request_headers
-    {}
+    { 'User-Agent' => "sdk.blue project info scanner (+https://sdk.blue) Ruby/#{RUBY_VERSION}"}
   end
 
   def get_response(url)
