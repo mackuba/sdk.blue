@@ -1,3 +1,4 @@
+require_relative 'cargo_import'
 require_relative 'import_helpers'
 require_relative 'npm_import'
 require_relative 'requests'
@@ -53,6 +54,13 @@ class TangledImport
     if project.language == :js
       npm = get_npm_releases(repo_folder, project)
       last_update = npm.map { |n| n.last_release_time }.sort.last
+
+      if last_update
+        data['last_release'] = { 'published_at' => last_update }
+      end
+    elsif project.language == :rust
+      crates = get_cargo_releases(repo_folder, project)
+      last_update = crates.map { |c| c.last_release_time }.sort.last
 
       if last_update
         data['last_release'] = { 'published_at' => last_update }
@@ -143,6 +151,31 @@ class TangledImport
 
           if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == package_repo_url || u == package_homepage }
             releases << npm
+          end
+        end
+      end
+
+      releases
+    end
+  end
+
+  def get_cargo_releases(repo_folder, project)
+    Dir.chdir(repo_folder) do
+      packages = %x(find . -name 'Cargo.toml').strip
+      releases = []
+
+      packages.lines.each do |file|
+        contents = File.read(file.strip)
+        package = CargoImport::CargoToml.new(contents)
+
+        next if package.name.nil?
+
+        if crate = CargoImport.new.get_crate_info(package.name)
+          crate_repo_url = normalize_repo_url(crate.repository_url)
+          crate_homepage = normalize_repo_url(crate.homepage_url)
+
+          if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == crate_repo_url || u == crate_homepage }
+            releases << crate
           end
         end
       end

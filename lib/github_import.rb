@@ -1,3 +1,4 @@
+require_relative 'cargo_import'
 require_relative 'import_helpers'
 require_relative 'npm_import'
 require_relative 'requests'
@@ -39,6 +40,13 @@ class GithubImport
     if ['JavaScript', 'TypeScript'].include?(repo_info['language'])
       npm = get_npm_releases(user, repo, project)
       last_update = npm.map { |n| n.last_release_time }.sort.last
+
+      if last_update && (release.nil? || last_update > release['published_at'])
+        data['last_release'] = { 'published_at' => last_update }
+      end
+    elsif repo_info['language'] == 'Rust'
+      crates = get_cargo_releases(user, repo, project)
+      last_update = crates.map { |c| c.last_release_time }.sort.last
 
       if last_update && (release.nil? || last_update > release['published_at'])
         data['last_release'] = { 'published_at' => last_update }
@@ -173,6 +181,40 @@ class GithubImport
 
         if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == package_repo_url || u == package_homepage }
           releases << npm
+        end
+      end
+    end
+
+    releases
+  end
+
+  def get_cargo_releases(user, repo, project)
+    sleep 5
+
+    search_url = URI("https://api.github.com/search/code")
+    search_url.query = URI.encode_www_form(q: "repo:#{user}/#{repo} filename:Cargo.toml", per_page: 100)
+    response = get_response(search_url)
+    raise FetchError.new(response) unless response.code.to_i == 200
+
+    json = JSON.parse(response.body)
+    releases = []
+
+    json['items'].each do |file|
+      response = get_response(file['url'])
+      raise FetchError.new(response) unless response.code.to_i == 200
+
+      details = JSON.parse(response.body)
+      contents = Base64.decode64(details['content'])
+      package = CargoImport::CargoToml.new(contents)
+
+      next if package.name.nil?
+
+      if crate = CargoImport.new.get_crate_info(package.name)
+        crate_repo_url = normalize_repo_url(crate.repository_url)
+        crate_homepage = normalize_repo_url(crate.homepage_url)
+
+        if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == crate_repo_url || u == crate_homepage }
+          releases << crate
         end
       end
     end
