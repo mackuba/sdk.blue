@@ -59,12 +59,6 @@ repos:
     tags: ['bluesky appview']
 
   - urls:
-    - https://tangled.org/@hailey.at/expo-atproto-auth/
-    - https://github.com/haileyok/expo-atproto-auth
-    description: Expo client library for Atproto OAuth
-    tags: ['oauth']
-  
-  - urls:
     - https://tangled.org/@tylur.dev/prototypey
     - https://github.com/tylersayshi/prototypey
     description: "atproto lexicon typescript toolkit"
