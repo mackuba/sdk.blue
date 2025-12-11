@@ -60,7 +60,7 @@ repos:
     tags: ['oauth']
 
   - urls:
-    - https://tangled.org/@khanwinter.com/CBOR
+    - https://tangled.org/khanwinter.com/CBOR
     - https://github.com/thecoolwinter/CBOR
     tags: ['parsing']
 

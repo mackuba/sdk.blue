@@ -20,55 +20,55 @@ repos:
   - url: https://github.com/graze-social/aip
     tags: ['oauth']
 
-  - url: https://tangled.org/@smokesignal.events/atproto-identity-rs/
+  - url: https://tangled.org/smokesignal.events/atproto-identity-rs/
     tags: ['identity']
 
   - urls:
-    - https://tangled.org/@nonbinary.computer/jacquard/
+    - https://tangled.org/nonbinary.computer/jacquard/
     - https://github.com/rsform/jacquard
     tags: ['xrpc client', 'firehose', 'oauth', 'identity', 'lexicons', 'server', 'moderation']
 
-  - url: https://tangled.org/@parakeet.at/plc-mirror/
+  - url: https://tangled.org/parakeet.at/plc-mirror/
     license: "MIT / Apache"
     tags: ['plc mirror']
 
-  - url: https://tangled.org/@parakeet.at/parakeet/
+  - url: https://tangled.org/parakeet.at/parakeet/
     description: "Rust-based Bluesky AppView aiming to implement most of the functionality required to support the Bluesky client"
     license: "MIT / Apache"
     tags: ['bluesky appview']
 
-  - url: https://tangled.org/@slices.network/slices/
+  - url: https://tangled.org/slices.network/slices/
 
   - url: https://github.com/graze-social/iftta
 
   - urls:
-    - https://tangled.org/@microcosm.blue/Allegedly/
+    - https://tangled.org/microcosm.blue/Allegedly/
     - https://github.com/at-microcosm/allegedly
     license: "MIT / Apache"
     tags: ['plc mirror']
 
   - urls:
-    - https://tangled.org/@microcosm.blue/microcosm-rs/
+    - https://tangled.org/microcosm.blue/microcosm-rs/
     - https://github.com/at-microcosm/microcosm-rs
     tags: ['firehose', 'indexer']
 
-  - url: https://tangled.org/@microcosm.blue/repo-stream/
+  - url: https://tangled.org/microcosm.blue/repo-stream/
     license: "MIT / Apache"
     tags: ['parsing']
 
-  - url: https://tangled.org/@smokesignal.events/smokesignal/
+  - url: https://tangled.org/smokesignal.events/smokesignal/
     description: "A decentralized event and RSVP management application built for the AT Protocol ecosystem"
     tags: ['atproto app']
 
-  - url: https://tangled.org/@smokesignal.events/quickdid
+  - url: https://tangled.org/smokesignal.events/quickdid
     description: "A high-performance AT Protocol identity resolution service written in Rust"
     license: MIT
     tags: ['identity']
 
-  - url: https://tangled.org/@baileytownsend.dev/pds-gatekeeper
+  - url: https://tangled.org/baileytownsend.dev/pds-gatekeeper
     tags: ['pds']
 
-  - url: https://tangled.org/@smokesignal.events/atproto-plc
+  - url: https://tangled.org/smokesignal.events/atproto-plc
     license: "MIT / Apache"
     tags: ['identity']
 

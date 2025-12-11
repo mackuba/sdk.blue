@@ -15,5 +15,5 @@ repos:
     description: "ATProto Clojure SDK"
     tags: ['xrpc client', 'firehose', 'identity']
 
-  - url: https://tangled.org/@chadtmiller.com/goose
+  - url: https://tangled.org/chadtmiller.com/goose
     tags: ['firehose']

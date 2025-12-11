@@ -43,7 +43,7 @@ repos:
 
   - urls:
     - https://github.com/whyrusleeping/konbini
-    - https://tangled.org/@why.bsky.team/konbini
+    - https://tangled.org/why.bsky.team/konbini
     description: "A Cozy Bluesky AppView"
     license: MIT
     tags: ['bluesky appview']
@@ -52,7 +52,7 @@ repos:
     tags: ['firehose', 'indexer', 'plc mirror']
 
   - urls:
-    - https://tangled.org/@hailey.at/cocoon
+    - https://tangled.org/hailey.at/cocoon
     - https://github.com/haileyok/cocoon
     tags: ['pds']
 
@@ -63,11 +63,11 @@ repos:
     tags: ['indexer']
 
   - urls:
-    - https://tangled.org/@stream.place/streamplace
+    - https://tangled.org/stream.place/streamplace
     - https://github.com/streamplace/streamplace
     tags: ['atproto app']
 
-  - url: https://tangled.org/@tangled.org/core
+  - url: https://tangled.org/tangled.org/core
     name: 'tangled core'
     tags: ['atproto app']
 
