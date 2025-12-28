@@ -19,11 +19,11 @@ class TangledImport
   end
 
   def url_matches?(url)
-    url =~ %r{^https://tangled\.org/@[\w\-\.]+/[\w\-\.]+}
+    url =~ %r{^https://tangled\.org/@?[\w\-\.]+/[\w\-\.]+}
   end
 
   def import_url(url, project)
-    url =~ %r{^https://tangled\.org/@([\w\-\.]+)/([\w\-\.]+)}
+    url =~ %r{^https://tangled\.org/@?([\w\-\.]+)/([\w\-\.]+)}
     user, repo = $1, $2
 
     did = DID.resolve_handle(user)
