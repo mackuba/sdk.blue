@@ -27,7 +27,7 @@ class TangledImport
     user, repo = $1, $2
 
     did = DID.resolve_handle(user)
-    sky = Minisky.new(did.get_document.pds_endpoint, nil)
+    sky = Minisky.new(did.document.pds_host, nil)
 
     repos = sky.fetch_all('com.atproto.repo.listRecords',
       { repo: did, collection: 'sh.tangled.repo', limit: 100 },
