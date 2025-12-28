@@ -39,7 +39,7 @@ class TangledImport
 
     data = repo_data_from_record(repo_record['value'])
     data['user_login'] = user
-    data['user_profile'] = "https://tangled.org/@#{user}"
+    data['user_profile'] = "https://tangled.org/#{user}"
 
     if tag_info = get_latest_tag(repo_folder)
       data['last_tag'] = tag_info
@@ -85,7 +85,7 @@ class TangledImport
       end
     else
       Dir.chdir(repos_cache) do
-        system("git clone https://tangled.org/@#{user}/#{repo} #{dirname}")
+        system("git clone https://tangled.org/#{user}/#{repo} #{dirname}")
       end
     end
 
