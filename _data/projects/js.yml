@@ -63,3 +63,7 @@ repos:
     - https://github.com/tylersayshi/prototypey
     description: "atproto lexicon typescript toolkit"
     tags: ['lexicons']
+
+  - url: https://github.com/ThisIsMissEm/adonisjs-atproto-tap
+    description: "This package provides a small Adonis.js provider and services for @atproto/tap"
+    tags: ['firehose']

@@ -17,3 +17,7 @@ repos:
 
   - url: https://tangled.org/chadtmiller.com/goose
     tags: ['firehose']
+
+  - url: https://tangled.org/futur.blue/pegasus/
+    tags: ['pds']
+    description: "An atproto PDS, along with an assortment of atproto-relevant libraries, written in OCaml"

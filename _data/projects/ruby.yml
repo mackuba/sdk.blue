@@ -28,3 +28,6 @@ repos:
 
   - url: https://github.com/jhuckabee/atproto_auth
     tags: ['oauth']
+
+  - url: https://tangled.org/mackuba.eu/tapfall/
+    tags: ['firehose']
