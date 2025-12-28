@@ -8,6 +8,7 @@ require 'fileutils'
 require 'json'
 require 'licensee'
 require 'minisky'
+require 'time'
 
 class TangledImport
   include ImportHelpers

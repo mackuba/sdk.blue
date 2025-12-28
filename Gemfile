@@ -12,6 +12,8 @@ end
 # dependency of net-ssh and jekyll - remove when jekyll is updated
 gem 'logger'
 
+gem 'base64'
+
 group :development do
   gem 'capistrano', '~> 2.0'
 

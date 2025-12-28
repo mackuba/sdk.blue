@@ -5,6 +5,7 @@ require_relative 'requests'
 
 require 'base64'
 require 'json'
+require 'time'
 
 class GithubImport
   include ImportHelpers
