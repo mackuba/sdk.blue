@@ -1,10 +1,17 @@
 ---
 ---
 
+{% assign tags = "" | split: "" %}
+
 <nav>
   {% for projects in site.data.projects %}
     {% assign key = projects[0] %}
     {% assign data = projects[1] %}
+
+    {% for repo in data.repos %}
+      {% assign repo_tags = repo.tags | join: ',' | split: ',' %}
+      {% assign tags = tags | concat: repo_tags %}
+    {% endfor %}
 
     {% if key != 'other' %}
       <a href="#{{ key }}">{{ data.name }}</a> |
@@ -13,6 +20,16 @@
 
   <a href="#other">Other</a>
 </nav>
+
+{% assign tags = tags | uniq | sort %}
+
+<div class="nav-separator"></div>
+
+<p class="tags">
+  {% for tag in tags %}
+    <span>{{ tag }}</span>
+  {% endfor %}
+</p>
 
 {% for projects in site.data.projects %}
   {% assign key = projects[0] %}

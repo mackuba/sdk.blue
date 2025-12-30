@@ -38,11 +38,32 @@ header {
 }
 
 nav {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 
   a {
     margin-left: 2px;
     margin-right: 2px;
+  }
+}
+
+.nav-separator {
+  width: 80px;
+  border-top: 1px solid #aaa;
+  margin: 0px auto 30px;
+}
+
+.tags {
+  line-height: 200%;
+  margin: 10px auto 40px;
+  max-width: 720px;
+
+  span {
+    font-size: 10pt;
+    background-color: #d9efff;
+    border: 1px solid #bde2fe;
+    border-radius: 5px;
+    padding: 1px 5px;
+    margin-right: 8px;
   }
 }
 
@@ -92,9 +113,14 @@ nav {
 
     .description { line-height: 145%; font-size: 11pt; }
 
-    .tags { margin: -3px 0; line-height: 150%; }
-    .tags span { font-size: 10pt; background-color: #d9efff; border: 1px solid #bde2fe; border-radius: 5px; padding: 1px 5px;
-      margin-right: 3px; }
+    .tags {
+      margin: -3px 0;
+      line-height: 160%;
+
+      span {
+        margin-right: 3px;
+      }
+    }
 
     .stats { margin-top: 18px; font-size: 11pt; border-top: 1px solid #ddd; padding-top: 15px; }
     .stats img { position: relative; top: 2px; margin-right: 2px; }
@@ -139,6 +165,8 @@ footer {
     h2 { border-color: #666; background-color: rgba(255, 255, 255, 0.05); }
   }
 
+  .tags span { background-color: #073659; border-color: #1c5179; color: #77aad1; }
+
   .projects li {
     border-color: #666;
     background-color: rgba(255, 255, 255, 0.02);
@@ -146,7 +174,6 @@ footer {
     .author a { color: #888; }
     .stars { color: #888; }
     .stats { border-top-color: #444; }
-    .tags span { background-color: #073659; border-color: #1c5179; color: #77aad1; }
     .separator { color: #666; }
     .license { border-color: #666; }
     .license.unknown { border-color: #a62; }
