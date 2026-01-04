@@ -21,3 +21,7 @@ repos:
   - url: https://tangled.org/futur.blue/pegasus/
     tags: ['pds']
     description: "An atproto PDS, along with an assortment of atproto-relevant libraries, written in OCaml"
+
+  - url: https://tangled.org/gdiazlo.tngl.sh/atproto
+    license: "MIT"
+    tags: ['xrpc client', 'firehose', 'identity', 'parsing', 'crypto', 'server', 'lexicons']

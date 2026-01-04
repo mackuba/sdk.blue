@@ -76,3 +76,9 @@ repos:
     name: "rocketman"
     description: "A modular(ish) jetstream consumer. Backed by Tungstenite."
     tags: ['firehose']
+
+  - url: https://tangled.org/lewis.moe/bspds-sandbox
+    name: "Tranquil PDS"
+    description: "PDS software with bells & whistles you didn’t even know you needed"
+    license: "AGPL-3.0"
+    tags: ['pds']
