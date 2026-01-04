@@ -12,15 +12,19 @@ What kinds of projects I'm looking for:
 
 * full SDKs for building things on ATProto in a given language
 * targetted libraries for things like streaming from the firehose, making XRPC calls, building feeds, labellers etc.
-* independent implementations of things like PDS or Relay
 * template repos for making e.g. labeller or feed projects using your library
-* some tools and apps that include pieces of useful code that could be reused easily, but wasn't extracted to a library yet
+* tools and helper services that can be used as part of a larger app
 
 So generally repos that contain code that you could use to build your thing.
 
-What I'm not looking for:
+Additionally, I'm also including:
 
-* clients, user-facing tools, webapps, command-line tools etc.
+* independent implementations of things like PDS, relay, or Bluesky AppView
+* example full non-Bluesky ATProto apps like Tangled or Leaflet
+
+What I'm *not* looking for:
+
+* client apps, user-facing tools, webapps, command-line tools etc.
 * specific examples of bots, labellers, feeds etc.
 
 
