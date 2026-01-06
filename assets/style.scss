@@ -70,13 +70,20 @@ nav {
 #tag_cloud {
   span {
     cursor: pointer;
-    transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
+    user-select: none;
+    -webkit-user-select: none;
+
+    &:hover {
+      background-color: hsl(205, 75%, 82%);
+    };
 
     &.selected {
-      background-color: hsl(210, 90%, 45%);
-      border-color: hsl(210, 90%, 38%);
+      background-color: hsl(210, 90%, 55%);
+      border-color: hsl(210, 90%, 50%);
       color: white;
-      box-shadow: 0 0 0 2px hsla(210, 90%, 45%, 0.25);
+      border-width: 2px;
+      margin-right: 7px;
+      margin-left: -1px;
     }
   }
 }
@@ -179,12 +186,32 @@ footer {
     h2 { border-color: #666; background-color: rgba(255, 255, 255, 0.05); }
   }
 
-  .tags span { background-color: #073659; border-color: #1c5179; color: #77aad1; }
-  #tag_cloud span.selected { background-color: hsl(210, 80%, 58%); border-color: hsl(210, 80%, 52%); color: #01213a; box-shadow: 0 0 0 2px hsla(210, 80%, 58%, 0.25); }
+  .tags span {
+    background-color: #073659;
+    border-color: #1c5179;
+    color: #77aad1;
+  }
+
+  #tag_cloud span:hover {
+    background-color: hsl(205, 75%, 32%);
+    border-color: hsl(205, 63%, 44%);
+    color: hsl(205, 50%, 80%);
+  }
+
+  #tag_cloud span.selected {
+    background-color: hsl(210, 95%, 60%);
+    border-color: hsl(210, 80%, 50%);
+    color: hsl(210, 95%, 5%);
+  }
 
   .projects li {
     border-color: #666;
     background-color: rgba(255, 255, 255, 0.02);
+
+    &.official {
+      border-color: hsl(210, 80%, 40%);
+      background-color: hsla(210, 90%, 45%, 10%);
+    }
 
     .author a { color: #888; }
     .stars { color: #888; }
