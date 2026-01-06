@@ -6,24 +6,6 @@ repos:
   - url: https://github.com/MasterJ93/ATProtoKit
     tags: ['xrpc client', 'firehose', 'identity']
 
-  - url: https://github.com/andooown/swift-atproto
-    tags: ['xrpc client']
-
-  - url: https://github.com/andooown/lexicon-gen
-    tags: ['lexicons']
-
-  - url: https://github.com/chead/SwiftBluesky
-    description: "A package for interacting with the Bluesky Social API."
-    tags: ['xrpc client']
-
-  - url: https://github.com/chead/SwiftATProto
-    description: "A Swift package for constructing ATProto requests."
-    tags: ['xrpc client']
-
-  - url: https://github.com/chead/SwiftLexicon
-    description: "A Swift package for decoding ATProto Lexicon."
-    tags: ['lexicons']
-
   - url: https://github.com/nnabeyang/swift-atproto
     tags: ['xrpc client', 'identity', 'lexicons']
 
