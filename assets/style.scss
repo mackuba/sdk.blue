@@ -67,6 +67,20 @@ nav {
   }
 }
 
+#tag_cloud {
+  span {
+    cursor: pointer;
+    transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
+
+    &.selected {
+      background-color: hsl(210, 90%, 45%);
+      border-color: hsl(210, 90%, 38%);
+      color: white;
+      box-shadow: 0 0 0 2px hsla(210, 90%, 45%, 0.25);
+    }
+  }
+}
+
 .language {
   margin-bottom: 60px;
 
@@ -166,6 +180,7 @@ footer {
   }
 
   .tags span { background-color: #073659; border-color: #1c5179; color: #77aad1; }
+  #tag_cloud span.selected { background-color: hsl(210, 80%, 58%); border-color: hsl(210, 80%, 52%); color: #01213a; box-shadow: 0 0 0 2px hsla(210, 80%, 58%, 0.25); }
 
   .projects li {
     border-color: #666;

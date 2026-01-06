@@ -15,7 +15,11 @@
   {% assign user = '@' | append: info.user_login %}
 {% endif %}
 
-<li class="{% if info.user_login == 'bluesky-social' %}official{% endif %}">
+<li class="{% if info.user_login == 'bluesky-social' %}official{% endif %}"
+    {% if include.project.tags %}
+      data-tags="{{ include.project.tags | join: ',' }}"
+    {% endif %}>
+
   <p class="title">
     <a class="project-name" href="{{ include.project.url | default: include.project.urls[0] }}" target="_blank">{{ include.project.name | default: info.name }}</a>
     <span class="author"><span class="dot">•</span>

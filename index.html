@@ -25,9 +25,9 @@
 
 <div class="nav-separator"></div>
 
-<p class="tags">
+<p class="tags" id="tag_cloud">
   {% for tag in tags %}
-    <span>{{ tag }}</span>
+    <span data-tag="{{ tag }}">{{ tag }}</span>
   {% endfor %}
 </p>
 
