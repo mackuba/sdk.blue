@@ -48,7 +48,7 @@ repos:
     license: MIT
     tags: ['bluesky appview']
 
-  - url: https://github.com/blebbit/atmunge
+  - url: https://github.com/verdverm/atmunge
     tags: ['firehose', 'indexer', 'plc mirror']
 
   - urls:

@@ -47,7 +47,7 @@ repos:
     description: "Raw CAR/CBOR format parsing"
     tags: ['parsing']
 
-  - url: https://github.com/blebbit/authr
+  - url: https://github.com/verdverm/authr
     tags: ['oauth']
 
   - urls:
