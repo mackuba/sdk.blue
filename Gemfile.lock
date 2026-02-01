@@ -1,3 +1,16 @@
+GIT
+  remote: https://github.com/mackuba/didkit.git
+  revision: cd01682faad54b36a3f4e53a72ba325c0c864eee
+  specs:
+    didkit (0.3.1)
+
+GIT
+  remote: https://github.com/mackuba/minisky.git
+  revision: 3d1e45e852c6534c38cce0b618a4dfde527e8722
+  specs:
+    minisky (0.5.0)
+      base64 (~> 0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -16,7 +29,6 @@ GEM
     colorator (1.1.0)
     concurrent-ruby (1.3.6)
     csv (3.3.5)
-    didkit (0.3.1)
     dotenv (3.2.0)
     ed25519 (1.4.0)
     em-websocket (0.5.3)
@@ -115,8 +127,6 @@ GEM
     logger (1.7.0)
     mercenary (0.4.0)
     mini_portile2 (2.8.9)
-    minisky (0.5.0)
-      base64 (~> 0.1)
     net-http (0.9.1)
       uri (>= 0.11.1)
     net-scp (4.1.0)
@@ -215,12 +225,12 @@ DEPENDENCIES
   bcrypt_pbkdf (>= 1.0, < 2.0)
   benchmark
   capistrano (~> 2.0)
-  didkit (~> 0.2)
+  didkit (~> 0.3)!
   ed25519 (>= 1.2, < 2.0)
   jekyll (~> 4.3)
   licensee
   logger
-  minisky (~> 0.5)
+  minisky (~> 0.5)!
 
 BUNDLED WITH
    2.6.3
