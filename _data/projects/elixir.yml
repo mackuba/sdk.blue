@@ -5,3 +5,6 @@ repos:
 
   - url: https://github.com/cribbles/bluesky_ex
     tags: ['xrpc client']
+
+  - url: https://tangled.org/did:web:comet.sh/atex
+    tags: ['xrpc client', 'identity', 'lexicons', 'oauth']
