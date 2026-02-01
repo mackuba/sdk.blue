@@ -13,7 +13,7 @@ set :deploy_to, "/var/www/sdk.blue"
 set :deploy_via, :remote_cache
 set :public_children, []
 
-server "blue.mackuba.eu", :app, :web, :db, :primary => true
+server "sdk.blue", :app, :web, :db, :primary => true
 
 before 'bundle:install', 'deploy:set_bundler_options'
 
