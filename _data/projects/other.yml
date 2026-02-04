@@ -25,3 +25,12 @@ repos:
   - url: https://tangled.org/gdiazlo.tngl.sh/atproto
     license: "MIT"
     tags: ['xrpc client', 'firehose', 'identity', 'parsing', 'crypto', 'server', 'lexicons']
+
+  - url: https://github.com/sanko/At.pm
+    license: "Artistic"
+    tags: ['xrpc client', 'firehose', 'identity', 'oauth']
+
+  - url: https://github.com/sanko/Bluesky.pm
+    description: "Bluesky Client Library in Perl"
+    license: "Artistic"
+    tags: ['xrpc client']
