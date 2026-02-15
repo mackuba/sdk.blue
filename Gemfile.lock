@@ -23,7 +23,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    faraday (2.14.0)
+    faraday (2.14.1)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
@@ -41,31 +41,31 @@ GEM
     ffi (1.17.3-x86_64-linux-gnu)
     ffi (1.17.3-x86_64-linux-musl)
     forwardable-extended (2.6.0)
-    google-protobuf (4.33.4)
+    google-protobuf (4.33.5)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.33.4-aarch64-linux-gnu)
+    google-protobuf (4.33.5-aarch64-linux-gnu)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.33.4-aarch64-linux-musl)
+    google-protobuf (4.33.5-aarch64-linux-musl)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.33.4-arm64-darwin)
+    google-protobuf (4.33.5-arm64-darwin)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.33.4-x86-linux-gnu)
+    google-protobuf (4.33.5-x86-linux-gnu)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.33.4-x86-linux-musl)
+    google-protobuf (4.33.5-x86-linux-musl)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.33.4-x86_64-darwin)
+    google-protobuf (4.33.5-x86_64-darwin)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.33.4-x86_64-linux-gnu)
+    google-protobuf (4.33.5-x86_64-linux-gnu)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.33.4-x86_64-linux-musl)
+    google-protobuf (4.33.5-x86_64-linux-musl)
       bigdecimal
       rake (>= 13)
     highline (3.1.2)
@@ -97,7 +97,7 @@ GEM
       sass-embedded (~> 1.75)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    json (2.18.0)
+    json (2.18.1)
     kramdown (2.5.2)
       rexml (>= 3.4.4)
     kramdown-parser-gfm (1.1.0)
