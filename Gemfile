@@ -6,6 +6,8 @@ gem 'minisky', '~> 0.5'
 gem 'didkit', '~> 0.3'
 gem 'licensee'
 
+gem 'irb'
+
 group :jekyll_plugins do
 end
 
