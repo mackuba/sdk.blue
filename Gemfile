@@ -2,8 +2,8 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
 
-gem 'minisky', '~> 0.5', git: 'https://github.com/mackuba/minisky.git'
-gem 'didkit', '~> 0.3', git: 'https://github.com/mackuba/didkit.git'
+gem 'minisky', '~> 0.5'
+gem 'didkit', '~> 0.3'
 gem 'licensee'
 
 group :jekyll_plugins do
