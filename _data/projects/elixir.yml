@@ -8,3 +8,7 @@ repos:
 
   - url: https://tangled.org/did:web:comet.sh/atex
     tags: ['xrpc client', 'identity', 'lexicons', 'oauth']
+
+  - url: https://github.com/RosterPub/Potable
+    description: "An Elixir implementation of core AT Protocol repository primitives"
+    tags: ['parsing', 'crypto']
