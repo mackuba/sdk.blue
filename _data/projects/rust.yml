@@ -20,8 +20,9 @@ repos:
   - url: https://github.com/graze-social/aip
     tags: ['oauth']
 
-  - url: https://tangled.org/smokesignal.events/atproto-identity-rs/
-    tags: ['identity']
+  - url: https://tangled.org/ngerakines.me/atproto-crates
+    description: "A comprehensive collection of Rust components for creating AT Protocol applications"
+    tags: ['xrpc client', 'identity', 'firehose', 'oauth', 'server', 'parsing', 'crypto', 'lexicons']
 
   - urls:
     - https://tangled.org/nonbinary.computer/jacquard/
