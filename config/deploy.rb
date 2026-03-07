@@ -1,9 +1,3 @@
-# TODO: migrate to capistrano3 bundler integration
-require 'bundler/capistrano'
-set :bundle_dir, ''
-set :bundle_flags, '--quiet'
-set :bundle_without, []
-
 set :application, "sdk.blue"
 set :repository, "https://github.com/mackuba/sdk.blue.git"
 set :scm, :git
@@ -15,17 +9,18 @@ set :public_children, []
 
 server "sdk.blue", :app, :web, :db, :primary => true
 
-before 'bundle:install', 'deploy:set_bundler_options'
+before 'deploy:finalize_update', 'deploy:bundle_install'
 
 after 'deploy:update_code', 'deploy:link_shared'
 before 'deploy:create_symlink', 'deploy:build'
 after 'deploy', 'deploy:cleanup'
 
 namespace :deploy do
-  task :set_bundler_options do
+  task :bundle_install do
     run "cd #{release_path} && bundle config set --local deployment 'true'"
     run "cd #{release_path} && bundle config set --local path '#{shared_path}/bundle'"
     run "cd #{release_path} && bundle config set --local without 'development test'"
+    run "cd #{release_path} && bundle install --quiet"
   end
 
   task :link_shared do
