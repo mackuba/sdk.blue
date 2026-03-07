@@ -34,3 +34,13 @@ repos:
     description: "Bluesky Client Library in Perl"
     license: "Artistic"
     tags: ['xrpc client']
+
+  - url: https://tangled.org/zat.dev/zat
+    description: "AT Protocol building blocks for zig"
+    tags: ['xrpc client', 'identity', 'firehose', 'parsing', 'crypto']
+
+  - url: https://tangled.org/zzstoatzz.io/zlay
+    tags: ['relay']
+
+  - url: https://github.com/Arrow7000/atproto-fsharp
+    tags: ['xrpc client', 'identity', 'firehose', 'oauth', 'server', 'feeds', 'lexicons', 'crypto', 'moderation']
