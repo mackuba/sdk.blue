@@ -80,3 +80,8 @@ repos:
   - url: https://tangled.org/tranquil.farm/tranquil-pds
     license: "AGPL-3.0"
     tags: ['pds']
+
+  - url: https://tangled.org/ptr.pet/hydrant
+    tags: ['indexer']
+
+  - url: https://github.com/gamesgamesgamesgamesgames/happyview
