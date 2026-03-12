@@ -1,4 +1,4 @@
-name: "C# (.NET)"
+name: "C#"
 repos:
   - url: https://github.com/drasticactions/FishyFlip
     tags: ['xrpc client', 'firehose', 'oauth']
