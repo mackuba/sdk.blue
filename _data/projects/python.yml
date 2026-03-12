@@ -21,9 +21,6 @@ repos:
   - url: https://github.com/DavidBuchanan314/millipds
     tags: ['pds']
 
-  - url: https://github.com/mnogu/chitose
-    tags: ['xrpc client']
-
   - url: https://github.com/snarfed/lexrpc
     tags: ['xrpc client', 'server']
 
