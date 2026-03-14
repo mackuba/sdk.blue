@@ -51,3 +51,11 @@ repos:
 
   - url: https://github.com/tijs/ATProtoFoundation
     tags: ['oauth']
+
+  - url: https://tangled.org/sparrowtek.com/CoreATProtocol
+    description: "A Swift package providing the foundational networking layer for interacting with the AT Protocol"
+    tags: ['xrpc client', 'identity', 'oauth']
+  
+  - url: https://tangled.org/sparrowtek.com/bskyKit
+    description: "A Swift SDK for building Bluesky clients on Apple platforms"
+    tags: ['xrpc client']
