@@ -3,9 +3,6 @@ repos:
   - url: https://github.com/astrenoxcoop/supercell
     tags: ['feeds']
 
-  - url: https://github.com/astrenoxcoop/badgeblue
-    tags: ['atproto app']
-
   - url: https://github.com/blacksky-algorithms/rsky
     tags: ['pds', 'relay', 'bluesky appview', 'feeds', 'firehose', 'identity', 'crypto', 'parsing', 'moderation']
 
