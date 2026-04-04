@@ -21,7 +21,7 @@ def merge_infos(infos)
     'last_tag'     => latest_of(infos.map { |x| x['last_tag'] }, 'committer_date'),
     'last_commit'  => latest_of(infos.map { |x| x['last_commit'] }, 'committer_date'),
 
-    'stars' => infos.map { |x| x['stars'] || 0 }.reduce(&:+)
+    'stars' => infos.map { |x| x['stars'] || 0 }.sum
   }
 end
 
