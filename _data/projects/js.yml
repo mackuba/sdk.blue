@@ -59,7 +59,7 @@ repos:
     tags: ['bluesky appview']
 
   - urls:
-    - https://tangled.org/tylur.dev/prototypey
+    - https://tangled.org/tyler.fun/prototypey
     - https://github.com/tylersayshi/prototypey
     description: "atproto lexicon typescript toolkit"
     tags: ['lexicons']
