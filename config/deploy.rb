@@ -1,5 +1,5 @@
 set :application, "sdk.blue"
-set :repository, "https://github.com/mackuba/sdk.blue.git"
+set :repository, "https://tangled.org/mackuba.eu/sdk.blue"
 set :scm, :git
 set :keep_releases, 10
 set :use_sudo, false
