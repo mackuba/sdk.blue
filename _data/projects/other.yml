@@ -20,3 +20,7 @@ repos:
 
   - url: https://github.com/Arrow7000/atproto-fsharp
     tags: ['xrpc client', 'identity', 'firehose', 'oauth', 'server', 'feeds', 'lexicons', 'crypto', 'moderation']
+
+  - url: https://github.com/JBGruber/atrrr
+    tags: ['xrpc client']
+    license: 'MIT'
