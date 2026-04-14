@@ -6,16 +6,21 @@ class MetadataImport
   OUTPUT_FILE = '_data/metadata.yml'
   PROJECTS_DIR = '_data/projects'
 
-  def run(language: nil)
+  def run(languages: nil, project: nil)
+    languages = nil if languages.is_a?(Array) && languages.empty?
+    raise ArgumentError, 'Pass either languages or project, not both' if languages && project
+
     output_path = File.join(__dir__, '..', OUTPUT_FILE)
 
-    if language
+    if languages || project
       data = YAML.load_file(output_path, permitted_classes: [Time])
     else
       data = {}
     end
 
-    projects = Project.load_all(language)
+    projects = Project.load_all(languages: languages, project: project)
+    raise ArgumentError, "No project found for #{project}" if project && projects.empty?
+
     importers = [GithubImport.new, TangledImport.new]
 
     projects.each do |project|
