@@ -77,7 +77,7 @@ class TangledImport
     repos_cache = File.expand_path(File.join(__dir__, '..', 'tmp', 'repos'))
     FileUtils.mkdir_p(repos_cache)
 
-    dirname = "#{user}_#{repo}"
+    dirname = "#{user.gsub(':', '_')}_#{repo}"
     repo_folder = File.join(repos_cache, dirname)
 
     if Dir.exist?(repo_folder)

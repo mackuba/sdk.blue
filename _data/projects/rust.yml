@@ -17,56 +17,56 @@ repos:
   - url: https://github.com/graze-social/aip
     tags: ['oauth']
 
-  - url: https://tangled.org/ngerakines.me/atproto-crates
+  - url: https://tangled.org/did:plc:cbkjy5n7bk3ax2wplmtjofq2/atproto-crates
     description: "A comprehensive collection of Rust components for creating AT Protocol applications"
     tags: ['xrpc client', 'identity', 'firehose', 'oauth', 'server', 'parsing', 'crypto', 'lexicons']
 
   - urls:
-    - https://tangled.org/nonbinary.computer/jacquard/
+    - https://tangled.org/did:plc:yfvwmnlztr4dwkb7hwz55r2g/jacquard
     - https://github.com/rsform/jacquard
     tags: ['xrpc client', 'firehose', 'oauth', 'identity', 'lexicons', 'server', 'moderation']
 
-  - url: https://tangled.org/parakeet.at/plc-mirror/
+  - url: https://tangled.org/did:plc:rjo3yss3misbrdmpuc2eza6s/plc-mirror/
     license: "MIT / Apache"
     tags: ['plc mirror']
 
-  - url: https://tangled.org/parakeet.at/parakeet/
+  - url: https://tangled.org/did:plc:rjo3yss3misbrdmpuc2eza6s/parakeet
     description: "Rust-based Bluesky AppView aiming to implement most of the functionality required to support the Bluesky client"
     license: "MIT / Apache"
     tags: ['bluesky appview']
 
-  - url: https://tangled.org/slices.network/slices/
+  - url: https://tangled.org/did:plc:dzmqinfp7efnofbqg5npjmth/slices
 
   - url: https://github.com/graze-social/iftta
 
   - urls:
-    - https://tangled.org/microcosm.blue/Allegedly/
+    - https://tangled.org/did:plc:lulmyldiq4sb2ikags5sfb25/Allegedly
     - https://github.com/at-microcosm/allegedly
     license: "MIT / Apache"
     tags: ['plc mirror']
 
   - urls:
-    - https://tangled.org/microcosm.blue/microcosm-rs/
+    - https://tangled.org/did:plc:lulmyldiq4sb2ikags5sfb25/microcosm-rs/
     - https://github.com/at-microcosm/microcosm-rs
     tags: ['firehose', 'indexer']
 
-  - url: https://tangled.org/microcosm.blue/repo-stream/
+  - url: https://tangled.org/did:plc:lulmyldiq4sb2ikags5sfb25/repo-stream/
     license: "MIT / Apache"
     tags: ['parsing']
 
-  - url: https://tangled.org/smokesignal.events/smokesignal/
+  - url: https://tangled.org/did:plc:tgudj2fjm77pzkuawquqhsxm/smokesignal
     description: "A decentralized event and RSVP management application built for the AT Protocol ecosystem"
     tags: ['atproto app']
 
-  - url: https://tangled.org/smokesignal.events/quickdid
+  - url: https://tangled.org/did:plc:tgudj2fjm77pzkuawquqhsxm/quickdid
     description: "A high-performance AT Protocol identity resolution service written in Rust"
     license: MIT
     tags: ['identity']
 
-  - url: https://tangled.org/pds.dad/pds-gatekeeper
+  - url: https://tangled.org/did:plc:rnpkyqnmsw4ipey6eotbdnnf/pds-gatekeeper
     tags: ['pds']
 
-  - url: https://tangled.org/smokesignal.events/atproto-plc
+  - url: https://tangled.org/did:plc:tgudj2fjm77pzkuawquqhsxm/atproto-plc
     license: "MIT / Apache"
     tags: ['identity']
 
@@ -75,11 +75,11 @@ repos:
     description: "A modular(ish) jetstream consumer. Backed by Tungstenite."
     tags: ['firehose']
 
-  - url: https://tangled.org/tranquil.farm/tranquil-pds
+  - url: https://tangled.org/did:web:tranquil.tranquil.farm/tranquil-pds
     license: "AGPL-3.0"
     tags: ['pds']
 
-  - url: https://tangled.org/ptr.pet/hydrant
+  - url: https://tangled.org/did:plc:dfl62fgb7wtjj3fcbb72naae/hydrant
     tags: ['indexer']
 
   - url: https://github.com/gamesgamesgamesgamesgames/happyview

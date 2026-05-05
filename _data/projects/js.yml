@@ -1,7 +1,7 @@
 name: JavaScript
 repos:
   - urls:
-    - https://tangled.org/mary.my.id/atcute
+    - https://tangled.org/did:plc:ia76kvnndjutgedggx2ibrem/atcute
     - https://github.com/mary-ext/atcute
     tags: ['xrpc client', 'firehose', 'identity', 'oauth', 'server', 'lexicons', 'parsing', 'crypto']
 
@@ -35,7 +35,7 @@ repos:
     tags: ['bots']
 
   - urls:
-    - https://tangled.org/frontpage.fyi/frontpage
+    - https://tangled.org/did:plc:klmr76mpewpv7rtm3xgpzd7x/frontpage
     - https://github.com/frontpagefyi/frontpage
     tags: ['atproto app']
 
@@ -51,7 +51,7 @@ repos:
     tags: ['oauth']
 
   - urls:
-    - https://tangled.org/leaflet.pub/leaflet
+    - https://tangled.org/did:plc:btxrwcaeyodrap5mnjw2fvmz/leaflet
     - https://github.com/hyperlink-academy/leaflet
     tags: ['atproto app']
 
@@ -59,7 +59,7 @@ repos:
     tags: ['bluesky appview']
 
   - urls:
-    - https://tangled.org/tyler.fun/prototypey
+    - https://tangled.org/did:plc:4gt3dbmp4pydjiemob4konzm/prototypey
     - https://github.com/tylersayshi/prototypey
     description: "atproto lexicon typescript toolkit"
     tags: ['lexicons']
