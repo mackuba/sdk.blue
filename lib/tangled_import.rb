@@ -39,7 +39,7 @@ class TangledImport
     repo_folder = clone_repo(user, repo)
 
     data = repo_data_from_record(repo_record['value'])
-    data['user_login'] = user
+    data['user_login'] = user.start_with?('did:') && DID.new(user).document.get_verified_handle || user
     data['user_profile'] = "https://tangled.org/#{user}"
 
     if tag_info = get_latest_tag(repo_folder)
