@@ -1,6 +1,8 @@
 require_relative 'lib/metadata_import'
 require 'didkit'
 
+Encoding.default_external = 'UTF-8'
+
 task :fetch_metadata do
   languages = ENV['LANGUAGE'].to_s.split(',').map(&:strip).reject(&:empty?).uniq
   project = ENV['PROJECT']
