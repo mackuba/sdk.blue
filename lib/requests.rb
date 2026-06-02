@@ -17,8 +17,20 @@ module Requests
     { 'User-Agent' => "sdk.blue project info scanner (+https://sdk.blue) Ruby/#{RUBY_VERSION}"}
   end
 
-  def get_response(url)
-    Net::HTTP.get_response(URI(url), request_headers)
+  def get_response(url, retries: 0)
+    attempts = 0
+
+    loop do
+      response = Net::HTTP.get_response(URI(url), request_headers)
+
+      if response.is_a?(Net::HTTPInternalServerError) && attempts < retries
+        puts "#{url} returned #{response}, retrying"
+        attempts += 1
+        next
+      else
+        return response
+      end
+    end
   end
 end
 

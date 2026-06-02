@@ -160,14 +160,14 @@ class GithubImport
 
     search_url = URI("https://api.github.com/search/code")
     search_url.query = URI.encode_www_form(q: "repo:#{user}/#{repo} filename:package.json", per_page: 100)
-    response = get_response(search_url)
+    response = get_response(search_url, retries: 5)
     raise FetchError.new(response) unless response.code.to_i == 200
 
     json = JSON.parse(response.body)
     releases = []
 
     json['items'].each do |file|
-      response = get_response(file['url'])
+      response = get_response(file['url'], retries: 5)
       raise FetchError.new(response) unless response.code.to_i == 200
 
       details = JSON.parse(response.body)
