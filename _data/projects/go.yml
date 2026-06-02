@@ -52,7 +52,7 @@ repos:
     tags: ['firehose', 'indexer', 'plc mirror']
 
   - urls:
-    - https://tangled.org/did:plc:oisofpd7lj26yvgiivf3lxsi/cocoon
+    #- https://tangled.org/did:plc:oisofpd7lj26yvgiivf3lxsi/cocoon
     - https://github.com/haileyok/cocoon
     tags: ['pds']
 
