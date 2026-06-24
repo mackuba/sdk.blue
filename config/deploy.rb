@@ -1,28 +1,15 @@
+server "sdk.blue"
+
 set :application, "sdk.blue"
 set :repository, "https://tangled.org/mackuba.eu/sdk.blue"
-set :scm, :git
 set :keep_releases, 10
 set :use_sudo, false
-set :deploy_to, "/var/www/sdk.blue"
-set :deploy_via, :remote_cache
 set :public_children, []
-
-server "sdk.blue", :app, :web, :db, :primary => true
-
-before 'deploy:finalize_update', 'deploy:bundle_install'
 
 after 'deploy:update_code', 'deploy:link_shared'
 before 'deploy:create_symlink', 'deploy:build'
-after 'deploy', 'deploy:cleanup'
 
 namespace :deploy do
-  task :bundle_install do
-    run "cd #{release_path} && bundle config set --local deployment 'true'"
-    run "cd #{release_path} && bundle config set --local path '#{shared_path}/bundle'"
-    run "cd #{release_path} && bundle config set --local without 'development test'"
-    run "cd #{release_path} && bundle install --quiet"
-  end
-
   task :link_shared do
     run "mkdir -p #{release_path}/config"
     run "ln -s #{shared_path}/auth.yml #{release_path}/config/auth.yml"

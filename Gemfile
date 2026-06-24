@@ -17,12 +17,9 @@ gem 'logger'
 gem 'base64'
 
 group :development do
-  gem 'capistrano', '~> 2.0'
+  gem 'minestrone'
 
   # for net-ssh
   gem 'ed25519', '>= 1.2', '< 2.0'
   gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
-
-  # dependency of capistrano
-  gem 'benchmark'
 end
