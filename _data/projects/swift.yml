@@ -12,10 +12,6 @@ repos:
   - url: https://github.com/nnabeyang/swift-cbor
     tags: ['parsing']
 
-  - url: https://github.com/nnabeyang/swift-atproto-demo-firehose
-    description: "A demo application of Firehose using swift-atproto."
-    tags: ['firehose', 'parsing', 'example']
-
   - url: https://github.com/ChimeHQ/OAuthenticator
     tags: ['oauth']
 

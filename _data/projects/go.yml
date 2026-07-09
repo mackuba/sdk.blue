@@ -7,9 +7,6 @@ repos:
   - url: https://github.com/bluesky-social/jetstream
     tags: ['firehose', 'relay']
 
-  - url: https://github.com/uabluerail/indexer
-    tags: ['indexer']
-
   - url: https://github.com/CharlesDardaman/blueskyfirehose
     tags: ['firehose']
 
@@ -31,8 +28,6 @@ repos:
 
   - url: https://github.com/bsky-watch/labeler
     tags: ['moderation']
-
-  - url: https://github.com/bsky-watch/utils
 
   - url: https://github.com/bsky-watch/plc-mirror
     tags: ['plc mirror']
