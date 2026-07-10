@@ -11,9 +11,10 @@ class MetadataImport
     raise ArgumentError, 'Pass either languages or project, not both' if languages && project
 
     output_path = File.join(__dir__, '..', OUTPUT_FILE)
+    existing_data = YAML.load_file(output_path, permitted_classes: [Time])
 
     if languages || project
-      data = YAML.load_file(output_path, permitted_classes: [Time])
+      data = existing_data
     else
       data = {}
     end
@@ -27,7 +28,13 @@ class MetadataImport
       project.urls.each do |url|
         if imp = importers.detect { |i| i.url_matches?(url) }
           p url
-          data[url] = imp.import_url(url, project)
+
+          begin
+            data[url] = imp.import_url(url, project)
+          rescue Minisky::ServerErrorResponse => e
+            $stderr.puts "Error fetching #{url}: #{e}"
+            data[url] = existing_data[url]
+          end
         else
           puts "Skipping #{url}"
         end
