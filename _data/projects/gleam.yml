@@ -1,0 +1,13 @@
+name: Gleam
+repos:
+  - url: https://tangled.org/did:plc:bcgltzqazw5tb6k2g3ttenbj/goose
+    tags: ['firehose']
+
+  - url: https://tangled.org/did:plc:dvyyslcz7bicxdumlccviqyv/possum
+    tags: ['xrpc client', 'identity']
+
+  - url: https://tangled.org/did:plc:i5bdzkbmq5vnoyqiilwulmuq/alicia
+    tags: ['identity', 'lexicons', 'parsing']
+
+  - url: https://tangled.org/did:plc:r5bee2hexwjtmhkfmfu2tphx/gleam-atproto
+    tags: ['xrpc client', 'identity', 'oauth', 'lexicons', 'parsing']
