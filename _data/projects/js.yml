@@ -43,10 +43,6 @@ repos:
     description: "atproto OAuth Client for React Native"
     tags: ['oauth']
 
-  - url: https://github.com/colds-ky/bski
-    description: "Raw CAR/CBOR format parsing"
-    tags: ['parsing']
-
   - url: https://github.com/verdverm/authr
     tags: ['oauth']
 
