@@ -34,11 +34,11 @@ class TangledImport
       field: 'records'
     )
 
-    repo_record = repos.detect { |x| x['value']['name'] == repo }
+    repo_record = repos.detect { |x| x['value']['name'] == repo || x['uri'].split('/').last == repo }
 
     repo_folder = clone_repo(user, repo)
 
-    data = repo_data_from_record(repo_record['value'])
+    data = repo_data_from_record(repo_record)
     data['user_login'] = user.start_with?('did:') && DID.new(user).document.get_verified_handle || user
     data['user_profile'] = "https://tangled.org/#{user}"
 
@@ -50,7 +50,7 @@ class TangledImport
       data['license'] = license.spdx_id
     end
 
-    data['stars'] = get_stars(repo_record['uri'])
+    data['stars'] = get_stars(repo_record)
 
     if project.language == :js
       npm = get_npm_releases(repo_folder, project)
@@ -95,8 +95,8 @@ class TangledImport
 
   def repo_data_from_record(record)
     {
-      'name'        => record['name'],
-      'description' => record['description'],
+      'name'        => record['value']['name'] || record['uri'].split('/').last,
+      'description' => record['value']['description'],
     }
   end
 
@@ -124,9 +124,15 @@ class TangledImport
     end
   end
 
-  def get_stars(repo_record_uri)
+  def get_stars(repo_record)
+    stars = get_stars_for_target(repo_record['uri'], '.subject')
+    stars += get_stars_for_target(repo_record['value']['repoDid'], '.subject.did') if repo_record['value']['repoDid']
+    stars
+  end
+
+  def get_stars_for_target(target, path)
     url = URI("https://constellation.microcosm.blue/links/count")
-    url.query = URI.encode_www_form(target: repo_record_uri, collection: 'sh.tangled.feed.star', path: '.subject')
+    url.query = URI.encode_www_form(target: target, collection: 'sh.tangled.feed.star', path: path)
 
     response = get_response(url)
     raise FetchError.new(response) unless response.code.to_i == 200
