@@ -63,6 +63,9 @@ repos:
   - url: https://github.com/adonisjs-atproto/tap
     tags: ['firehose']
 
+  - url: https://github.com/adonisjs-atproto/oauth
+    tags: ['oauth']
+
   - url: https://github.com/ascorbic/cirrus
     license: "MIT"
     tags: ['pds']
