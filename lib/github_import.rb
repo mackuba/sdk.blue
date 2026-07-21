@@ -2,6 +2,7 @@ require_relative 'cargo_import'
 require_relative 'import_helpers'
 require_relative 'npm_import'
 require_relative 'requests'
+require_relative 'ruby_gems_import'
 
 require 'base64'
 require 'json'
@@ -38,14 +39,21 @@ class GithubImport
       data['last_tag'] = tag_info
     end
 
-    if ['JavaScript', 'TypeScript'].include?(repo_info['language'])
+    if project.language == :ruby
+      gems = get_rubygems_releases(user, repo, project)
+      last_update = gems.map { |gem| gem.last_release_time }.sort.last
+
+      if last_update && (release.nil? || last_update > release['published_at'])
+        data['last_release'] = { 'published_at' => last_update }
+      end
+    elsif project.language == :js
       npm = get_npm_releases(user, repo, project)
       last_update = npm.map { |n| n.last_release_time }.sort.last
 
       if last_update && (release.nil? || last_update > release['published_at'])
         data['last_release'] = { 'published_at' => last_update }
       end
-    elsif repo_info['language'] == 'Rust'
+    elsif project.language == :rust
       crates = get_cargo_releases(user, repo, project)
       last_update = crates.map { |c| c.last_release_time }.sort.last
 
@@ -217,6 +225,32 @@ class GithubImport
         if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == crate_repo_url || u == crate_homepage }
           releases << crate
         end
+      end
+    end
+
+    releases
+  end
+
+  def get_rubygems_releases(user, repo, project)
+    response = get_response("https://api.github.com/repos/#{user}/#{repo}/contents")
+    raise FetchError.new(response) unless response.code.to_i == 200
+
+    gemspec_files = JSON.parse(response.body)
+      .select { |file| file['type'] == 'file' && file['name'].end_with?('.gemspec') }
+      .sort_by { |file| file['name'] }
+
+    releases = []
+
+    gemspec_files.each do |gemspec_file|
+      response = get_response(gemspec_file['url'])
+      raise FetchError.new(response) unless response.code.to_i == 200
+
+      details = JSON.parse(response.body)
+      gemspec = RubyGemsImport::Gemspec.new(Base64.decode64(details['content']))
+      next unless gemspec.name
+
+      if gem = RubyGemsImport.new.get_gem_info(gemspec.name)
+        releases << gem
       end
     end
 

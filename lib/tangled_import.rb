@@ -2,6 +2,7 @@ require_relative 'cargo_import'
 require_relative 'import_helpers'
 require_relative 'npm_import'
 require_relative 'requests'
+require_relative 'ruby_gems_import'
 
 require 'didkit'
 require 'fileutils'
@@ -52,7 +53,15 @@ class TangledImport
 
     data['stars'] = get_stars(repo_record)
 
-    if project.language == :js
+    if project.language == :ruby
+      gems = get_rubygems_releases(repo_folder, project)
+      last_update = gems.map { |gem| gem.last_release_time }.sort.last
+      tag_date = tag_info && tag_info['committer_date']
+
+      if last_update && (tag_date.nil? || last_update > tag_date)
+        data['last_release'] = { 'published_at' => last_update }
+      end
+    elsif project.language == :js
       npm = get_npm_releases(repo_folder, project)
       last_update = npm.map { |n| n.last_release_time }.sort.last
 
@@ -189,5 +198,20 @@ class TangledImport
 
       releases
     end
+  end
+
+  def get_rubygems_releases(repo_folder, project)
+    releases = []
+
+    Dir[File.join(repo_folder, '*.gemspec')].sort.each do |gemspec_file|
+      gemspec = RubyGemsImport::Gemspec.new(File.read(gemspec_file))
+      next unless gemspec.name
+
+      if gem = RubyGemsImport.new.get_gem_info(gemspec.name)
+        releases << gem
+      end
+    end
+
+    releases
   end
 end
