@@ -31,3 +31,6 @@ repos:
 
   - url: https://tangled.org/did:plc:oio4hkxaop4ao4wz2pp3f4cr/tapfall
     tags: ['firehose']
+
+  - url: https://github.com/lasercatspro/atproto-ruby
+    tags: ['xrpc client', 'oauth']
