@@ -60,8 +60,7 @@ repos:
     description: "atproto lexicon typescript toolkit"
     tags: ['lexicons']
 
-  - url: https://github.com/ThisIsMissEm/adonisjs-atproto-tap
-    description: "This package provides a small Adonis.js provider and services for @atproto/tap"
+  - url: https://github.com/adonisjs-atproto/tap
     tags: ['firehose']
 
   - url: https://github.com/ascorbic/cirrus
