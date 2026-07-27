@@ -69,3 +69,6 @@ repos:
   - url: https://github.com/ascorbic/cirrus
     license: "MIT"
     tags: ['pds']
+
+  - url: https://github.com/grainsocial/grain
+    tags: ['atproto app']
