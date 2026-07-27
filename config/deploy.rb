@@ -3,8 +3,7 @@ server "sdk.blue"
 set :application, "sdk.blue"
 set :repository, "https://tangled.org/mackuba.eu/sdk.blue"
 set :keep_releases, 10
-set :use_sudo, false
-set :public_children, []
+set :default_environment, { 'RACK_ENV' => 'production' }
 
 after 'deploy:update_code', 'deploy:link_shared'
 before 'deploy:create_symlink', 'deploy:build'
@@ -18,20 +17,17 @@ namespace :deploy do
   end
 
   task :build do
-    run "cd #{release_path} && RACK_ENV=production bundle exec jekyll build"
-  end
-
-  task :migrate do
+    run "cd #{release_path} && bundle exec jekyll build"
   end
 
   task :fetch_metadata do
-    run "export RACK_ENV=production; cd #{current_path} && bundle exec rake fetch_metadata && bundle exec jekyll build"
+    run "cd #{current_path} && #{rake} fetch_metadata && bundle exec jekyll build"
   end
 
   task :with_fetch do
     update_code
 
-    run "cd #{release_path} && RACK_ENV=production bundle exec rake fetch_metadata"
+    run "cd #{release_path} && #{rake} fetch_metadata"
 
     create_symlink
     cleanup

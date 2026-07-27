@@ -116,7 +116,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.7.0)
     mercenary (0.4.0)
-    minestrone (0.0.1)
+    minestrone (0.0.2)
       benchmark (~> 0.5)
       highline
       logger
@@ -132,7 +132,7 @@ GEM
       net-ssh (>= 2.6.5, < 8.0.0)
     net-sftp (4.0.0)
       net-ssh (>= 5.0.0, < 8.0.0)
-    net-ssh (7.3.2)
+    net-ssh (7.3.3)
     nokogiri (1.19.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
