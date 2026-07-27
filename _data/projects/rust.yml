@@ -82,4 +82,6 @@ repos:
   - url: https://tangled.org/did:plc:dfl62fgb7wtjj3fcbb72naae/hydrant
     tags: ['indexer']
 
-  - url: https://github.com/gamesgamesgamesgamesgames/happyview
+  - urls:
+    - https://github.com/gamesgamesgamesgamesgames/happyview
+    - https://tangled.org/did:web:gamesgamesgamesgames.games/happyview
