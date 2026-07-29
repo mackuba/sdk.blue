@@ -91,11 +91,11 @@ class TangledImport
 
     if Dir.exist?(repo_folder)
       Dir.chdir(repo_folder) do
-        system('git pull -q')
+        system('git pull -q', exception: true)
       end
     else
       Dir.chdir(repos_cache) do
-        system("git clone https://tangled.org/#{user}/#{repo} #{dirname}")
+        system("git clone https://tangled.org/#{user}/#{repo} #{dirname}", exception: true)
       end
     end
 
