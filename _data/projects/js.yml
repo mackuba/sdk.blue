@@ -72,3 +72,5 @@ repos:
 
   - url: https://github.com/grainsocial/grain
     tags: ['atproto app']
+
+  - url: https://tangled.org/did:plc:d6w7z5r75qmea7edmat6yqzo/hatk

@@ -11,3 +11,6 @@ repos:
 
   - url: https://tangled.org/did:plc:r5bee2hexwjtmhkfmfu2tphx/gleam-atproto
     tags: ['xrpc client', 'identity', 'oauth', 'lexicons', 'parsing']
+
+  - url: https://tangled.org/did:plc:dzmqinfp7efnofbqg5npjmth/quickslice
+    tags: ['indexer']

@@ -79,9 +79,11 @@ repos:
     license: "AGPL-3.0"
     tags: ['pds']
 
-  - url: https://tangled.org/did:plc:dfl62fgb7wtjj3fcbb72naae/hydrant
+  - urls:
+    - https://tangled.org/did:plc:dfl62fgb7wtjj3fcbb72naae/hydrant
+    - https://github.com/90-008/hydrant
     tags: ['indexer']
 
   - urls:
-    - https://github.com/gamesgamesgamesgamesgames/happyview
     - https://tangled.org/did:web:gamesgamesgamesgames.games/happyview
+    - https://github.com/gamesgamesgamesgamesgames/happyview
