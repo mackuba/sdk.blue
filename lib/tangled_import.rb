@@ -91,7 +91,9 @@ class TangledImport
 
     if Dir.exist?(repo_folder)
       Dir.chdir(repo_folder) do
-        system('git pull -q', exception: true)
+        system('git fetch -q --prune origin', exception: true)
+        system('git reset -q --hard @{upstream}', exception: true)
+        system('git clean -ffd', exception: true)
       end
     else
       Dir.chdir(repos_cache) do
