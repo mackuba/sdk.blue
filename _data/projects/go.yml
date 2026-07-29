@@ -58,7 +58,7 @@ repos:
     - https://github.com/streamplace/streamplace
     tags: ['atproto app']
 
-  - url: https://did:plc:wshs7t2adsemcrrd4snkeqli/tangled.org/core
+  - url: https://tangled.org/did:plc:wshs7t2adsemcrrd4snkeqli/core
     name: 'tangled core'
     tags: ['atproto app']
 
