@@ -36,6 +36,7 @@ repos:
     tags: ['bluesky appview']
 
   - url: https://tangled.org/did:plc:dzmqinfp7efnofbqg5npjmth/slices
+    tags: ['app tooling']
 
   - url: https://github.com/graze-social/iftta
 
@@ -87,3 +88,4 @@ repos:
   - urls:
     - https://tangled.org/did:web:gamesgamesgamesgames.games/happyview
     - https://github.com/gamesgamesgamesgamesgames/happyview
+    tags: ['app tooling']
