@@ -68,3 +68,6 @@ repos:
   - url: https://github.com/hyphacoop/go-dasl
     tags: ['parsing']
     license: "MIT / Apache"
+
+  - url:  https://github.com/skywatch-bsky/labeler-relay
+    tags: ['moderation', 'relay']
