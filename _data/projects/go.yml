@@ -7,6 +7,9 @@ repos:
   - url: https://github.com/bluesky-social/jetstream
     tags: ['firehose', 'relay']
 
+  - url: https://github.com/bluesky-social/jetstream-legacy
+    tags: ['firehose', 'relay']
+
   - url: https://github.com/CharlesDardaman/blueskyfirehose
     tags: ['firehose']
 
