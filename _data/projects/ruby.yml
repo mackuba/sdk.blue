@@ -20,6 +20,11 @@ repos:
     - https://github.com/mackuba/skyfall
     tags: ['firehose']
 
+  - urls:
+    - https://tangled.org/did:plc:oio4hkxaop4ao4wz2pp3f4cr/oxygene
+    - https://github.com/mackuba/oxygene
+    tags: ['parsing']
+
   - url: https://github.com/mackuba/bluesky-feeds-rb
     tags: ['feeds', 'example']
 
