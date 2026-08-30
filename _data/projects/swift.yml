@@ -51,7 +51,7 @@ repos:
   - url: https://tangled.org/did:plc:ezer2uh5ki6jvrag5wc5oryk/CoreATProtocol
     description: "A Swift package providing the foundational networking layer for interacting with the AT Protocol"
     tags: ['xrpc client', 'identity', 'oauth']
-  
+
   - url: https://tangled.org/did:plc:ezer2uh5ki6jvrag5wc5oryk/bskyKit
     description: "A Swift SDK for building Bluesky clients on Apple platforms"
     tags: ['xrpc client']

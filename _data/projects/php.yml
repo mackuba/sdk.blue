@@ -1,4 +1,4 @@
-name: PHP 
+name: PHP
 repos:
   - url: https://github.com/edevsh/blueskysdk
     tags: ['xrpc client']
