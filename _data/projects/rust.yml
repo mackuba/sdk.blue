@@ -49,6 +49,7 @@ repos:
   - urls:
     - https://tangled.org/did:plc:lulmyldiq4sb2ikags5sfb25/microcosm-rs/
     - https://github.com/at-microcosm/microcosm-rs
+    license: "Mixed"
     tags: ['firehose', 'indexer']
 
   - url: https://tangled.org/did:plc:lulmyldiq4sb2ikags5sfb25/repo-stream/
