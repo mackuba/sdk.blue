@@ -12,10 +12,10 @@ repos:
   - url: https://github.com/nnabeyang/swift-cbor
     tags: ['parsing']
 
-  - url: https://github.com/ChimeHQ/OAuthenticator
+  - url: https://github.com/ATProtoKit/OAuthenticator
     tags: ['oauth']
 
-  - url: https://github.com/mattmassicotte/ATResolve
+  - url: https://github.com/ATProtoKit/ATResolve
     tags: ['identity']
 
   - url: https://github.com/mattmassicotte/ATAT
