@@ -21,12 +21,16 @@
     {% endif %}>
 
   <p class="title">
-    <a class="project-name" href="{{ include.project.url | default: include.project.urls[0] }}" target="_blank">{{ include.project.name | default: info.name }}</a>
+    <a class="project-name" href="{{ include.project.url | default: include.project.urls[0] }}"
+      target="_blank">{{ include.project.name | default: info.name }}</a>
+
     <span class="author"><span class="dot">•</span>
       <a href="{{ info.user_profile }}" target="_blank">{{ user }}</a></span>
+
     {% if info.user_login == "bluesky-social" %}
-      <img class="butterfly" src="/assets/images/logo.png" width="16">
+      <img class="butterfly" src="/assets/images/logo.png" width="16" height="16">
     {% endif %}
+
     <span class="stars">★ <span class="count">{{ info.stars }}</span></span>
   </p>
 
@@ -43,14 +47,24 @@
   {% endif %}
 
   <p class="stats">
-    <img src="/assets/images/release.png" width="15"> Last release: {{ last_release | date: "%b %Y" | default: "–" }}
+    <span class="property">
+      <img src="/assets/images/release.png" width="15"> Last release: {{ last_release | date: "%b %Y" | default: "–" }}
+    </span>
+
     <span class="separator">|</span>
-    <img src="/assets/images/commit.png" width="15"> Last commit: {{ info.last_commit.author_date | date: "%b %Y" }}
+
+    <span class="property">
+      <img src="/assets/images/commit.png" width="15"> Last commit: {{ info.last_commit.author_date | date: "%b %Y" }}
+    </span>
+
     <span class="separator">|</span>
-    {% if info.license or include.project.license %}
-      <span class="license">{{ include.project.license | default: info.license | replace: "-", " " }}</span>
-    {% else %}
-      <span class="license unknown">Unknown</span>
-    {% endif %}
+
+    <span class="property prop-license">
+      {% if info.license or include.project.license %}
+        <span class="license">{{ include.project.license | default: info.license | replace: "-", " " }}</span>
+      {% else %}
+        <span class="license unknown">Unknown</span>
+      {% endif %}
+    </span>
   </p>
 </li>

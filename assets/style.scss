@@ -228,3 +228,113 @@ footer {
     a:hover img { opacity: 0.75; }
   }
 }
+
+@media screen and (max-width: 480px) {
+  body {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  header {
+    margin-top: 30px;
+  }
+
+  nav {
+    margin-inline: 10px;
+    line-height: 160%;
+    margin-bottom: 25px;
+  }
+
+  #tag_cloud {
+    margin-inline: 10px;
+  }
+
+  #tangled {
+    position: absolute;
+  }
+
+  .language:last-child {
+    margin-bottom: 40px;
+  }
+
+  .projects {
+    width: auto;
+  }
+
+  .projects li {
+    margin: 20px 10px;
+    border-color: #aaa;
+
+    .title {
+      --separator-width: 1em;
+
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: var(--separator-width);
+      row-gap: 5px;
+      overflow: hidden;
+
+      margin-right: -5px;
+      padding-right: 44px;
+    }
+
+    .project-name {
+      min-width: 0;
+      margin-right: 0px;
+    }
+
+    .author {
+      position: relative;
+      flex: 0 0 auto;
+      white-space: nowrap;
+
+      margin-left: calc(-1 * var(--separator-width));
+      padding-left: var(--separator-width);
+    }
+
+    .author .dot {
+      position: absolute;
+      left: 0;
+      width: var(--separator-width);
+      text-align: center;
+    }
+
+    .butterfly {
+      order: -1;
+      align-self: center;
+      margin-right: -8px;
+      margin-top: 1px;
+    }
+
+    .stars .count {
+      margin-left: -1px;
+    }
+
+    .stats {
+      position: relative;
+    }
+
+    .property {
+      display: block; margin-bottom: 5px;
+    }
+
+    .prop-license {
+      position: absolute; top: 15px; right: 0;
+    }
+
+    .separator {
+      display: none;
+    }
+  }
+
+  footer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) and (prefers-color-scheme: dark) {
+  .projects li {
+    border-color: #888;
+  }
+}
