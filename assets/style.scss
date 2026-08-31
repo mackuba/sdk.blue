@@ -21,7 +21,7 @@ a {
 
 header {
   margin-top: 70px;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 
   h1 {
     font-size: 28pt;
@@ -39,6 +39,8 @@ header {
 
 nav {
   margin-bottom: 40px;
+  margin-inline: 15px;
+  line-height: 160%;
 
   a {
     margin-left: 2px;
