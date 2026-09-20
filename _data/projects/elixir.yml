@@ -12,3 +12,6 @@ repos:
 
   - url: https://tangled.org/did:plc:bvraa6gajy4tfr3eh2sisdkr/latch
     tags: ['xrpc client', 'oauth']
+
+  - url: https://tangled.org/did:plc:bvraa6gajy4tfr3eh2sisdkr/kite
+    tags: ['firehose']

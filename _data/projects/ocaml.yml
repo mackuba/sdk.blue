@@ -7,3 +7,6 @@ repos:
   - url: https://tangled.org/did:plc:g2nj54o5lr36vbtw55n7xktw/atproto
     license: "MIT"
     tags: ['xrpc client', 'firehose', 'identity', 'parsing', 'crypto', 'server', 'lexicons']
+
+  - url: https://github.com/david-engelmann/atproto
+    tags: ['identity', 'firehose', 'xrpc client', 'parsing', 'lexicons', 'oauth', 'moderation']
