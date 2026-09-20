@@ -90,3 +90,7 @@ repos:
     - https://tangled.org/did:web:gamesgamesgamesgames.games/happyview
     - https://github.com/gamesgamesgamesgamesgames/happyview
     tags: ['app tooling']
+
+  - urls:
+      - https://tangled.org/did:plc:p5yjdr64h7mk5l3kh6oszryk/porxie
+    tags: ["app tooling"]
