@@ -7,6 +7,8 @@ def latest_of(list, field)
 end
 
 def merge_infos(infos)
+  return nil if infos.empty?
+
   {
     'name'         => infos[0]['name'],
     'user_login'   => infos[0]['user_login'],
