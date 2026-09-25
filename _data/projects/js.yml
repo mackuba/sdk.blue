@@ -74,3 +74,6 @@ repos:
     tags: ['atproto app']
 
   - url: https://tangled.org/did:plc:d6w7z5r75qmea7edmat6yqzo/hatk
+
+  - url: https://tangled.org/did:plc:lrphxvv25aibthe7xoc2eeyy/atmosphereinabox
+    tags: ['app tooling']
