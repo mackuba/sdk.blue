@@ -1,8 +1,15 @@
 name: Zig
 repos:
   - url: https://tangled.org/did:plc:mkqt76xvfgxuemlwlx6ruc3w/zat
-    description: "AT Protocol building blocks for zig"
     tags: ['xrpc client', 'identity', 'firehose', 'parsing', 'crypto']
 
-  - url: https://tangled.org/did:plc:xbtmt2zjwlrfegqvch7fboei/zlay
+  - urls:
+      - https://tangled.org/did:plc:mkqt76xvfgxuemlwlx6ruc3w/zlay
+      - https://tangled.org/did:plc:xbtmt2zjwlrfegqvch7fboei/zlay
     tags: ['relay']
+
+  - url: https://tangled.org/did:plc:mkqt76xvfgxuemlwlx6ruc3w/jetstream
+    tags: ['firehose']
+
+  - url: https://tangled.org/did:plc:mkqt76xvfgxuemlwlx6ruc3w/zds
+    tags: ['pds']
