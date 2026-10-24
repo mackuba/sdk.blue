@@ -11,15 +11,8 @@ gem 'irb'
 group :jekyll_plugins do
 end
 
-# dependency of net-ssh and jekyll - remove when jekyll is updated
-gem 'logger'
-
 gem 'base64'
 
 group :development do
-  gem 'minestrone'
-
-  # for net-ssh
-  gem 'ed25519', '>= 1.2', '< 2.0'
-  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+  gem 'minestrone', '>= 0.0.3'
 end
