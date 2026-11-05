@@ -7,7 +7,7 @@ class Project
   def self.load_all(languages: nil, project: nil)
     return yaml_paths(languages)
       .map { |y|
-        lang = File.basename(y).gsub(/\.yml$/, '')
+        lang = File.basename(y).chomp('.yml')
         YAML.load(File.read(y))['repos'].map { |r| Project.new(r, lang) }
       }
       .flatten
@@ -44,6 +44,6 @@ class Project
   end
 
   def name
-    @yaml['name'] || urls.first.gsub(/\/$/, '').split('/').last
+    @yaml['name'] || urls.first.chomp('/').split('/').last
   end
 end
