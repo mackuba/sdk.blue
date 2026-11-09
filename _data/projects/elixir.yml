@@ -15,3 +15,6 @@ repos:
 
   - url: https://tangled.org/did:plc:bvraa6gajy4tfr3eh2sisdkr/kite
     tags: ['firehose']
+
+  - url: https://github.com/tobbbles/exosphere
+    tags: ['xrpc client', 'identity', 'firehose', 'oauth', 'lexicons', 'parsing', 'crypto']
