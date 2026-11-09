@@ -1,14 +1,7 @@
 name: Elixir
 repos:
-  - url: https://github.com/NetWatchInc/hexpds
-    tags: ['pds']
-
   - url: https://tangled.org/did:web:comet.sh/atex
     tags: ['xrpc client', 'identity', 'lexicons', 'oauth']
-
-  - url: https://github.com/RosterPub/Potable
-    description: "An Elixir implementation of core AT Protocol repository primitives"
-    tags: ['parsing', 'crypto']
 
   - url: https://tangled.org/did:plc:bvraa6gajy4tfr3eh2sisdkr/latch
     tags: ['xrpc client', 'oauth']
