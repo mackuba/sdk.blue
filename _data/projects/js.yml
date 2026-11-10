@@ -77,3 +77,6 @@ repos:
 
   - url: https://tangled.org/did:plc:lrphxvv25aibthe7xoc2eeyy/atmosphereinabox
     tags: ['app tooling']
+
+  - url: https://tangled.org/chadtmiller.com/pds.js
+    tags: ['pds']

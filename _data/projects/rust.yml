@@ -94,3 +94,9 @@ repos:
   - urls:
       - https://tangled.org/did:plc:p5yjdr64h7mk5l3kh6oszryk/porxie
     tags: ["app tooling"]
+
+  - url: https://github.com/jazware/vlpds
+    tags: ["pds"]
+
+  - url: https://github.com/threddyrex/rustproto
+    tags: ["pds"]

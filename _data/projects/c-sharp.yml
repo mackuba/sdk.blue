@@ -9,12 +9,12 @@ repos:
   - url: https://github.com/blowdart/idunno.Bluesky
     tags: ['xrpc client', 'firehose', 'oauth']
 
-  - url: https://github.com/PassiveModding/atompds
-    tags: ['pds']
-
   - url: https://github.com/alnkesq/AppViewLite
     tags: ['bluesky appview']
 
   - url: https://github.com/shinolabs/PinkSea
     license: "EUPL + CC0"
     tags: ['atproto app']
+
+  - url: https://github.com/threddyrex/dnproto
+    tags: ['pds']
