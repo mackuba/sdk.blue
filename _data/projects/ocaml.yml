@@ -5,7 +5,6 @@ repos:
     description: "An atproto PDS, along with an assortment of atproto-relevant libraries, written in OCaml"
 
   - url: https://tangled.org/did:plc:g2nj54o5lr36vbtw55n7xktw/atproto
-    license: "MIT"
     tags: ['xrpc client', 'firehose', 'identity', 'parsing', 'crypto', 'server', 'lexicons']
 
   - url: https://github.com/david-engelmann/atproto

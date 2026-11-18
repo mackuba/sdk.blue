@@ -39,7 +39,6 @@ repos:
     - https://github.com/whyrusleeping/konbini
     - https://tangled.org/did:plc:vpkhqolt662uhesyj6nxm7ys/konbini
     description: "A Cozy Bluesky AppView"
-    license: MIT
     tags: ['bluesky appview']
 
   - url: https://github.com/verdverm/atmunge
@@ -64,6 +63,7 @@ repos:
   - url: https://tangled.org/did:plc:wshs7t2adsemcrrd4snkeqli/core
     name: 'tangled core'
     tags: ['atproto app']
+    license: 'MIT'
 
   - url: https://github.com/hyphacoop/go-dasl
     tags: ['parsing']
