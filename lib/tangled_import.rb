@@ -26,22 +26,20 @@ class TangledImport
   def import_url(url, project)
     url =~ %r{^https://tangled\.org/@?([\w\-\.\:]+)/([\w\-\.]+)}
     user, repo = $1, $2
+    data = {}
 
     did = DID.resolve_handle(user)
-    sky = Minisky.new(did.document.pds_host, nil)
+    api = Minisky.new('api.tangled.org', nil)
 
-    repos = sky.fetch_all('com.atproto.repo.listRecords',
-      { repo: did, collection: 'sh.tangled.repo', limit: 100 },
-      field: 'records'
-    )
+    response = api.get_request('org.tangled.repo.getRepoByName', { owner: did, name: repo })
 
-    repo_record = repos.detect { |x| x['value']['name'] == repo || x['uri'].split('/').last == repo }
-
-    repo_folder = clone_repo(user, repo)
-
-    data = repo_data_from_record(repo_record)
-    data['user_login'] = user.start_with?('did:') && DID.new(user).document.get_verified_handle || user
+    data['name'] = response['value']['declaration']['name'] || repo
+    data['description'] = response['value']['description']
+    data['user_login'] = did.document.get_verified_handle
     data['user_profile'] = "https://tangled.org/#{user}"
+
+    repo_did = response['uri'].split('/')[2]
+    repo_folder = clone_repo(user, repo)
 
     if tag_info = get_latest_tag(repo_folder)
       data['last_tag'] = tag_info
@@ -51,7 +49,7 @@ class TangledImport
       data['license'] = license.spdx_id
     end
 
-    data['stars'] = get_stars(repo_record)
+    data['stars'] = api.get_request('org.tangled.feed.countStars', { subject: repo_did })['distinctAuthors']
 
     if project.language == :ruby
       gems = get_rubygems_releases(repo_folder, project)
@@ -104,13 +102,6 @@ class TangledImport
     repo_folder
   end
 
-  def repo_data_from_record(record)
-    {
-      'name'        => record['value']['name'] || record['uri'].split('/').last,
-      'description' => record['value']['description'],
-    }
-  end
-
   def get_latest_tag(repo_folder)
     Dir.chdir(repo_folder) do
       newest_tag_commit = %x(git rev-list --tags --max-count=1).strip
@@ -133,23 +124,6 @@ class TangledImport
         'author_date' => %x(git show -s --format=%aI).strip.then { |x| Time.parse(x) }
       }
     end
-  end
-
-  def get_stars(repo_record)
-    stars = get_stars_for_target(repo_record['uri'], '.subject')
-    stars += get_stars_for_target(repo_record['value']['repoDid'], '.subject.did') if repo_record['value']['repoDid']
-    stars
-  end
-
-  def get_stars_for_target(target, path)
-    url = URI("https://constellation.microcosm.blue/links/count")
-    url.query = URI.encode_www_form(target: target, collection: 'sh.tangled.feed.star', path: path)
-
-    response = get_response(url)
-    raise FetchError.new(response) unless response.code.to_i == 200
-
-    json = JSON.parse(response.body)
-    json['total']
   end
 
   def get_npm_releases(repo_folder, project)
