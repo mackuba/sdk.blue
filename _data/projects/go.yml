@@ -44,9 +44,7 @@ repos:
   - url: https://github.com/verdverm/atmunge
     tags: ['firehose', 'indexer', 'plc mirror']
 
-  - urls:
-    #- https://tangled.org/did:plc:oisofpd7lj26yvgiivf3lxsi/cocoon
-    - https://github.com/haileyok/cocoon
+  - url: https://github.com/haileyok/cocoon
     tags: ['pds']
 
   - url: https://github.com/whyrusleeping/cbor-gen
@@ -72,8 +70,10 @@ repos:
   - url:  https://github.com/skywatch-bsky/labeler-relay
     tags: ['moderation', 'relay']
 
-  - url: https://tangled.org/aly.codes/asterism
-    tags: ['indexer', 'app tooling']
+  - urls:
+    - https://tangled.org/aly.codes/asterism
+    - https://github.com/alyraffauf/asterism
+    tags: ['indexer']
 
   - url: https://tangled.org/edavis.dev/updraft
     tags: ['feeds']
