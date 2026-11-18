@@ -71,3 +71,9 @@ repos:
 
   - url:  https://github.com/skywatch-bsky/labeler-relay
     tags: ['moderation', 'relay']
+
+  - url: https://tangled.org/aly.codes/asterism
+    tags: ['indexer', 'app tooling']
+
+  - url: https://tangled.org/edavis.dev/updraft
+    tags: ['feeds']
