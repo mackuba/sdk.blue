@@ -23,9 +23,10 @@ module Requests
     loop do
       response = Net::HTTP.get_response(URI(url), request_headers)
 
-      if response.is_a?(Net::HTTPInternalServerError) && attempts < retries
+      if response.is_a?(Net::HTTPServerError) && attempts < retries
         puts "#{url} returned #{response}, retrying"
         attempts += 1
+        sleep 5
         next
       else
         return response
