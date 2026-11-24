@@ -14,6 +14,25 @@ class TangledImport
   include ImportHelpers
   include Requests
 
+  class Shell
+    def initialize(working_directory)
+      @working_directory = working_directory
+    end
+
+    def run(*command)
+      system(*command, chdir: @working_directory, exception: true)
+    end
+
+    def read(*command)
+      invocation = (command.length == 1) ? command.first : command
+      output = IO.popen(invocation, chdir: @working_directory, &:read)
+      status = $?
+      raise "Command failed (#{status}): #{command.join(' ')}" unless status.success?
+
+      output
+    end
+  end
+
   def initialize
     @user_cache = {}
   end
@@ -85,14 +104,14 @@ class TangledImport
     repo_folder = File.join(repos_cache, dirname)
 
     if Dir.exist?(repo_folder)
-      Dir.chdir(repo_folder) do
-        system('git fetch -q --prune origin', exception: true)
-        system('git reset -q --hard @{upstream}', exception: true)
-        system('git clean -ffd', exception: true)
+      run_in_shell(repo_folder) do |sh|
+        sh.run('git fetch -q --prune origin')
+        sh.run('git reset -q --hard @{upstream}')
+        sh.run('git clean -ffd')
       end
     else
-      Dir.chdir(repos_cache) do
-        system("git clone https://tangled.org/#{user}/#{repo} #{dirname}", exception: true)
+      run_in_shell(repos_cache) do |sh|
+        sh.run('git', 'clone', "https://tangled.org/#{user}/#{repo}", dirname)
       end
     end
 
@@ -100,77 +119,74 @@ class TangledImport
   end
 
   def get_latest_tag(repo_folder)
-    Dir.chdir(repo_folder) do
-      newest_tag_commit = %x(git rev-list --tags --max-count=1).strip
+    run_in_shell(repo_folder) do |sh|
+      newest_tag_commit = sh.read('git rev-list --tags --max-count=1').strip
       return nil if newest_tag_commit.empty?
 
-      newest_tag = %x(git tag --points-at "#{newest_tag_commit}" | head -1).strip
-      timestamp = %x(git show -s --format=%cI "#{newest_tag_commit}").strip
+      tags = sh.read('git', 'tag', '--points-at', newest_tag_commit)
+      timestamp = sh.read('git', 'show', '-s', '--format=%cI', newest_tag_commit)
 
       {
-        'name' => newest_tag,
-        'committer_date' => Time.parse(timestamp)
+        'name' => tags.lines.first.to_s.strip,
+        'committer_date' => Time.parse(timestamp.strip)
       }
     end
   end
 
   def get_latest_commit(repo_folder)
-    Dir.chdir(repo_folder) do
-      {
-        'committer_date' => %x(git show -s --format=%cI).strip.then { |x| Time.parse(x) },
-        'author_date' => %x(git show -s --format=%aI).strip.then { |x| Time.parse(x) }
-      }
-    end
+    dates = run_in_shell(repo_folder) { |sh| sh.read('git show -s --format=%cI%n%aI') }
+    committer_date, author_date = dates.lines.map(&:strip)
+
+    {
+      'committer_date' => Time.parse(committer_date),
+      'author_date' => Time.parse(author_date)
+    }
   end
 
   def get_npm_releases(repo_folder, project)
-    Dir.chdir(repo_folder) do
-      packages = %x(find . -name 'package.json').strip
-      releases = []
+    packages = run_in_shell(repo_folder) { |sh| sh.read('find . -name package.json') }
+    releases = []
 
-      packages.lines.each do |file|
-        contents = File.read(file.strip)
-        package = NPMImport::PackageJSON.new(contents)
+    packages.each_line do |file|
+      contents = File.read(File.join(repo_folder, file.chomp))
+      package = NPMImport::PackageJSON.new(contents)
 
-        next if package.version.nil? || package.private?
+      next if package.version.nil? || package.private?
 
-        if npm = NPMImport.new.get_package_info(package.name)
-          package_repo_url = normalize_repo_url(npm.repository_url)
-          package_homepage = normalize_repo_url(npm.homepage_url)
+      if npm = NPMImport.new.get_package_info(package.name)
+        package_repo_url = normalize_repo_url(npm.repository_url)
+        package_homepage = normalize_repo_url(npm.homepage_url)
 
-          if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == package_repo_url || u == package_homepage }
-            releases << npm
-          end
+        if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == package_repo_url || u == package_homepage }
+          releases << npm
         end
       end
-
-      releases
     end
+
+    releases
   end
 
   def get_cargo_releases(repo_folder, project)
-    Dir.chdir(repo_folder) do
-      packages = %x(find . -name 'Cargo.toml').strip
-      releases = []
+    packages = run_in_shell(repo_folder) { |sh| sh.read('find . -name Cargo.toml') }
+    releases = []
 
-      packages.lines.each do |file|
-        contents = File.read(file.strip)
-        package = CargoImport::CargoToml.new(contents)
+    packages.each_line do |file|
+      contents = File.read(File.join(repo_folder, file.chomp))
+      package = CargoImport::CargoToml.new(contents)
 
-        next if package.name.nil?
+      next if package.name.nil?
 
-        if crate = CargoImport.new.get_crate_info(package.name)
-          crate_repo_url = normalize_repo_url(crate.repository_url)
-          crate_homepage = normalize_repo_url(crate.homepage_url)
+      if crate = CargoImport.new.get_crate_info(package.name)
+        crate_repo_url = normalize_repo_url(crate.repository_url)
+        crate_homepage = normalize_repo_url(crate.homepage_url)
 
-          if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == crate_repo_url || u == crate_homepage }
-            releases << crate
-          end
+        if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == crate_repo_url || u == crate_homepage }
+          releases << crate
         end
       end
-
-      releases
     end
+
+    releases
   end
 
   def get_rubygems_releases(repo_folder, project)
@@ -190,6 +206,10 @@ class TangledImport
 
 
   private
+
+  def run_in_shell(directory)
+    yield Shell.new(directory)
+  end
 
   def make_xrpc_request(method, params)
     uri = URI("https://api.tangled.org/xrpc/#{method}")
