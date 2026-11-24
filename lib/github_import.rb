@@ -164,8 +164,6 @@ class GithubImport
   end
 
   def get_npm_releases(user, repo, project)
-    sleep 5
-
     search_url = URI("https://api.github.com/search/code")
     search_url.query = URI.encode_www_form(q: "repo:#{user}/#{repo} filename:package.json", per_page: 100)
     response = get_response(search_url, retries: 5)
@@ -198,8 +196,6 @@ class GithubImport
   end
 
   def get_cargo_releases(user, repo, project)
-    sleep 5
-
     search_url = URI("https://api.github.com/search/code")
     search_url.query = URI.encode_www_form(q: "repo:#{user}/#{repo} filename:Cargo.toml", per_page: 100)
     response = get_response(search_url)
