@@ -31,7 +31,9 @@ repos:
   - url: https://github.com/lasercatspro/omniauth-atproto
     tags: ['oauth']
 
-  - url: https://github.com/jhuckabee/atproto_auth
+  - urls:
+    - https://tangled.org/did:plc:oio4hkxaop4ao4wz2pp3f4cr/authproto
+    - https://github.com/mackuba/authproto
     tags: ['oauth']
 
   - url: https://tangled.org/did:plc:oio4hkxaop4ao4wz2pp3f4cr/tapfall
