@@ -71,7 +71,7 @@ module Requests
       retry_at = Time.at(reset.to_i) if reset&.match?(/\A\d+\z/)
     end
 
-    retry_at ? [(retry_at - Time.now).ceil, 0].max : 60
+    retry_at ? (retry_at + 1 - Time.now).clamp(1..) : 60
   end
 
   def parse_retry_date(value)
