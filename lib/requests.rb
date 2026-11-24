@@ -17,7 +17,7 @@ module Requests
     { 'User-Agent' => "sdk.blue project info scanner (+https://sdk.blue) Ruby/#{RUBY_VERSION}"}
   end
 
-  def get_response(url, retries: 0)
+  def get_response(url, retries: 3)
     attempts = 0
 
     loop do
