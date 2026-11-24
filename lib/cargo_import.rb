@@ -52,7 +52,6 @@ class CargoImport
   end
 
   def get_crate_info(name)
-    sleep 1
     response = @@cache[name] || get_response("https://crates.io/api/v1/crates/#{name}")
     @@cache[name] = response
 

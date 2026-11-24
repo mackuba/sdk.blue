@@ -4,6 +4,8 @@ require 'time'
 require 'uri'
 require 'yaml'
 
+require_relative 'rate_limiter'
+
 module Requests
   AUTH_FILE = 'config/auth.yml'
 
@@ -23,6 +25,7 @@ module Requests
     attempts = 0
 
     loop do
+      RateLimiter.request(uri)
       response = Net::HTTP.get_response(uri, request_headers)
       return response if attempts >= retries
 
