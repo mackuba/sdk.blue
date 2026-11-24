@@ -8,7 +8,6 @@ require 'didkit'
 require 'fileutils'
 require 'json'
 require 'licensee'
-require 'minisky'
 require 'time'
 
 class TangledImport
@@ -29,9 +28,7 @@ class TangledImport
     data = {}
 
     did = DID.resolve_handle(user)
-    api = Minisky.new('api.tangled.org', nil)
-
-    response = api.get_request('org.tangled.repo.getRepoByName', { owner: did, name: repo })
+    response = make_xrpc_request('org.tangled.repo.getRepoByName', { owner: did.did, name: repo })
 
     data['name'] = response['value']['declaration']['name'] || repo
     data['description'] = response['value']['description']
@@ -49,7 +46,7 @@ class TangledImport
       data['license'] = license.spdx_id
     end
 
-    data['stars'] = api.get_request('org.tangled.feed.countStars', { subject: repo_did })['distinctAuthors']
+    data['stars'] = make_xrpc_request('org.tangled.feed.countStars', { subject: repo_did })['distinctAuthors']
 
     if project.language == :ruby
       gems = get_rubygems_releases(repo_folder, project)
@@ -189,5 +186,18 @@ class TangledImport
     end
 
     releases
+  end
+
+
+  private
+
+  def make_xrpc_request(method, params)
+    uri = URI("https://api.tangled.org/xrpc/#{method}")
+    uri.query = URI.encode_www_form(params)
+
+    response = get_response(uri)
+    raise FetchError.new(response) unless response.is_a?(Net::HTTPSuccess)
+
+    JSON.parse(response.body)
   end
 end

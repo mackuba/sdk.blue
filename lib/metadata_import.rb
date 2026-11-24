@@ -31,7 +31,7 @@ class MetadataImport
 
           begin
             data[url] = imp.import_url(url, project)
-          rescue Minisky::ServerErrorResponse => e
+          rescue FetchError => e
             $stderr.puts "Error fetching #{url}: #{e}"
             data[url] = existing_data[url]
           end
