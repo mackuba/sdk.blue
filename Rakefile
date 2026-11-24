@@ -6,9 +6,10 @@ Encoding.default_external = 'UTF-8'
 task :fetch_metadata do
   languages = ENV['LANGUAGE'].to_s.split(',').map(&:strip).reject(&:empty?).uniq
   project = ENV['PROJECT']
+  threads = ENV['THREADS']&.to_i || 1
 
   import = MetadataImport.new
-  import.run(languages: languages, project: project)
+  import.run(languages: languages, project: project, threads: threads)
 end
 
 task :normalize_tangled_urls do
