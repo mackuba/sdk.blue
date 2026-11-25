@@ -39,27 +39,16 @@ class GithubImport
       data['last_tag'] = tag_info
     end
 
-    if project.language == :ruby
-      gems = get_rubygems_releases(user, repo, project)
-      last_update = gems.map { |gem| gem.last_release_time }.sort.last
-
-      if last_update && (release.nil? || last_update > release['published_at'])
-        data['last_release'] = { 'published_at' => last_update }
-      end
-    elsif project.language == :js
-      npm = get_npm_releases(user, repo, project)
-      last_update = npm.map { |n| n.last_release_time }.sort.last
-
-      if last_update && (release.nil? || last_update > release['published_at'])
-        data['last_release'] = { 'published_at' => last_update }
-      end
-    elsif project.language == :rust
-      crates = get_cargo_releases(user, repo, project)
-      last_update = crates.map { |c| c.last_release_time }.sort.last
-
-      if last_update && (release.nil? || last_update > release['published_at'])
-        data['last_release'] = { 'published_at' => last_update }
-      end
+    case project.language
+    when :ruby
+      gem = get_rubygems_releases(user, repo, project).first
+      update_last_release(data, gem)
+    when :js
+      npm = get_npm_releases(user, repo, project).first
+      update_last_release(data, npm)
+    when :rust
+      crate = get_cargo_releases(user, repo, project).first
+      update_last_release(data, crate)
     end
 
     data['last_commit'] = get_latest_commit(user, repo)
@@ -69,6 +58,17 @@ class GithubImport
     end
 
     data
+  end
+
+  def update_last_release(data, package)
+    return if package.nil?
+
+    last_update = package.last_release_time
+    release = data['last_release']
+
+    if release.nil? || last_update > release['published_at']
+      data['last_release'] = { 'published_at' => last_update }
+    end
   end
 
   def get_repo_info(user, repo)
@@ -192,7 +192,7 @@ class GithubImport
       end
     end
 
-    releases
+    releases.sort_by(&:last_release_time).reverse
   end
 
   def get_cargo_releases(user, repo, project)
@@ -224,7 +224,7 @@ class GithubImport
       end
     end
 
-    releases
+    releases.sort_by(&:last_release_time).reverse
   end
 
   def get_rubygems_releases(user, repo, project)
@@ -250,6 +250,6 @@ class GithubImport
       end
     end
 
-    releases
+    releases.sort_by(&:last_release_time).reverse
   end
 end

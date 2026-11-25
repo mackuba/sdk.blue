@@ -47,6 +47,19 @@ module ClonedRepo
     end
   end
 
+  def get_license(repo_folder)
+    license = Licensee.license(repo_folder)
+    return nil if license.nil? || license.spdx_id == 'NOASSERTION'
+
+    license
+  end
+
+  def update_last_release(data, package)
+    return if package.nil?
+
+    data['last_release'] = { 'published_at' => package.last_release_time }
+  end
+
   def get_latest_commit(repo_folder)
     dates = run_in_shell(repo_folder) { |sh| sh.read('git show -s --format=%cI%n%aI') }
     committer_date, author_date = dates.lines.map(&:strip)
@@ -77,7 +90,7 @@ module ClonedRepo
       end
     end
 
-    releases
+    releases.sort_by(&:last_release_time).reverse
   end
 
   def get_cargo_releases(repo_folder, project)
@@ -100,7 +113,7 @@ module ClonedRepo
       end
     end
 
-    releases
+    releases.sort_by(&:last_release_time).reverse
   end
 
   def get_rubygems_releases(repo_folder, project)
@@ -115,7 +128,7 @@ module ClonedRepo
       end
     end
 
-    releases
+    releases.sort_by(&:last_release_time).reverse
   end
 
   def run_in_shell(directory)

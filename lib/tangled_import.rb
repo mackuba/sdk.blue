@@ -39,34 +39,22 @@ class TangledImport
       data['last_tag'] = tag_info
     end
 
-    if (license = Licensee.license(repo_folder)) && license.spdx_id != 'NOASSERTION'
+    if license = get_license(repo_folder)
       data['license'] = license.spdx_id
     end
 
     data['stars'] = make_xrpc_request('org.tangled.feed.countStars', { subject: repo_did })['distinctAuthors']
 
-    if project.language == :ruby
-      gems = get_rubygems_releases(repo_folder, project)
-      last_update = gems.map { |gem| gem.last_release_time }.sort.last
-      tag_date = tag_info && tag_info['committer_date']
-
-      if last_update && (tag_date.nil? || last_update > tag_date)
-        data['last_release'] = { 'published_at' => last_update }
-      end
-    elsif project.language == :js
-      npm = get_npm_releases(repo_folder, project)
-      last_update = npm.map { |n| n.last_release_time }.sort.last
-
-      if last_update
-        data['last_release'] = { 'published_at' => last_update }
-      end
-    elsif project.language == :rust
-      crates = get_cargo_releases(repo_folder, project)
-      last_update = crates.map { |c| c.last_release_time }.sort.last
-
-      if last_update
-        data['last_release'] = { 'published_at' => last_update }
-      end
+    case project.language
+    when :ruby
+      gem = get_rubygems_releases(repo_folder, project).first
+      update_last_release(data, gem)
+    when :js
+      npm = get_npm_releases(repo_folder, project).first
+      update_last_release(data, npm)
+    when :rust
+      crate = get_cargo_releases(repo_folder, project).first
+      update_last_release(data, crate)
     end
 
     data['last_commit'] = get_latest_commit(repo_folder)
