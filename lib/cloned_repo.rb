@@ -71,11 +71,11 @@ module ClonedRepo
   end
 
   def get_npm_releases(repo_folder, project)
-    packages = run_in_shell(repo_folder) { |sh| sh.read('find . -name package.json') }
+    packages = Dir.glob(File.join(repo_folder, '**', 'package.json'))
     releases = []
 
-    packages.each_line do |file|
-      contents = File.read(File.join(repo_folder, file.chomp))
+    packages.each do |file|
+      contents = File.read(file)
       package = NPMImport::PackageJSON.new(contents)
 
       next if package.version.nil? || package.private?
@@ -94,11 +94,11 @@ module ClonedRepo
   end
 
   def get_cargo_releases(repo_folder, project)
-    packages = run_in_shell(repo_folder) { |sh| sh.read('find . -name Cargo.toml') }
+    packages = Dir.glob(File.join(repo_folder, '**', 'Cargo.toml'))
     releases = []
 
-    packages.each_line do |file|
-      contents = File.read(File.join(repo_folder, file.chomp))
+    packages.each do |file|
+      contents = File.read(file)
       package = CargoImport::CargoToml.new(contents)
 
       next if package.name.nil?
@@ -119,7 +119,7 @@ module ClonedRepo
   def get_rubygems_releases(repo_folder, project)
     releases = []
 
-    Dir[File.join(repo_folder, '*.gemspec')].sort.each do |gemspec_file|
+    Dir.glob(File.join(repo_folder, '**', '*.gemspec')).each do |gemspec_file|
       gemspec = RubyGemsImport::Gemspec.new(File.read(gemspec_file))
       next unless gemspec.name
 
