@@ -3,6 +3,9 @@ repos:
   - url: https://github.com/drasticactions/FishyFlip
     tags: ['xrpc client', 'firehose', 'oauth']
 
+  - url: https://github.com/drasticactions/CarpaNet
+    tags: ['xrpc client', 'firehose', 'identity', 'oauth', 'parsing', 'lexicons']
+
   - url: https://github.com/a-gubskiy/X.Bluesky
     tags: ['xrpc client']
 
