@@ -1,3 +1,4 @@
+require_relative 'import_helpers'
 require_relative 'requests'
 
 require 'json'
@@ -5,6 +6,7 @@ require 'time'
 require 'uri'
 
 class RubyGemsImport
+  include ImportHelpers
   include Requests
 
   class Gemspec
@@ -31,6 +33,14 @@ class RubyGemsImport
     def last_release_time
       Time.parse(@json['version_created_at'])
     end
+
+    def homepage_url
+      @json['homepage_uri']
+    end
+
+    def repository_url
+      @json['source_code_uri']
+    end
   end
 
   def initialize
@@ -49,5 +59,20 @@ class RubyGemsImport
     else
       raise FetchError.new(response)
     end
+  end
+
+  def get_releases(gem_names, project_urls)
+    repo_urls = project_urls.map { |url| normalize_repo_url(url) }
+    releases = []
+
+    gem_names.each do |name|
+      if gem = get_gem_info(name)
+        if package_matches_repo?(gem, repo_urls)
+          releases << gem
+        end
+      end
+    end
+
+    releases.sort_by(&:last_release_time).reverse
   end
 end

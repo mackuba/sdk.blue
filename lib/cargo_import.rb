@@ -1,8 +1,10 @@
+require_relative 'import_helpers'
 require_relative 'requests'
 require 'json'
 require 'time'
 
 class CargoImport
+  include ImportHelpers
   include Requests
 
   class CargoToml
@@ -62,5 +64,20 @@ class CargoImport
     else
       raise FetchError.new(response)
     end
+  end
+
+  def get_releases(package_names, project_urls)
+    repo_urls = project_urls.map { |url| normalize_repo_url(url) }
+    releases = []
+
+    package_names.each do |name|
+      if crate = get_crate_info(name)
+        if package_matches_repo?(crate, repo_urls)
+          releases << crate
+        end
+      end
+    end
+
+    releases.sort_by(&:last_release_time).reverse
   end
 end

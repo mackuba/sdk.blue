@@ -1,8 +1,10 @@
+require_relative 'import_helpers'
 require_relative 'requests'
 require 'json'
 require 'time'
 
 class NPMImport
+  include ImportHelpers
   include Requests
 
   class PackageJSON
@@ -69,5 +71,20 @@ class NPMImport
     else
       raise FetchError.new(response)
     end
+  end
+
+  def get_releases(package_names, project_urls)
+    repo_urls = project_urls.map { |url| normalize_repo_url(url) }
+    releases = []
+
+    package_names.each do |name|
+      if npm = get_package_info(name)
+        if package_matches_repo?(npm, repo_urls)
+          releases << npm
+        end
+      end
+    end
+
+    releases.sort_by(&:last_release_time).reverse
   end
 end

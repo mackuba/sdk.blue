@@ -164,67 +164,27 @@ class GithubImport
   end
 
   def get_npm_releases(user, repo, project)
-    search_url = URI("https://api.github.com/search/code")
-    search_url.query = URI.encode_www_form(q: "repo:#{user}/#{repo} filename:package.json", per_page: 100)
-    response = get_response(search_url, retries: 5)
-    raise FetchError.new(response) unless response.code.to_i == 200
+    files = find_package_configs(user, repo, 'package.json')
 
-    json = JSON.parse(response.body)
-    releases = []
-
-    json['items'].each do |file|
-      response = get_response(file['url'], retries: 5)
-      raise FetchError.new(response) unless response.code.to_i == 200
-
-      details = JSON.parse(response.body)
-      contents = Base64.decode64(details['content'])
-      package = NPMImport::PackageJSON.new(contents)
-
+    package_names = files.filter_map do |file|
+      package = NPMImport::PackageJSON.new(file[:contents])
       next if package.version.nil? || package.private?
 
-      if npm = NPMImport.new.get_package_info(package.name)
-        package_repo_url = normalize_repo_url(npm.repository_url)
-        package_homepage = normalize_repo_url(npm.homepage_url)
-
-        if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == package_repo_url || u == package_homepage }
-          releases << npm
-        end
-      end
+      package.name
     end
 
-    releases.sort_by(&:last_release_time).reverse
+    NPMImport.new.get_releases(package_names, project.urls)
   end
 
   def get_cargo_releases(user, repo, project)
-    search_url = URI("https://api.github.com/search/code")
-    search_url.query = URI.encode_www_form(q: "repo:#{user}/#{repo} filename:Cargo.toml", per_page: 100)
-    response = get_response(search_url, retries: 5)
-    raise FetchError.new(response) unless response.code.to_i == 200
+    files = find_package_configs(user, repo, 'Cargo.toml')
 
-    json = JSON.parse(response.body)
-    releases = []
-
-    json['items'].each do |file|
-      response = get_response(file['url'], retries: 5)
-      raise FetchError.new(response) unless response.code.to_i == 200
-
-      details = JSON.parse(response.body)
-      contents = Base64.decode64(details['content'])
-      package = CargoImport::CargoToml.new(contents)
-
-      next if package.name.nil?
-
-      if crate = CargoImport.new.get_crate_info(package.name)
-        crate_repo_url = normalize_repo_url(crate.repository_url)
-        crate_homepage = normalize_repo_url(crate.homepage_url)
-
-        if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == crate_repo_url || u == crate_homepage }
-          releases << crate
-        end
-      end
+    package_names = files.filter_map do |file|
+      package = CargoImport::CargoToml.new(file[:contents])
+      package.name
     end
 
-    releases.sort_by(&:last_release_time).reverse
+    CargoImport.new.get_releases(package_names, project.urls)
   end
 
   def get_rubygems_releases(user, repo, project)
@@ -235,21 +195,34 @@ class GithubImport
       .select { |file| file['type'] == 'file' && file['name'].end_with?('.gemspec') }
       .sort_by { |file| file['name'] }
 
-    releases = []
-
-    gemspec_files.each do |gemspec_file|
+    gem_names = gemspec_files.filter_map do |gemspec_file|
       response = get_response(gemspec_file['url'])
       raise FetchError.new(response) unless response.code.to_i == 200
 
       details = JSON.parse(response.body)
       gemspec = RubyGemsImport::Gemspec.new(Base64.decode64(details['content']))
-      next unless gemspec.name
-
-      if gem = RubyGemsImport.new.get_gem_info(gemspec.name)
-        releases << gem
-      end
+      gemspec.name
     end
 
-    releases.sort_by(&:last_release_time).reverse
+    RubyGemsImport.new.get_releases(gem_names, project.urls)
+  end
+
+  def find_package_configs(user, repo, filename)
+    search_url = URI('https://api.github.com/search/code')
+    search_url.query = URI.encode_www_form(q: "repo:#{user}/#{repo} filename:#{filename}", per_page: 100)
+    response = get_response(search_url, retries: 5)
+    raise FetchError.new(response) unless response.code.to_i == 200
+
+    json = JSON.parse(response.body)
+
+    json['items'].map do |file|
+      response = get_response(file['url'], retries: 5)
+      raise FetchError.new(response) unless response.code.to_i == 200
+
+      details = JSON.parse(response.body)
+      contents = Base64.decode64(details['content'])
+
+      { name: file['name'], path: file['path'], contents: contents }
+    end
   end
 end

@@ -71,64 +71,32 @@ module ClonedRepo
   end
 
   def get_npm_releases(repo_folder, project)
-    packages = Dir.glob(File.join(repo_folder, '**', 'package.json'))
-    releases = []
-
-    packages.each do |file|
-      contents = File.read(file)
-      package = NPMImport::PackageJSON.new(contents)
-
+    package_names = Dir.glob(File.join(repo_folder, '**', 'package.json')).filter_map do |file|
+      package = NPMImport::PackageJSON.new(File.read(file))
       next if package.version.nil? || package.private?
 
-      if npm = NPMImport.new.get_package_info(package.name)
-        package_repo_url = normalize_repo_url(npm.repository_url)
-        package_homepage = normalize_repo_url(npm.homepage_url)
-
-        if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == package_repo_url || u == package_homepage }
-          releases << npm
-        end
-      end
+      package.name
     end
 
-    releases.sort_by(&:last_release_time).reverse
+    NPMImport.new.get_releases(package_names, project.urls)
   end
 
   def get_cargo_releases(repo_folder, project)
-    packages = Dir.glob(File.join(repo_folder, '**', 'Cargo.toml'))
-    releases = []
-
-    packages.each do |file|
-      contents = File.read(file)
-      package = CargoImport::CargoToml.new(contents)
-
-      next if package.name.nil?
-
-      if crate = CargoImport.new.get_crate_info(package.name)
-        crate_repo_url = normalize_repo_url(crate.repository_url)
-        crate_homepage = normalize_repo_url(crate.homepage_url)
-
-        if project.urls.map { |u| normalize_repo_url(u) }.any? { |u| u == crate_repo_url || u == crate_homepage }
-          releases << crate
-        end
-      end
+    package_names = Dir.glob(File.join(repo_folder, '**', 'Cargo.toml')).filter_map do |file|
+      package = CargoImport::CargoToml.new(File.read(file))
+      package.name
     end
 
-    releases.sort_by(&:last_release_time).reverse
+    CargoImport.new.get_releases(package_names, project.urls)
   end
 
   def get_rubygems_releases(repo_folder, project)
-    releases = []
-
-    Dir.glob(File.join(repo_folder, '**', '*.gemspec')).each do |gemspec_file|
-      gemspec = RubyGemsImport::Gemspec.new(File.read(gemspec_file))
-      next unless gemspec.name
-
-      if gem = RubyGemsImport.new.get_gem_info(gemspec.name)
-        releases << gem
-      end
+    gem_names = Dir.glob(File.join(repo_folder, '**', '*.gemspec')).filter_map do |file|
+      gemspec = RubyGemsImport::Gemspec.new(File.read(file))
+      gemspec.name
     end
 
-    releases.sort_by(&:last_release_time).reverse
+    RubyGemsImport.new.get_releases(gem_names, project.urls)
   end
 
   def run_in_shell(directory)
