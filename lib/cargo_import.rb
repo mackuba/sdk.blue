@@ -70,7 +70,7 @@ class CargoImport
     repo_urls = project_urls.map { |url| normalize_repo_url(url) }
     releases = []
 
-    package_names.each do |name|
+    package_names.uniq.each do |name|
       if crate = get_crate_info(name)
         if package_matches_repo?(crate, repo_urls)
           releases << crate

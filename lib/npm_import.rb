@@ -77,7 +77,7 @@ class NPMImport
     repo_urls = project_urls.map { |url| normalize_repo_url(url) }
     releases = []
 
-    package_names.each do |name|
+    package_names.uniq.each do |name|
       if npm = get_package_info(name)
         if package_matches_repo?(npm, repo_urls)
           releases << npm

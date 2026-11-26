@@ -65,7 +65,7 @@ class RubyGemsImport
     repo_urls = project_urls.map { |url| normalize_repo_url(url) }
     releases = []
 
-    gem_names.each do |name|
+    gem_names.uniq.each do |name|
       if gem = get_gem_info(name)
         if package_matches_repo?(gem, repo_urls)
           releases << gem

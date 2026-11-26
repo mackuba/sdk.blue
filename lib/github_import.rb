@@ -1,4 +1,5 @@
 require_relative 'cargo_import'
+require_relative 'hex_import'
 require_relative 'import_helpers'
 require_relative 'npm_import'
 require_relative 'requests'
@@ -49,6 +50,12 @@ class GithubImport
     when :rust
       crate = get_cargo_releases(user, repo, project).first
       update_last_release(data, crate)
+    when :gleam
+      package = get_gleam_releases(user, repo, project).first
+      update_last_release(data, package)
+    when :elixir
+      package = get_elixir_releases(user, repo, project).first
+      update_last_release(data, package)
     end
 
     data['last_commit'] = get_latest_commit(user, repo)
@@ -196,6 +203,28 @@ class GithubImport
     end
 
     RubyGemsImport.new.get_releases(gem_names, project.urls)
+  end
+
+  def get_gleam_releases(user, repo, project)
+    files = find_package_configs(user, repo, 'gleam.toml')
+
+    package_names = files.filter_map do |file|
+      package = HexImport::GleamToml.new(file[:contents])
+      package.name
+    end
+
+    HexImport.new.get_releases(package_names)
+  end
+
+  def get_elixir_releases(user, repo, project)
+    files = find_package_configs(user, repo, 'mix.exs')
+
+    package_names = files.filter_map do |file|
+      package = HexImport::MixConfig.new(file[:contents])
+      package.name
+    end
+
+    HexImport.new.get_releases(package_names)
   end
 
   def find_package_configs(user, repo, filename_pattern)

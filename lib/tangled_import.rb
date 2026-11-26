@@ -55,6 +55,12 @@ class TangledImport
     when :rust
       crate = get_cargo_releases(repo_folder, project).first
       update_last_release(data, crate)
+    when :gleam
+      package = get_gleam_releases(repo_folder, project).first
+      update_last_release(data, package)
+    when :elixir
+      package = get_elixir_releases(repo_folder, project).first
+      update_last_release(data, package)
     end
 
     data['last_commit'] = get_latest_commit(repo_folder)

@@ -1,4 +1,5 @@
 require_relative 'cargo_import'
+require_relative 'hex_import'
 require_relative 'import_helpers'
 require_relative 'npm_import'
 require_relative 'ruby_gems_import'
@@ -97,6 +98,24 @@ module ClonedRepo
     end
 
     RubyGemsImport.new.get_releases(gem_names, project.urls)
+  end
+
+  def get_gleam_releases(repo_folder, project)
+    package_names = Dir.glob(File.join(repo_folder, '**', 'gleam.toml')).filter_map do |file|
+      package = HexImport::GleamToml.new(File.read(file))
+      package.name
+    end
+
+    HexImport.new.get_releases(package_names)
+  end
+
+  def get_elixir_releases(repo_folder, project)
+    package_names = Dir.glob(File.join(repo_folder, '**', 'mix.exs')).filter_map do |file|
+      package = HexImport::MixConfig.new(File.read(file))
+      package.name
+    end
+
+    HexImport.new.get_releases(package_names)
   end
 
   def run_in_shell(directory)
