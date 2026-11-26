@@ -100,3 +100,8 @@ repos:
 
   - url: https://github.com/threddyrex/rustproto
     tags: ["pds"]
+
+  - urls:
+    - https://github.com/teal-fm/teal
+    - https://tangled.org/teal.fm/teal
+    tags: ['atproto app']
