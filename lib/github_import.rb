@@ -32,6 +32,10 @@ class GithubImport
     repo_info = get_repo_info(user, repo)
     data = extract_repo_data(repo_info)
 
+    if repo_info['archived']
+      puts "⚠️  Repo #{user}/#{repo} is archived"
+    end
+
     if release = get_latest_release(user, repo)
       data['last_release'] = release
     end
