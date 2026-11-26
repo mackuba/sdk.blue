@@ -188,41 +188,37 @@ class GithubImport
   end
 
   def get_rubygems_releases(user, repo, project)
-    response = get_response("https://api.github.com/repos/#{user}/#{repo}/contents")
-    raise FetchError.new(response) unless response.code.to_i == 200
+    files = find_package_configs(user, repo, '*.gemspec')
 
-    gemspec_files = JSON.parse(response.body)
-      .select { |file| file['type'] == 'file' && file['name'].end_with?('.gemspec') }
-      .sort_by { |file| file['name'] }
-
-    gem_names = gemspec_files.filter_map do |gemspec_file|
-      response = get_response(gemspec_file['url'])
-      raise FetchError.new(response) unless response.code.to_i == 200
-
-      details = JSON.parse(response.body)
-      gemspec = RubyGemsImport::Gemspec.new(Base64.decode64(details['content']))
+    gem_names = files.filter_map do |file|
+      gemspec = RubyGemsImport::Gemspec.new(file[:contents])
       gemspec.name
     end
 
     RubyGemsImport.new.get_releases(gem_names, project.urls)
   end
 
-  def find_package_configs(user, repo, filename)
-    search_url = URI('https://api.github.com/search/code')
-    search_url.query = URI.encode_www_form(q: "repo:#{user}/#{repo} filename:#{filename}", per_page: 100)
-    response = get_response(search_url, retries: 5)
+  def find_package_configs(user, repo, filename_pattern)
+    tree_url = "https://api.github.com/repos/#{user}/#{repo}/git/trees/HEAD?recursive=1"
+    response = get_response(tree_url, retries: 5)
     raise FetchError.new(response) unless response.code.to_i == 200
 
     json = JSON.parse(response.body)
 
-    json['items'].map do |file|
+    json['tree'].filter_map do |file|
+      next unless file['type'] == 'blob' && file['mode'] != '120000'
+
+      path = file['path']
+      name = File.basename(path)
+      next unless File.fnmatch?(filename_pattern, name)
+
       response = get_response(file['url'], retries: 5)
       raise FetchError.new(response) unless response.code.to_i == 200
 
       details = JSON.parse(response.body)
       contents = Base64.decode64(details['content'])
 
-      { name: file['name'], path: file['path'], contents: contents }
+      { name: name, path: path, contents: contents }
     end
   end
 end
