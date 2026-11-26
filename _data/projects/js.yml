@@ -61,6 +61,7 @@ repos:
     tags: ['atproto app']
 
   - url: https://tangled.org/did:plc:d6w7z5r75qmea7edmat6yqzo/hatk
+    tags: ['app tooling']
 
   - url: https://tangled.org/did:plc:lrphxvv25aibthe7xoc2eeyy/atmosphereinabox
     tags: ['app tooling']
@@ -68,3 +69,6 @@ repos:
 
   - url: https://tangled.org/chadtmiller.com/pds.js
     tags: ['pds']
+
+  - url: https://github.com/socialdept/protobroker
+    tags: ['oauth', 'app tooling']

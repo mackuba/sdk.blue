@@ -77,3 +77,6 @@ repos:
 
   - url: https://tangled.org/edavis.dev/updraft
     tags: ['feeds']
+
+  - url: https://github.com/socialdept/tack
+    tags: ['moderation', 'firehose']
